@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="color-scheme" content="light">
+  <title>Test privé de fonctionnement — Assistant IA du CV</title>
+  <link rel="stylesheet" href="chatbot/chat.css">
+  <style>
+    [hidden]{display:none!important}
+    *{box-sizing:border-box}
+    body{margin:0;background:#f4f7fb;color:#12314e;font-family:Inter,"Segoe UI",Arial,sans-serif}
+    .page{max-width:810px;margin:7vh auto;padding:0 24px 70px}
+    .tag{font-size:12px;font-weight:750;color:#287a83;text-transform:uppercase;letter-spacing:.08em}
+    h1{font-size:clamp(29px,4vw,46px);margin:14px 0 18px;letter-spacing:-.035em;line-height:1.12}
+    p{font-size:16px;line-height:1.7;color:#556779}
+    .notice{margin:24px 0;padding:18px 21px;border:1px solid #dce6f2;border-left:4px solid #46b7bb;background:#fff;border-radius:13px;font-size:14px;line-height:1.65;color:#38516a}
+    a{color:#116f87;text-decoration-thickness:1px;text-underline-offset:3px}
+    .questions{margin-top:24px;padding-left:20px;color:#38516a;line-height:1.9}
+    .foot{font-size:13px;color:#708196;margin-top:30px}
+    @media(max-width:480px){.page{margin:36px auto;padding:0 16px 100px}.notice{padding:13px}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="tag">V10 · Espace de validation</div>
+    <h1>Tester mon assistant IA pour les recruteurs</h1>
+    <p>Cette page permet de vérifier les réponses du chatbot avant son intégration au CV public. Le fonctionnement actuel du CV et ses trois cartes de réalisations ne sont pas modifiés.</p>
+    <div class="notice"><strong>Comment essayer ?</strong> Cliquez sur le bouton « Une question sur mon parcours ? » en bas à droite, puis choisissez une suggestion ou posez votre propre question. Vérifiez que le bandeau indique <strong>« Assistant IA actif »</strong> : le mode « aperçu de démonstration » ne teste pas l'intelligence artificielle.</div>
+    <p>Quelques questions intéressantes à tester :</p>
+    <ul class="questions">
+      <li>Quelles recommandations ont été retenues après Auto-Mission ?</li>
+      <li>Que propose votre mémoire sur l'assurabilité des collectivités ?</li>
+      <li>Quelle expérience avez-vous en gestion de sinistres corporels ?</li>
+      <li>Qu'est-ce qui prouve votre capacité à travailler avec plusieurs métiers ?</li>
+    </ul>
+    <p class="foot">Une question envoyée en mode IA consomme une petite partie du quota gratuit Cloudflare. N'envoyez aucune information personnelle ou confidentielle dans les questions. <a href="./">Retour au CV interactif actuellement publié</a>.</p>
+  </main>
+  <button class="ai-launcher" id="aiLauncher" type="button" aria-haspopup="dialog" aria-controls="aiPanel" aria-expanded="false"><span class="ai-launch-dot" aria-hidden="true"></span> Une question sur mon parcours ?</button>
+<section class="ai-panel" id="aiPanel" role="dialog" aria-modal="false" aria-labelledby="aiTitle" hidden>
+  <header class="ai-head"><div><strong id="aiTitle">Assistant IA du CV de Victor</strong><small>Questions sur les expériences et compétences documentées</small></div><button type="button" class="ai-close" id="aiClose" aria-label="Fermer l’assistant">×</button></header>
+  <div class="ai-modes" id="aiMode" role="status" aria-live="polite">Vérification du mode de conversation…</div>
+  <div class="ai-thread" id="aiThread" role="log" aria-live="polite" aria-relevant="additions"></div>
+  <div class="ai-suggestions" id="aiSuggestions" aria-label="Questions proposées"></div>
+  <form class="ai-form" id="aiForm"><label for="aiQuestion" class="sr-only">Votre question</label><textarea id="aiQuestion" class="ai-input" maxlength="500" rows="2" placeholder="Posez une question sur mon expérience…" required></textarea><button type="submit" id="aiSend" class="ai-send">Envoyer</button></form>
+  <div class="ai-foot"><button type="button" id="aiReset">Effacer cet échange</button> · Ne saisissez pas de données sensibles. <span id="aiPrivacy">Mode aperçu local : aucune question transmise à l’IA.</span></div>
+</section>
+  <script src="chatbot/config.js"></script>
+  <script src="chatbot/chat.js"></script>
+</body>
+</html>

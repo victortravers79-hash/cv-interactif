@@ -293,9 +293,9 @@
             </span>
             <span class="journey-copy">
               <strong>Voir mes Expériences et Projets</strong>
-              <span>Explorez directement mes 14 réalisations, regroupées par domaine, et consultez leurs fiches détaillées.</span>
+              <span>Choisissez une thématique, puis découvrez les expériences et projets correspondants, avec leurs fiches détaillées.</span>
             </span>
-            <span class="journey-foot">Explorer les 14 réalisations <span aria-hidden="true">→</span></span>
+            <span class="journey-foot">Choisir une thématique <span aria-hidden="true">→</span></span>
           </a>
           <a class="journey-card journey-criteria" href="#selectionArea" data-view-target="criteria">
             <span class="journey-icon" aria-hidden="true">
@@ -600,7 +600,7 @@
     const pr=el('section','prospects');pr.append(el('h3','','Comment je pourrais contribuer à votre équipe'),el('p','','À partir de vos critères, voici des contributions envisageables à discuter selon les responsabilités du poste :'));
     const ul=el('ul');Array.from(selected).slice(0,4).forEach(id=>ul.append(el('li','',contributionHints[id])));pr.append(ul);root.append(pr);
     const browse=el('div','browse-full');
-    const browseLink=el('a','btn btn-secondary','Voir mes 14 réalisations ↓');
+    const browseLink=el('a','btn btn-secondary','Explorer les réalisations par thématique →');
     browseLink.href='#realisations';
     browseLink.addEventListener('click',e=>{e.preventDefault();navigateView('catalogue');});
     browse.append(browseLink);root.append(browse);

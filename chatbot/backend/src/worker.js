@@ -115,14 +115,31 @@ export async function handle(request, env) {
   try {
     const result=await env.AI.run(MODEL, {
       messages:[{role:'system',content:system},...history,{role:'user',content:question}],
-      max_completion_tokens:350,temperature:0.15,
+      chat_template_kwargs:{enable_thinking:false},
+      max_completion_tokens:450,
+      temperature:0.15,
     });
-    const value=typeof result?.response==='string' ? result.response : result?.choices?.[0]?.message?.content;
-    if(typeof value!=='string'||!value.trim())throw new Error('NO_RESPONSE');
+    // Gemma 4 utilise le format Chat Completions ; d'autres modèles renvoient "response".
+    const raw=result?.choices?.[0]?.message?.content ?? result?.response ?? result?.output_text;
+    const value=typeof raw==='string' ? raw
+      : Array.isArray(raw) ? raw.filter(x=>x?.type==='text' && typeof x.text==='string').map(x=>x.text).join('\n') : '';
+    if(!value.trim())throw Object.assign(new Error('EMPTY_RESPONSE'),{code:'AI_EMPTY_RESPONSE'});
     return response({reply:value.trim().slice(0,1700),sources:sources.map(p=>({id:p.id,title:p.shortTitle}))},200,origin);
-  }catch {
-    // Aucun log de question, de reponse ou de donnees personnelles.
-    return response({error:'L’assistant IA est momentanément indisponible ou le quota gratuit est atteint. Les expériences restent accessibles dans le CV.'},503,origin);
+  }catch(err) {
+    const msg=String(err?.message??'').toLowerCase();
+    const providerCode=String(err?.code??'').slice(0,30);
+    const status=Number(err?.status??err?.statusCode??0);
+    const isQuota=status===429 || /quota|daily free|neurons|allocation|exceeded/.test(msg) || providerCode==='4006';
+    const isCapacity=/capacity|overload|unavailable/.test(msg) || providerCode==='3040';
+    const isEmpty=providerCode==='AI_EMPTY_RESPONSE';
+    const category=isQuota?'AI_QUOTA':isCapacity?'AI_CAPACITY':isEmpty?'AI_EMPTY_RESPONSE':'AI_INFERENCE_ERROR';
+    // Diagnostic technique uniquement : aucune question, réponse ou donnée personnelle journalisée.
+    console.warn('Workers AI error category',category,'provider code',providerCode,'status',status);
+    const error=isQuota?'Le quota gratuit Cloudflare a été atteint. Réessayez demain.'
+      :isCapacity?'Le modèle IA est temporairement saturé. Réessayez plus tard.'
+      :isEmpty?'Le modèle n’a pas produit de réponse exploitable. Réessayez plus tard.'
+      :'Le service IA a rencontré une erreur technique. Les fiches restent accessibles dans le CV.';
+    return response({error,code:category},isQuota?429:503,origin);
   }
 }
 export default {fetch:handle};

@@ -1,8 +1,15 @@
 /* Interface facultative du chatbot : aucun effet sur les cartes. */
-  .ai-launcher{position:fixed;right:22px;bottom:22px;z-index:90;border:0;border-radius:999px;padding:15px 19px;background:linear-gradient(130deg,#132c54,#4e54c8);color:#fff;display:flex;align-items:center;gap:11px;font-size:13px;font-weight:830;box-shadow:0 13px 34px rgba(11,32,69,.28)}
-  .ai-launcher:hover{transform:translateY(-2px)}
-  .ai-launcher .ai-launch-dot{width:9px;height:9px;border-radius:100%;background:#76f2d5;box-shadow:0 0 0 4px rgba(118,242,213,.16)}
-  .ai-panel{position:fixed;right:22px;bottom:86px;z-index:100;width:min(410px,calc(100vw - 24px));height:min(625px,calc(100dvh - 114px));background:#fff;border:1px solid #d7e3f1;border-radius:22px;box-shadow:0 18px 65px rgba(12,33,70,.24);display:flex;flex-direction:column;overflow:hidden}
+  /* Appel à l'action clairement identifié : chatbot IA, contrasté et accessible. */
+  .ai-launcher{position:fixed;left:50%;right:auto;bottom:24px;transform:translateX(-50%);z-index:90;display:flex;align-items:center;gap:13px;min-height:80px;width:min(334px,calc(100vw - 32px));padding:13px 15px;text-align:left;font:inherit;color:#fff;background:linear-gradient(115deg,#103e78 0%,#2b55b4 58%,#5940b7 100%);border:1px solid rgba(126,223,241,.72);border-radius:20px;box-shadow:0 16px 45px rgba(13,37,114,.36),0 0 0 4px rgba(41,179,201,.12);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+  .ai-launcher:hover{transform:translate(-50%,-3px);box-shadow:0 21px 50px rgba(13,37,114,.42),0 0 0 5px rgba(41,179,201,.16)}
+  .ai-launcher:focus-visible{outline:3px solid #11d0e3;outline-offset:4px}
+  .ai-launch-icon{display:grid;place-items:center;flex:0 0 47px;width:47px;height:47px;border-radius:15px;background:linear-gradient(135deg,#0fb4bd,#1285ac);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 6px 18px rgba(1,20,61,.17);color:#fff}
+  .ai-launch-svg{width:27px;height:27px}
+  .ai-launch-copy{display:flex;flex:1;flex-direction:column;min-width:0;gap:4px}
+  .ai-launch-copy strong{font-size:17px;letter-spacing:-.02em;line-height:1.15;font-weight:850}
+  .ai-launch-copy small{display:block;color:#edf5ff;font-size:11.5px;font-weight:580;line-height:1.4}
+  .ai-launch-arrow{align-self:flex-start;color:#c6f8f8;font-size:20px;font-weight:700;line-height:1}
+  .ai-panel{position:fixed;left:50%;right:auto;transform:translateX(-50%);bottom:122px;z-index:100;width:min(410px,calc(100vw - 24px));height:min(625px,calc(100dvh - 150px));background:#fff;border:1px solid #d7e3f1;border-radius:22px;box-shadow:0 18px 65px rgba(12,33,70,.24);display:flex;flex-direction:column;overflow:hidden}
   .ai-head{padding:17px 17px 14px;background:#102744;color:#fff;display:flex;gap:12px;align-items:center;justify-content:space-between}
   .ai-head strong{font-size:15px;line-height:1.4}.ai-head small{display:block;color:#d0e5f5;font-size:11px;line-height:1.45;margin-top:3px}
   .ai-close{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:9px;width:33px;height:33px;font-size:20px;flex:0 0 33px}
@@ -21,4 +28,5 @@
   .ai-send:disabled{opacity:.6;cursor:not-allowed}
   .ai-foot{padding:0 13px 10px;color:#7c8da0;font-size:10px;line-height:1.5;background:#fff}
   .ai-foot button{background:none;border:0;text-decoration:underline;color:#375e7a;padding:0 4px 0 0;font-size:10px}
-  @media(max-width:480px){.ai-launcher{right:12px;bottom:12px;padding:13px 16px}.ai-panel{right:0;bottom:0;width:100vw;height:min(94dvh,740px);border-radius:21px 21px 0 0}.ai-bubble{max-width:98%}}
+  @media(max-width:480px){.ai-launcher{left:50%;right:auto;bottom:12px;min-height:71px;width:min(315px,calc(100vw - 24px));padding:11px 12px;border-radius:18px;gap:11px}.ai-launch-icon{width:43px;height:43px;flex-basis:43px;border-radius:13px}.ai-launch-copy strong{font-size:16px}.ai-launch-copy small{font-size:11px}.ai-panel{left:0;right:0;transform:none;bottom:0;width:100vw;height:min(94dvh,740px);border-radius:21px 21px 0 0}.ai-bubble{max-width:98%}}
+  @media(prefers-reduced-motion:reduce){.ai-launcher{transition:none}.ai-launcher:hover{transform:translateX(-50%)}}

@@ -1,10 +1,15 @@
-# CV interactif — Victor Travers · V10.8
+# CV interactif — Victor Travers · V10.9
 
 **Site public :** https://victortravers79-hash.github.io/cv-interactif/
 
-Version **V10.8**, destinée à permettre aux recruteurs de découvrir les expériences professionnelles de Victor Travers (marketing, droit des assurances, souscription, sinistres, veille et IA).
+Version **V10.9**, destinée à permettre aux recruteurs de découvrir les expériences professionnelles de Victor Travers (marketing, droit des assurances, souscription, sinistres, veille et IA).
 
 ## Expérience recruteur
+
+- La page d'accueil annonce explicitement la recherche d'un poste en **marketing dans l'assurance dès le 1er janvier 2027**, avec accès direct à l'email et au téléphone.
+- Les coordonnées du profil restent visibles sur mobile. Le bouton chatbot centré devient plus compact pendant le défilement et propose des liens vers les réalisations associées à chaque réponse lorsque le backend les fournit.
+- Navigation au clavier améliorée : lien d'évitement, repères de focus et accès direct aux fiches par le fragment `#projet-ID`.
+
 
 - La page d'accueil propose deux grandes cartes cliquables : **« Voir mes Expériences et Projets »** et **« Sélectionner vos critères »**.
 - Les deux modes sont de véritables vues distinctes : un seul parcours est affiché à la fois, avec **« Changer de mode d'exploration »** pour revenir à l'accueil.

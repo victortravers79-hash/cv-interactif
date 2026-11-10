@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0d1d35">
-  <meta name="description" content="CV interactif de Victor Travers : découvrez librement 14 réalisations en assurance, marketing et droit, ou sélectionnez des compétences pour explorer trois expériences personnalisées.">
-  <title>Victor Travers — CV interactif | Marketing · Droit · Assurance</title>
+  <meta name="description" content="Victor Travers recherche un poste en marketing dans l’assurance dès le 1er janvier 2027. Portfolio interactif, 14 réalisations documentées et chatbot IA.">
+  <title>Victor Travers — Marketing en assurance | Portfolio interactif et chatbot IA</title>
   <style>
     :root{
       font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
@@ -334,12 +334,25 @@
     .education-source:hover{color:#104b62;text-decoration-color:currentColor}
     .education-source:focus-visible{outline:3px solid #1295b0;outline-offset:3px}
     @media(max-width:710px){.home-degree p.home-degree-context{font-size:11.5px}}
+
+    /* V10.9 : recrutement explicite et accès au contact sans dépendre du défilement. */
+    .skip-to-content{position:fixed;top:10px;left:14px;z-index:300;padding:12px 16px;background:#fff;color:#13365a;border:2px solid #1497aa;border-radius:10px;transform:translateY(-180%);font-size:13px;font-weight:800;text-decoration:none}
+    .skip-to-content:focus{transform:translateY(0)}
+    .hero-contact{display:flex;gap:10px 18px;align-items:center;flex-wrap:wrap;margin:20px 0 6px}
+    .hero-contact-availability{display:inline-flex;align-items:center;gap:8px;color:#2a5570;font-size:12px;font-weight:720}
+    .hero-contact-availability span{font-size:10px;color:#0c9f8e}
+    .hero-contact-mail{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:11px;background:#163f68;color:#fff;text-decoration:none;font-size:12px;font-weight:810}
+    .hero-contact-mail:hover{background:#1c618a}
+    .hero-contact-phone{color:#205d7e;text-decoration:underline;text-underline-offset:3px;font-size:12px;font-weight:750}
+    @media(max-width:930px){.profile .profile-contacts{display:flex;gap:8px;flex-wrap:wrap}.profile .profile-contacts a{flex:1 1 135px;font-size:11px}.profile .profile-contacts a:first-child{flex-basis:165px}}
+    @media(max-width:480px){.hero-contact{gap:10px}.hero-contact-availability{flex-basis:100%}.hero-contact-mail{flex:1;justify-content:center}.hero-contact-phone{padding:10px}.profile .profile-contacts{margin-top:12px}.profile .profile-contacts a{padding:9px 8px}}
   </style>
   <link rel="stylesheet" href="chatbot/chat.css">
 </head>
 <body>
+<a href="#main" class="skip-to-content">Aller au contenu principal</a>
 <div class="layout">
-  <main class="workspace" id="main">
+  <main class="workspace" id="main" tabindex="-1">
     <div class="wrap">
       <nav class="topnav" aria-label="Navigation principale">
         <a class="brand" href="#accueil" data-view-target="home"><span class="brand-mark" aria-hidden="true">VT</span><span>Victor Travers <span style="color:#8190a2;font-weight:500">/ CV interactif</span></span></a>
@@ -347,8 +360,13 @@
       </nav>
       <header class="hero hero-entry" id="accueil" aria-labelledby="welcomeTitle">
         <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Votre recrutement, mon parcours</p>
-        <h1 id="welcomeTitle">Découvrez mon parcours <span class="title-highlight">à votre façon.</span></h1>
-        <p class="hero-desc">Deux façons de découvrir mon expérience en assurance, marketing et droit : <strong>parcourir librement mes projets</strong> ou <strong>sélectionner les compétences</strong> recherchées pour votre recrutement.</p>
+        <h1 id="welcomeTitle">Marketing dans l’assurance : <span class="title-highlight">découvrez ce que je peux apporter à votre équipe.</span></h1>
+        <p class="hero-desc">Je recherche une nouvelle opportunité professionnelle en <strong>marketing dans le secteur de l’assurance à partir du 1er janvier 2027</strong>. Pour évaluer mon parcours, vous pouvez parcourir mes expériences ou sélectionner les compétences qui comptent pour votre recrutement.</p>
+        <div class="hero-contact" aria-label="Disponibilité et contact">
+          <span class="hero-contact-availability"><span aria-hidden="true">●</span> Disponible à partir du 1er janvier 2027</span>
+          <a href="mailto:victortravers79@gmail.com?subject=%C3%89change%20professionnel%20-%20Marketing%20Assurance" class="hero-contact-mail">Me proposer un échange <span aria-hidden="true">→</span></a>
+          <a href="tel:+33669230303" class="hero-contact-phone">M’appeler</a>
+        </div>
         <nav class="journey-grid" aria-label="Choisissez votre mode d'exploration">
           <a class="journey-card journey-portfolio" href="#realisations" data-view-target="catalogue">
             <span class="journey-icon" aria-hidden="true">
@@ -483,7 +501,7 @@
   <header class="ai-head"><div><strong id="aiTitle">Chatbot IA · Mon parcours professionnel</strong><small>Réponses générées par IA à partir de mes expériences documentées</small></div><button type="button" class="ai-close" id="aiClose" aria-label="Fermer l’assistant">×</button></header>
   <div class="ai-modes" id="aiMode" role="status" aria-live="polite">Vérification du mode de conversation…</div>
   <div class="ai-thread" id="aiThread" role="log" aria-live="polite" aria-relevant="additions"></div>
-  <div class="ai-suggestions" id="aiSuggestions" aria-label="Questions proposées"></div>
+  <div class="ai-suggestions" id="aiSuggestions" role="group" aria-label="Questions proposées"></div>
   <form class="ai-form" id="aiForm"><label for="aiQuestion" class="sr-only">Votre question</label><textarea id="aiQuestion" class="ai-input" maxlength="500" rows="2" placeholder="Posez une question sur mon expérience…" required></textarea><button type="submit" id="aiSend" class="ai-send">Envoyer</button></form>
   <div class="ai-foot"><button type="button" id="aiReset">Effacer cet échange</button> · Ne saisissez pas de données sensibles. <span id="aiPrivacy">Mode aperçu local : aucune question transmise à l’IA.</span></div>
 </section>
@@ -521,7 +539,14 @@
   function goTo(node){node.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
   let currentView='home';
   const viewHashes={home:'#accueil',catalogue:'#realisations',criteria:'#selectionArea',formation:'#formation'};
-  const groupForHash=hash=>catalogueGroups.find(g=>hash==='#theme-'+g.slug||(hash==='#memoire'&&g.slug==='droit'));
+  const proofFromHash=hash=>{
+    const id=hash==='#memoire'?'memoire':hash.startsWith('#projet-')?hash.slice(8):'';
+    return proofs.find(p=>p.id===id)||null;
+  };
+  const groupForHash=hash=>{
+    const proof=proofFromHash(hash);
+    return catalogueGroups.find(g=>hash==='#theme-'+g.slug||(proof&&g.ids.includes(proof.id)))||null;
+  };
   function viewForHash(hash){
     if(hash==='#formation')return 'formation';
     if(hash==='#realisations'||groupForHash(hash))return 'catalogue';
@@ -537,10 +562,10 @@
     catalogueDetailRoot.hidden=true;
     catalogueDetailRoot.textContent='';
     if(group)renderThemeCatalogue(group);
-    if(window.location.hash==='#memoire'){
-      const memory=proofs.find(p=>p.id==='memoire');
-      activeButton=Array.from(catalogueRoot.querySelectorAll('.catalogue-button')).find(btn=>btn.getAttribute('aria-label')==='Découvrir cette réalisation : '+memory.title)||null;
-      showDetail(memory,null,'catalogue');
+    const requestedProof=proofFromHash(window.location.hash);
+    if(requestedProof){
+      activeButton=Array.from(catalogueRoot.querySelectorAll('.catalogue-button')).find(btn=>btn.getAttribute('aria-label')==='Découvrir cette réalisation : '+requestedProof.title)||null;
+      showDetail(requestedProof,null,'catalogue');
     }
   }
   function setView(view,focus=false){
@@ -553,9 +578,10 @@
     educationArea.hidden=view!=='formation';
     if(view==='catalogue')showCatalogueState();
     if(focus){
-      const node=view==='home'?homeArea:view==='criteria'?skillArea:view==='formation'?educationArea:catalogueArea;
+      const inProof=view==='catalogue'&&!!proofFromHash(window.location.hash);
+      const node=view==='home'?homeArea:view==='criteria'?skillArea:view==='formation'?educationArea:inProof?catalogueDetailRoot:catalogueArea;
       goTo(node);
-      const heading=view==='home'?$('welcomeTitle'):view==='criteria'?$('skills-title'):view==='formation'?$('educationHeading'):catalogueLanding.hidden?$('themeHeading'):$('catalogueHeading');
+      const heading=view==='home'?$('welcomeTitle'):view==='criteria'?$('skills-title'):view==='formation'?$('educationHeading'):inProof?catalogueDetailRoot.querySelector('h2'):catalogueLanding.hidden?$('themeHeading'):$('catalogueHeading');
       if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}
     }
   }
@@ -580,7 +606,7 @@
   });
   function syncViewFromUrl(){
     const view=viewForHash(window.location.hash);
-    if(view)setView(view,false);
+    if(view)setView(view,true);
   }
   $('educationMemoireLink').addEventListener('click',event=>{
     event.preventDefault();
@@ -727,7 +753,7 @@
     const wrap=el('article','detail-panel');wrap.id=fromCatalogue?'catalogueDetailPanel':'detailPanel';
     const returnToOrigin=()=>{
       if(fromCatalogue){
-        if(window.location.hash==='#memoire')window.history.replaceState({cvTheme:'droit'},'','#theme-droit');
+        if(proofFromHash(window.location.hash))window.history.replaceState({cvTheme:groupForHash(window.location.hash)?.slug||'droit'},'','#theme-'+(groupForHash(window.location.hash)?.slug||'droit'));
         catalogueDetailRoot.textContent='';catalogueDetailRoot.hidden=true;catalogueRoot.hidden=false;
         goTo(catalogueExplore);activeButton?.focus({preventScroll:true});
       }else{
@@ -769,7 +795,7 @@
   const initialView=viewForHash(window.location.hash)||'home';
   setView(initialView,false);
   if(initialView!=='home'){
-    const initialNode=initialView==='criteria'?skillArea:initialView==='formation'?educationArea:catalogueArea;
+    const initialNode=initialView==='criteria'?skillArea:initialView==='formation'?educationArea:initialView==='catalogue'&&proofFromHash(window.location.hash)?catalogueDetailRoot:catalogueArea;
     initialNode.scrollIntoView({block:'start',behavior:'auto'});
   }
 })();

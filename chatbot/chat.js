@@ -11,9 +11,21 @@
   const API_BASE=(typeof window.CV_CHAT_API==='string'?window.CV_CHAT_API.trim().replace(/\/$/,''):'');
   const $=id=>document.getElementById(id), panel=$('aiPanel'),launcher=$('aiLauncher'),thread=$('aiThread');
   let mode='demo',history=[],busy=false;
-  const msg=(content,type,sourceNames=[])=>{
+  const knownExperienceIds=new Set(['studies','portfolio','auto','newsletter','social','underwriting','claims_mapa','claims_groupama','claims_life','memoire','regulation','automation','smart','rotaract']);
+  const msg=(content,type,sources=[])=>{
     const b=document.createElement('div');b.className='ai-bubble'+(type==='me'?' me':type==='error'?' error':'');b.textContent=content;
-    if(sourceNames.length){const src=document.createElement('span');src.className='ai-sources';src.textContent='Expériences : '+sourceNames.join(' · ');b.append(src);}
+    const associated=sources.filter(s=>s&&knownExperienceIds.has(s.id)&&typeof s.title==='string').slice(0,3);
+    if(associated.length){
+      const nav=document.createElement('nav');nav.className='ai-sources';nav.setAttribute('aria-label','Expériences documentées en rapport avec votre question');
+      const label=document.createElement('strong');label.textContent='Expériences à consulter :';nav.append(label);
+      associated.forEach(s=>{
+        const a=document.createElement('a');a.href='#projet-'+s.id;a.textContent=s.title;
+        a.setAttribute('aria-label','Consulter la fiche détaillée : '+s.title);
+        a.addEventListener('click',()=>closePanel(false));
+        nav.append(a);
+      });
+      b.append(nav);
+    }
     thread.append(b);thread.scrollTop=thread.scrollHeight;
   };
   function reset(){thread.textContent='';history=[];msg('Bonjour ! Je vous invite à découvrir mon parcours en marketing, droit des assurances, souscription, sinistres et veille stratégique. Quelle expérience souhaitez-vous approfondir ?');}
@@ -27,16 +39,27 @@
       if(mode==='online'){
         const response=await fetch(API_BASE+'/api/chat',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({question,history:oldHistory}),cache:'no-store'});
         const result=await response.json();if(!response.ok)throw new Error((result.error||'Service indisponible.')+(result.code?' [Diagnostic : '+result.code+']':''));
-        msg(result.reply,'bot',(result.sources||[]).map(s=>s.title));history.push({role:'user',content:question},{role:'assistant',content:result.reply});
+        msg(result.reply,'bot',Array.isArray(result.sources)?result.sources:[]);history.push({role:'user',content:question},{role:'assistant',content:result.reply});
       }else{const reply=demoReply(question);msg(reply,'bot');history.push({role:'user',content:question},{role:'assistant',content:reply});}
     }catch(err){msg(err?.message||'Une erreur est survenue, veuillez réessayer.','error');}
     finally{busy=false;$('aiSend').disabled=false;$('aiQuestion').focus({preventScroll:true});}
   }
-  launcher.addEventListener('click',()=>{panel.hidden=!panel.hidden;launcher.setAttribute('aria-expanded',String(!panel.hidden));if(!panel.hidden)$('aiQuestion').focus({preventScroll:true});});
-  $('aiClose').addEventListener('click',()=>{panel.hidden=true;launcher.setAttribute('aria-expanded','false');launcher.focus();});
+  const updateCompact=()=>launcher.classList.toggle('is-compact',panel.hidden&&window.scrollY>250);
+  function closePanel(restoreFocus=true){
+    panel.hidden=true;launcher.setAttribute('aria-expanded','false');launcher.classList.remove('is-open');
+    updateCompact();if(restoreFocus)launcher.focus({preventScroll:true});
+  }
+  launcher.addEventListener('click',()=>{
+    panel.hidden=!panel.hidden;launcher.setAttribute('aria-expanded',String(!panel.hidden));
+    launcher.classList.toggle('is-open',!panel.hidden);updateCompact();
+    if(!panel.hidden)$('aiQuestion').focus({preventScroll:true});
+  });
+  $('aiClose').addEventListener('click',()=>closePanel());
+  window.addEventListener('scroll',updateCompact,{passive:true});
+  updateCompact();
   $('aiReset').addEventListener('click',reset);
   $('aiForm').addEventListener('submit',e=>{e.preventDefault();send($('aiQuestion').value);});
   $('aiQuestion').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send($('aiQuestion').value);}});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){$('aiClose').click();}});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){e.preventDefault();closePanel();}});
   makeSuggestions();reset();detect();
 })();

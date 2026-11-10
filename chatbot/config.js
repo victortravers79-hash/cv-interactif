@@ -1,2 +1,2 @@
-/* Ajouter ici l’URL Cloudflare Worker après activation du service. */
-window.CV_CHAT_API = "";
+// Adresse publique du Worker Cloudflare (aucune clé API).
+window.CV_CHAT_API = "https://victor-travers-cv-chatbot.izemjet29.workers.dev";

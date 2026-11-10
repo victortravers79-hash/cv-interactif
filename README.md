@@ -1,8 +1,8 @@
-# CV interactif — Victor Travers · V10.5
+# CV interactif — Victor Travers · V10.6
 
 **Site public :** https://victortravers79-hash.github.io/cv-interactif/
 
-Version **V10.5**, destinée à permettre aux recruteurs de découvrir les expériences professionnelles de Victor Travers (marketing, droit des assurances, souscription, sinistres, veille et IA).
+Version **V10.6**, destinée à permettre aux recruteurs de découvrir les expériences professionnelles de Victor Travers (marketing, droit des assurances, souscription, sinistres, veille et IA).
 
 ## Expérience recruteur
 
@@ -17,6 +17,10 @@ Version **V10.5**, destinée à permettre aux recruteurs de découvrir les expé
 - Photos, CV PDF et coordonnées de contact.
 
 Les quatre cartes de thématiques affichent désormais des **illustrations SVG neutres et locales** en bandeau, sans logos ni texte dans les visuels. Leurs titres, descriptions et liens d'exploration restent inchangés. Les images sont décoratives et n'ajoutent aucune information factuelle.
+
+- Rubrique **Formation** accessible depuis le menu (ordinateur et mobile) et depuis la mention « Double Bac+5 » du profil, sans créer un troisième choix principal sur l'accueil.
+- Présentation chronologique de **4 formations** avec leurs noms officiels, établissements et années : DUT GEA (IUT de Niort, 2016–2018), Licence de droit des assurances (Pôle Universitaire de Niort, 2018–2021), Master de droit des assurances (Pôle Universitaire de Niort, 2021–2023) et titre RNCP Bac+5 « Management du Marketing et de la Relation Client en Assurance » (IFPASS & ICD Business School, 2024–2026).
+- Accès direct à l'étude de cas du mémoire de Master depuis la formation (fragment `#memoire`), avec retour vers la thématique droit. Le titre RNCP est distingué des diplômes universitaires.
 
 ## Architecture
 

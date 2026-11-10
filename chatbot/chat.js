@@ -26,7 +26,7 @@
     try{
       if(mode==='online'){
         const response=await fetch(API_BASE+'/api/chat',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({question,history:oldHistory}),cache:'no-store'});
-        const result=await response.json();if(!response.ok)throw new Error(result.error||'Service indisponible.');
+        const result=await response.json();if(!response.ok)throw new Error((result.error||'Service indisponible.')+(result.code?' [Diagnostic : '+result.code+']':''));
         msg(result.reply,'bot',(result.sources||[]).map(s=>s.title));history.push({role:'user',content:question},{role:'assistant',content:result.reply});
       }else{const reply=demoReply(question);msg(reply,'bot');history.push({role:'user',content:question},{role:'assistant',content:reply});}
     }catch(err){msg(err?.message||'Une erreur est survenue, veuillez réessayer.','error');}

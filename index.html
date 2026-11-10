@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0d1d35">
-  <meta name="description" content="CV interactif de Victor Travers : sélectionnez les compétences techniques recherchées et découvrez trois expériences concrètes en marketing, droit et assurance.">
+  <meta name="description" content="CV interactif de Victor Travers : découvrez librement 14 réalisations en assurance, marketing et droit, ou sélectionnez des compétences pour explorer trois expériences personnalisées.">
   <title>Victor Travers — CV interactif | Marketing · Droit · Assurance</title>
   <style>
     :root{
@@ -187,6 +187,33 @@
     @media(max-width:720px){h1{font-size:clamp(33px,8vw,43px)}.project-grid{grid-template-columns:1fr}.project-card{padding:18px}.card-inner{min-height:0;display:flex;flex-direction:column;gap:10px}.card-preview{max-width:650px;flex-grow:0}.card-bottom{margin-top:5px}.card-arrow{flex-shrink:0}.skill-grid{grid-template-columns:1fr}.detail-columns{grid-template-columns:1fr;gap:20px}.detail-side{padding:19px 0 0;border-left:0;border-top:1px solid #e2eaf1}.results-head h2{font-size:28px}.contact{grid-template-columns:117px 1fr}.contact-body{padding:19px}.contact h2{font-size:19px}}
     @media(max-width:480px){.workspace{padding:20px 14px 50px}.topnav{margin-bottom:27px}.navlinks a:not(.nav-cta){display:none}.hero{padding-bottom:25px}.hero-steps{gap:8px}.hero-steps span{font-size:10px}.section-heading{display:block}.selection-count{display:inline-flex;margin-top:10px}.skill-section{padding:20px 16px}.skill-check{font-size:12px;padding:12px 1px}.select-footer .btn-primary{width:100%}.contact{grid-template-columns:1fr}.contact img{height:180px;object-position:center 30%}.contact-body{padding:18px}.profile{padding:17px 14px}.profile-top{grid-template-columns:100px 1fr;gap:14px}.profile-photo{height:132px}.profile h2{font-size:25px}.profile-role{font-size:11px}.profile .eyebrow{font-size:9px}.profile-story{margin-top:14px}.profile h3{font-size:14px}.detail-photos img{height:145px}.result-footer-note{font-size:10px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+    /* V10.1 — deux parcours lisibles, sans sélection de compétences obligatoire. */
+    .hero-choices{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:25px}
+    .hero-choices .btn{display:inline-flex;gap:10px;align-items:center;text-decoration:none;min-height:43px}
+    .inline-browse{display:inline-block;color:#156c86;text-underline-offset:3px;font-weight:730;text-decoration:underline;margin-top:3px}
+    .inline-browse:hover{color:#11546c}
+    .catalogue-section{padding:35px 0 8px;scroll-margin-top:16px}
+    .catalogue-heading{margin-bottom:25px}
+    .catalogue-heading h2{font-size:clamp(27px,3vw,36px);letter-spacing:-.045em;color:#132d4e;margin:8px 0 9px}
+    .catalogue-heading p:not(.eyebrow){font-size:13px;line-height:1.75;color:#556b80;max-width:720px;margin:0}
+    .catalogue-group{background:#fff;border:1px solid #dce6f0;border-radius:19px;padding:15px 21px 7px;margin-bottom:15px;box-shadow:0 9px 26px rgba(20,40,75,.04)}
+    .catalogue-group-heading{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid #e9eef6;padding-bottom:12px}
+    .catalogue-group-heading h3{font-size:15px;line-height:1.4;color:#183653;letter-spacing:-.015em;margin:0;flex:1}
+    .catalogue-index{font-size:11px;color:#16869a;font-weight:850}
+    .catalogue-number{color:#7c8ea2;background:#edf3f9;border-radius:20px;font-size:10px;padding:4px 9px;font-weight:750}
+    .catalogue-list{display:grid;gap:0}
+    .catalogue-button{padding:14px 2px;min-height:69px}
+    .catalogue-button:last-child{border-bottom:none}
+    .catalogue-button:focus-visible{outline:3px solid #159fca;outline-offset:2px;border-radius:7px}
+    .catalogue-button .related-arrow{font-size:23px;color:#5c7796;line-height:1}
+    .catalogue-group .related-meta{font-size:10px}
+    .catalogue-group .related-title{font-size:13.5px}
+    .browse-full{display:flex;justify-content:flex-start;margin:22px 0 3px}
+    .browse-full .btn{text-decoration:none}
+    #catalogueDetailRoot{scroll-margin-top:22px}
+    #contact{margin-bottom:110px}
+    @media(max-width:600px){.hero-choices{align-items:stretch;flex-direction:column}.hero-choices .btn{justify-content:center;width:100%}.catalogue-group{padding:13px 14px 4px;border-radius:16px}.catalogue-group-heading h3{font-size:13px}.catalogue-group .related-title{font-size:12.5px}.catalogue-button{min-height:65px}}
   </style>
   <link rel="stylesheet" href="chatbot/chat.css">
 </head>
@@ -200,12 +227,15 @@
       </nav>
       <header class="hero">
         <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Votre recrutement, mes compétences</p>
-        <h1>Vous recherchez des compétences précises&nbsp;? <span class="title-highlight">Découvrez où je les ai mobilisées.</span></h1>
-        <p class="hero-desc">Pour évaluer si mon parcours peut répondre au poste que vous souhaitez pourvoir, <strong>sélectionnez les compétences techniques qui comptent pour vous</strong>. Je vous proposerai trois expériences concrètes, avec leurs méthodes, leurs résultats et leurs limites.</p>
-        <div class="hero-steps" aria-label="Comment ça marche"><span><b>1</b> Choisissez vos critères</span><span class="step-arrow" aria-hidden="true">→</span><span><b>2</b> Découvrez 3 projets</span><span class="step-arrow" aria-hidden="true">→</span><span><b>3</b> Ouvrez une fiche détaillée</span></div>
+        <h1>Découvrez mes réalisations. <span class="title-highlight">Explorez librement ou selon vos critères.</span></h1>
+        <p class="hero-desc">Pour comprendre ce que j’ai réalisé en marketing, souscription, gestion des sinistres et droit des assurances, <strong>parcourez directement mes 14 réalisations</strong>. Vous pouvez aussi choisir les compétences qui comptent pour votre recrutement : je vous présenterai alors trois expériences adaptées à vos critères.</p>
+        <nav class="hero-choices" aria-label="Deux façons de découvrir mon parcours">
+          <a class="btn btn-primary" href="#realisations">Voir mes 14 réalisations <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-ghost" href="#selectionArea">Personnaliser selon vos critères <span aria-hidden="true">↓</span></a>
+        </nav>
       </header>
       <section class="skill-section" id="selectionArea" aria-labelledby="skills-title">
-        <div class="section-heading"><div><p class="eyebrow">Votre besoin</p><h2 id="skills-title">Quelles compétences recherchez-vous&nbsp;?</h2><p>Vous pouvez cocher plusieurs critères, même dans des domaines différents. Je sélectionnerai trois exemples complémentaires qui les illustrent au mieux.</p></div><span class="selection-count" id="selectionCount" aria-live="polite">0 sélection</span></div>
+        <div class="section-heading"><div><p class="eyebrow">Parcours personnalisé · Facultatif</p><h2 id="skills-title">Quelles compétences recherchez-vous&nbsp;?</h2><p>Cette étape est facultative. Cochez plusieurs critères, même dans des domaines différents, pour découvrir trois expériences qui les illustrent. <a href="#realisations" class="inline-browse">Vous pouvez aussi parcourir directement les 14 réalisations ↓</a></p></div><span class="selection-count" id="selectionCount" aria-live="polite">0 sélection</span></div>
         <form id="skillForm">
           <div id="skillGroups"></div>
           <div class="select-footer">
@@ -216,6 +246,15 @@
       </section>
       <section class="results-section" id="resultsArea" hidden aria-live="polite" aria-labelledby="resultsHeading">
         <div id="resultsRoot"></div>
+      </section>
+      <section class="catalogue-section" id="realisations" aria-labelledby="catalogueHeading">
+        <div class="catalogue-heading">
+          <p class="eyebrow">Exploration libre · Sans sélection préalable</p>
+          <h2 id="catalogueHeading">Mes 14 réalisations</h2>
+          <p>Vous pouvez consulter les expériences qui vous intéressent directement, sans sélectionner de compétences. Cliquez sur une réalisation pour découvrir ma démarche, les résultats obtenus et leur portée réelle.</p>
+        </div>
+        <div id="catalogueRoot"></div>
+        <div id="catalogueDetailRoot" hidden></div>
       </section>
       <section class="contact" id="contact" aria-labelledby="contactHeading">
         <img src="assets/portrait-contact.webp" width="650" height="975" alt="Victor Travers en veste marron devant un bâtiment" loading="lazy">
@@ -280,6 +319,15 @@
   const generate=$('generate');
   const resultsArea=$('resultsArea');
   const root=$('resultsRoot');
+  const catalogueRoot=$('catalogueRoot');
+  const catalogueDetailRoot=$('catalogueDetailRoot');
+  const catalogueArea=$('realisations');
+  const catalogueGroups=[
+    {name:'Marketing, études et communication',ids:['studies','portfolio','auto','newsletter','social']},
+    {name:'Souscription et gestion des risques',ids:['underwriting','claims_mapa','claims_groupama','claims_life']},
+    {name:'Droit des assurances et marchés publics',ids:['memoire','regulation']},
+    {name:'Innovation, projets et engagement',ids:['automation','smart','rotaract']}
+  ];
   let activeResults=null,activeButton=null;
   const contributionHints={marketResearch:'structurer des études de marché et des benchmarks ciblés',dataAnalysis:'documenter les arbitrages à partir des données de portefeuille et des indicateurs disponibles',offerStrategy:'préparer des diagnostics et des recommandations d’évolution d’offres',customerJourney:'confronter les parcours clients aux retours des équipes de gestion et de souscription',contractLaw:'analyser les contrats et les garanties dans le cadre du poste',regulatory:'contribuer à une veille juridique et à l’analyse de ses impacts opérationnels',publicProc:'étudier les cahiers des charges et les enjeux assurantiels des appels d’offres',riskUnderwriting:'apporter une expérience concrète de l’analyse des risques et du suivi des contrats IARD',claimsLife:'relier la gestion des sinistres à la qualité de l’accompagnement des assurés',lifeContract:'contribuer aux analyses contractuelles et aux opérations en assurance de personnes',watch:'organiser et partager une veille sectorielle exploitable',cross:'mettre en dialogue les besoins et les contraintes de plusieurs métiers',editorial:'produire des contenus utiles aux professionnels et suivre leur diffusion',automation:'concevoir et faire évoluer un processus de veille outillé'};
   function el(tag,klass,content){const n=document.createElement(tag);if(klass)n.className=klass;if(content!==undefined&&content!==null)n.textContent=content;return n;}
@@ -300,7 +348,34 @@
     const others=proofs.filter(p=>!chosen.includes(p)).sort((a,b)=>matchesFor(b).length-matchesFor(a).length);
     return {chosen,others,covered};
   }
-  function resultsHeader(){const wrap=el('div','results-head');const first=el('div');first.append(el('p','eyebrow','Vos critères · Mes expériences'));const h=el('h2','','Trois expériences à découvrir');h.id='resultsHeading';first.append(h,el('p','','Voici trois exemples sélectionnés à partir de vos critères. Cliquez sur une carte pour consulter ma démarche, les résultats et les compétences mobilisées.'));wrap.append(first);
+  function buildCatalogue(){
+    const allIds=catalogueGroups.flatMap(g=>g.ids);
+    if(allIds.length!==proofs.length||new Set(allIds).size!==proofs.length||allIds.some(id=>!proofs.some(p=>p.id===id)))throw new Error('Le catalogue ne couvre pas les 14 réalisations');
+    catalogueRoot.textContent='';
+    catalogueGroups.forEach((group,i)=>{
+      const section=el('section','catalogue-group');
+      const heading=el('div','catalogue-group-heading');
+      heading.append(el('span','catalogue-index',String(i+1).padStart(2,'0')));
+      heading.append(el('h3','',group.name),el('span','catalogue-number',group.ids.length+' réalisation'+(group.ids.length>1?'s':'')));
+      section.append(heading);
+      const list=el('div','catalogue-list');
+      group.ids.forEach(id=>{
+        const p=proofs.find(item=>item.id===id);
+        const button=el('button','related-button catalogue-button');
+        button.type='button';
+        button.setAttribute('aria-label','Consulter la fiche détaillée : '+p.title);
+        const left=el('span','related-copy');
+        left.append(el('span','related-meta',p.contextLabel||p.category),el('span','related-title',p.shortTitle));
+        const chevron=el('span','related-arrow','›');
+        chevron.setAttribute('aria-hidden','true');
+        button.append(left,chevron);
+        button.addEventListener('click',()=>{activeButton=button;showDetail(p,null,'catalogue');});
+        list.append(button);
+      });
+      section.append(list);catalogueRoot.append(section);
+    });
+  }
+  function resultsHeader(){const wrap=el('div','results-head');const first=el('div');first.append(el('p','eyebrow','Vos critères · Mes expériences'));const h=el('h2','','Trois expériences à découvrir');h.id='resultsHeading';first.append(h,el('p','','Voici trois exemples choisis parmi mes 14 réalisations. Cliquez sur une carte pour consulter ma démarche, les résultats et les compétences mobilisées.'));wrap.append(first);
     const edit=el('button','btn btn-ghost','← Modifier mes critères');edit.type='button';edit.addEventListener('click',()=>{goTo($('selectionArea'));$('skills-title').setAttribute('tabindex','-1');$('skills-title').focus({preventScroll:true});});wrap.append(edit);return wrap;
   }
   function cardTone(p){return ['memoire','regulation','claims_life'].includes(p.id)?'tone-legal':['smart','social','newsletter','rotaract'].includes(p.id)?'tone-creative':['underwriting','claims_mapa','claims_groupama'].includes(p.id)?'tone-insurance':'';}
@@ -309,26 +384,45 @@
     const bottom=el('span','card-bottom');bottom.append(el('span','','Découvrir cette expérience'),el('span','card-arrow','↗'));inner.append(bottom);button.append(inner);
     button.addEventListener('click',()=>{activeButton=button;showDetail(p,index)});article.append(button);return article;
   }
-  function makeRelated(others){const details=el('details','related');const summary=el('summary','','Autres réalisations et expériences à découvrir ('+others.length+')');details.append(summary);
-    const list=el('div','related-list');others.forEach(p=>{const b=el('button','related-button');b.type='button';const left=el('span','related-copy');left.append(el('span','related-meta',p.contextLabel||p.category),el('span','related-title',p.shortTitle));const arrow=el('span','related-arrow','↗');arrow.setAttribute('aria-hidden','true');b.append(left,arrow);b.addEventListener('click',()=>{activeButton=b;showDetail(p,null);});list.append(b);});details.append(list);return details;
-  }
   function showCards(){if(!activeResults)return;root.textContent='';const head=resultsHeader();root.append(head);
     const chips=el('div','criteria-line');Array.from(selected).forEach(id=>chips.append(el('span','criteria-chip',skillNames[id])));root.append(chips);
     const grid=el('div','project-grid');activeResults.chosen.forEach((p,i)=>grid.append(miniProject(p,i)));root.append(grid);
     const direct=activeResults.chosen.filter(p=>matchesFor(p).length).length;
     if(direct<3)root.append(el('p','coverage','Pour cette sélection, '+direct+' expérience'+(direct>1?'s illustrent':' illustre')+' directement vos critères. '+(3-direct)+' exemple'+(3-direct>1?'s sont':' est')+' complémentaire'+(3-direct>1?'s':'')+' : il éclaire mon parcours sans prétendre démontrer toutes les compétences demandées.'));
     const missing=Array.from(selected).filter(id=>!activeResults.covered.has(id));
-    if(missing.length)root.append(el('p','coverage','Critères non directement illustrés par ces trois exemples : '+missing.map(id=>skillNames[id]).join(' · ')+'. D’autres expériences sont disponibles ci-dessous.'));
+    if(missing.length)root.append(el('p','coverage','Critères non directement illustrés par ces trois exemples : '+missing.map(id=>skillNames[id]).join(' · ')+'. Vous pouvez explorer les 14 réalisations ci-dessous.'));
     const pr=el('section','prospects');pr.append(el('h3','','Comment je pourrais contribuer à votre équipe'),el('p','','À partir de vos critères, voici des contributions envisageables à discuter selon les responsabilités du poste :'));
-    const ul=el('ul');Array.from(selected).slice(0,4).forEach(id=>ul.append(el('li','',contributionHints[id])));pr.append(ul);root.append(pr,makeRelated(activeResults.others));
+    const ul=el('ul');Array.from(selected).slice(0,4).forEach(id=>ul.append(el('li','',contributionHints[id])));pr.append(ul);root.append(pr);
+    const browse=el('div','browse-full');
+    const browseLink=el('a','btn btn-secondary','Voir mes 14 réalisations ↓');
+    browseLink.href='#realisations';browse.append(browseLink);root.append(browse);
     root.append(el('p','result-footer-note','Les chiffres et résultats sont contextualisés. Les soft skills sont illustrées par des situations vécues.'));
     goTo(resultsArea);
   }
   function detailBlock(title,contents,cls){const section=el('section',cls||'');section.append(el('h3','',title),el('p','',contents));return section;}
-  function showDetail(p,index){if(!activeResults)return;root.textContent='';const wrap=el('article','detail-panel');wrap.id='detailPanel';
-    const navigation=el('div','detail-nav');const back=el('button','back-to-cards','← Retour aux 3 expériences');back.type='button';back.addEventListener('click',()=>{showCards();const btn=Array.from(root.querySelectorAll('.project-card')).find(x=>x.getAttribute('aria-label')==='Ouvrir la fiche complète : '+p.title);(btn||root.querySelector('.project-card'))?.focus({preventScroll:true});});navigation.append(back,el('span','detail-id',index===null?'Expérience complémentaire':'Expérience 0'+(index+1)+' / 03'));wrap.append(navigation);
+  function showDetail(p,index,source='selection'){
+    const fromCatalogue=source==='catalogue';
+    if(!fromCatalogue&&!activeResults)return;
+    const host=fromCatalogue?catalogueDetailRoot:root;
+    if(fromCatalogue){catalogueRoot.hidden=true;catalogueDetailRoot.hidden=false;}
+    host.textContent='';
+    const wrap=el('article','detail-panel');wrap.id=fromCatalogue?'catalogueDetailPanel':'detailPanel';
+    const returnToOrigin=()=>{
+      if(fromCatalogue){
+        catalogueDetailRoot.textContent='';catalogueDetailRoot.hidden=true;catalogueRoot.hidden=false;
+        goTo(catalogueArea);activeButton?.focus({preventScroll:true});
+      }else{
+        showCards();
+        const button=Array.from(root.querySelectorAll('.project-card')).find(x=>x.getAttribute('aria-label')==='Ouvrir la fiche complète : '+p.title);
+        (button||root.querySelector('.project-card'))?.focus({preventScroll:true});
+      }
+    };
+    const navigation=el('div','detail-nav');
+    const back=el('button','back-to-cards',fromCatalogue?'← Retour aux 14 réalisations':'← Retour aux 3 expériences');
+    back.type='button';back.addEventListener('click',returnToOrigin);
+    navigation.append(back,el('span','detail-id',fromCatalogue?'Réalisation du portfolio':'Expérience 0'+(index+1)+' / 03'));wrap.append(navigation);
     wrap.append(el('span','detail-category',p.tag),el('h2','',p.title),el('p','detail-lede',p.context));
-    const matches=matchesFor(p);if(matches.length){const matched=el('div','matched-line');matched.append(el('strong','','Compétences recherchées illustrées :'));matches.forEach(id=>matched.append(el('span','',skillNames[id])));wrap.append(matched);}else wrap.append(el('p','coverage','Cette expérience apporte un éclairage complémentaire sur mon parcours sans illustrer directement les critères cochés.'));
+    const matches=matchesFor(p);if(matches.length){const matched=el('div','matched-line');matched.append(el('strong','','Compétences recherchées illustrées :'));matches.forEach(id=>matched.append(el('span','',skillNames[id])));wrap.append(matched);}else if(selected.size&&!fromCatalogue)wrap.append(el('p','coverage','Cette expérience apporte un éclairage complémentaire sur mon parcours sans illustrer directement les critères cochés.'));
     const metrics=el('div','metrics');p.kpis.forEach(m=>{const item=el('div','metric');item.append(el('b','',m.value),el('span','',m.label));metrics.append(item);});wrap.append(metrics);
     const cols=el('div','detail-columns');const method=el('section');method.append(el('h3','','Ma méthode de travail'));const steps=el('ol','method-steps');p.method.forEach(m=>steps.append(el('li','',m)));method.append(steps);cols.append(method);
     const side=el('div','detail-side');side.append(detailBlock('Ce que j’ai produit',p.deliverable));side.append(detailBlock('Résultat et portée réelle',p.result,'outcome'));side.append(el('p','detail-note',p.nuance));cols.append(side);wrap.append(cols);
@@ -348,11 +442,11 @@
     if(p.id==='smart'){const fig=el('figure','detail-photos');const grid=el('div','detail-photos-grid');const img1=el('img');img1.src='assets/challenge-smart-action.webp';img1.alt='Victor Travers en pleine réflexion pendant le Challenge S.M.A.R.T. de France Assureurs';img1.loading='lazy';const img2=el('img');img2.src='assets/challenge-smart-portrait.webp';img2.alt='Victor Travers portant un sweat France Assureurs au Challenge S.M.A.R.T.';img2.loading='lazy';grid.append(img1,img2);fig.append(grid,el('figcaption','','Photographies prises lors du Challenge S.M.A.R.T. de France Assureurs en 2025.'));wrap.append(fig);}
     const soft=el('section','human-evidence');soft.append(el('h3','','Ce que cette expérience montre aussi de ma façon de travailler'));const ul=el('ul');p.behaviorHighlights.forEach(x=>{const li=el('li');li.append(el('b','',x.label+' — '),document.createTextNode(x.evidence));ul.append(li);});soft.append(ul);wrap.append(soft);
     const value=el('div','what-it-means');value.append(el('strong','','Ce que vous pouvez évaluer : '),document.createTextNode(p.contribution));wrap.append(value);
-    const end=el('div','detail-end');const prev=el('button','btn btn-secondary','← Revenir aux 3 expériences');prev.type='button';prev.addEventListener('click',()=>showCards());end.append(prev);const pdf=el('a','btn btn-ghost','Consulter mon CV PDF ↗');pdf.href='cv-victor-travers.pdf';pdf.target='_blank';pdf.rel='noopener';const contact=el('a','btn btn-primary','En discuter par e-mail ↗');contact.href='mailto:victortravers79@gmail.com?subject=%C3%89change%20sur%20votre%20recrutement';end.append(pdf,contact);wrap.append(end);root.append(wrap);
-    goTo(resultsArea);const title=wrap.querySelector('h2');title.tabIndex=-1;title.focus({preventScroll:true});
+    const end=el('div','detail-end');const prev=el('button','btn btn-secondary',fromCatalogue?'← Revenir aux 14 réalisations':'← Revenir aux 3 expériences');prev.type='button';prev.addEventListener('click',returnToOrigin);end.append(prev);const pdf=el('a','btn btn-ghost','Consulter mon CV PDF ↗');pdf.href='cv-victor-travers.pdf';pdf.target='_blank';pdf.rel='noopener';const contact=el('a','btn btn-primary','En discuter par e-mail ↗');contact.href='mailto:victortravers79@gmail.com?subject=%C3%89change%20sur%20votre%20recrutement';end.append(pdf,contact);wrap.append(end);host.append(wrap);
+    goTo(fromCatalogue?catalogueDetailRoot:resultsArea);const title=wrap.querySelector('h2');title.tabIndex=-1;title.focus({preventScroll:true});
   }
   $('skillForm').addEventListener('submit',e=>{e.preventDefault();if(!selected.size)return;activeResults=rank();resultsArea.hidden=false;showCards();});
-  buildSkillForm();updateCount();
+  buildSkillForm();buildCatalogue();updateCount();
 })();
 </script>
   <script src="chatbot/config.js"></script>

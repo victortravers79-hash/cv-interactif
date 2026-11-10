@@ -21,6 +21,7 @@ const FAMILIES = [
   [/collectif|coop[eé]r|[eé]quipe|transvers|coordonn|f[eé]d[eé]rer/i, ['auto','rotaract','smart']],
   [/smart|challenge|france\s+assureurs|[eé]ducation\s+financi/i, ['smart','rotaract','social']],
   [/associati|b[eé]n[eé]vol|rotaract/i, ['rotaract','underwriting','smart']],
+  [/parcours|profil|comp[eé]tenc|exp[eé]riences?|recrut|contribu|apporter|correspond|poste|travaill[eé]|atouts?/i, ['auto','underwriting','claims_mapa']],
 ];
 const STOP = new Set('vous votre vos mes les des une dans pour avec sur leur leurs cela cette ceux est sont avez quels quelles quel quelle qui que quoi comment peux pouvez peuvent aurait pourriez auriez pourrais moi mon ma mais donc comment chez quelles quels dont tres plus bien fait faire apporter pourrait besoin entreprise poste candidat recrutement quelles voudrai souhaite aimerait savoir quoi'.split(' '));
 const normalize = s => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -92,6 +93,9 @@ export async function handle(request, env) {
   const question = typeof body?.question === 'string' ? body.question.trim() : '';
   if(question.length < 3 || question.length > MAX_QUESTION)return response({error:'Écrivez une question de 3 à 500 caractères.'},400,origin);
   // Validation avant la limitation de debit pour ne pas consommer le quota avec des requetes invalides.
+  if(/(?:contact|email|e[ -]?mail|t[eé]l[eé]phone|num[eé]ro|joindre|disponib|linkedin|cv pdf)/i.test(question)) {
+    return response({reply:'Je suis disponible pour échanger sur des opportunités à partir de janvier 2027. Vous pouvez consulter mon CV PDF ou contacter Victor Travers à victortravers79@gmail.com ou au 06 69 23 03 03.',sources:[]},200,origin);
+  }
   const sources=retrieve(question);
   if(!sources.length)return response({reply:'Je n’ai pas d’information suffisamment précise dans mon parcours documenté pour répondre à cette question. Vous pouvez m’interroger sur le marketing des offres, le droit des assurances, la souscription, les sinistres ou la veille stratégique.',sources:[]},200,origin);
   try {

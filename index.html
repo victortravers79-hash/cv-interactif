@@ -214,6 +214,30 @@
     #catalogueDetailRoot{scroll-margin-top:22px}
     #contact{margin-bottom:110px}
     @media(max-width:600px){.hero-choices{align-items:stretch;flex-direction:column}.hero-choices .btn{justify-content:center;width:100%}.catalogue-group{padding:13px 14px 4px;border-radius:16px}.catalogue-group-heading h3{font-size:13px}.catalogue-group .related-title{font-size:12.5px}.catalogue-button{min-height:65px}}
+
+    /* V10.2 — page d'entrée à deux choix exclusifs, accessible sur mobile. */
+    .hero-entry{padding-bottom:28px;scroll-margin-top:24px}
+    .hero-entry .hero-desc{max-width:720px}
+    .journey-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:30px}
+    .journey-card{display:flex;flex-direction:column;gap:21px;min-height:260px;padding:25px 24px 22px;text-decoration:none;color:#172f4d;border:1px solid #d4e1ed;border-radius:23px;background:#fff;box-shadow:0 12px 32px rgba(24,48,81,.07);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+    .journey-card:hover{transform:translateY(-3px);border-color:#63b9ca;box-shadow:0 19px 42px rgba(20,49,86,.13)}
+    .journey-card:focus-visible{outline:3px solid #0f9ab4;outline-offset:4px}
+    .journey-icon{display:grid;place-items:center;width:53px;height:53px;border-radius:15px;background:#e2f5f5;color:#086b85;flex:none}
+    .journey-icon svg{width:27px;height:27px}
+    .journey-criteria .journey-icon{background:#eeedfe;color:#4e4aa9}
+    .journey-copy{display:flex;flex-direction:column;gap:11px;flex:1}
+    .journey-copy strong{display:block;font-size:clamp(17px,1.7vw,20px);font-weight:850;letter-spacing:-.027em;line-height:1.27}
+    .journey-copy>span{font-size:12.5px;line-height:1.74;color:#536b80}
+    .journey-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:15px;border-top:1px solid #e7edf5;color:#175a7c;font-size:12px;font-weight:820}
+    .journey-criteria .journey-foot{color:#5546a0}
+    .journey-foot span{font-size:20px;line-height:1}
+    .view-switch{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 25px}
+    .view-home{display:inline-flex;align-items:center;min-height:38px;padding:8px 13px;color:#285779;background:#e7f0fa;border:1px solid #d4e3ef;border-radius:99px;font-size:12px;font-weight:790;text-decoration:none}
+    .view-home:hover{background:#d9ecf9;color:#154c69}
+    .view-home:focus-visible{outline:3px solid #0f9ab4;outline-offset:3px}
+    .view-label{font-size:10px;color:#72849b;letter-spacing:.08em;text-transform:uppercase;font-weight:820}
+    @media(max-width:760px){.journey-grid{grid-template-columns:1fr;gap:13px}.journey-card{min-height:0;padding:20px;gap:15px}.journey-icon{width:46px;height:46px}.journey-icon svg{width:24px;height:24px}.journey-copy strong{font-size:18px}.journey-foot{padding-top:12px}}
+    @media(prefers-reduced-motion:reduce){.journey-card{transition:none}.journey-card:hover{transform:none}}
   </style>
   <link rel="stylesheet" href="chatbot/chat.css">
 </head>
@@ -222,20 +246,43 @@
   <main class="workspace" id="main">
     <div class="wrap">
       <nav class="topnav" aria-label="Navigation principale">
-        <a class="brand" href="#main"><span class="brand-mark" aria-hidden="true">VT</span><span>Victor Travers <span style="color:#8190a2;font-weight:500">/ CV interactif</span></span></a>
+        <a class="brand" href="#accueil" data-view-target="home"><span class="brand-mark" aria-hidden="true">VT</span><span>Victor Travers <span style="color:#8190a2;font-weight:500">/ CV interactif</span></span></a>
         <div class="navlinks"><a href="cv-victor-travers.pdf" target="_blank" rel="noopener">CV PDF</a><a href="#contact" class="nav-cta">Me contacter ↗</a></div>
       </nav>
-      <header class="hero">
-        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Votre recrutement, mes compétences</p>
-        <h1>Découvrez mes réalisations. <span class="title-highlight">Explorez librement ou selon vos critères.</span></h1>
-        <p class="hero-desc">Pour comprendre ce que j’ai réalisé en marketing, souscription, gestion des sinistres et droit des assurances, <strong>parcourez directement mes 14 réalisations</strong>. Vous pouvez aussi choisir les compétences qui comptent pour votre recrutement : je vous présenterai alors trois expériences adaptées à vos critères.</p>
-        <nav class="hero-choices" aria-label="Deux façons de découvrir mon parcours">
-          <a class="btn btn-primary" href="#realisations">Voir mes 14 réalisations <span aria-hidden="true">↓</span></a>
-          <a class="btn btn-ghost" href="#selectionArea">Personnaliser selon vos critères <span aria-hidden="true">↓</span></a>
+      <header class="hero hero-entry" id="accueil" aria-labelledby="welcomeTitle">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Votre recrutement, mon parcours</p>
+        <h1 id="welcomeTitle">Découvrez mon parcours <span class="title-highlight">à votre façon.</span></h1>
+        <p class="hero-desc">Deux façons de découvrir mon expérience en assurance, marketing et droit : <strong>parcourir librement mes projets</strong> ou <strong>sélectionner les compétences</strong> recherchées pour votre recrutement.</p>
+        <nav class="journey-grid" aria-label="Choisissez votre mode d'exploration">
+          <a class="journey-card journey-portfolio" href="#realisations" data-view-target="catalogue">
+            <span class="journey-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="6" width="18" height="15" rx="3"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/>
+              </svg>
+            </span>
+            <span class="journey-copy">
+              <strong>Voir mes Expériences et Projets</strong>
+              <span>Explorez directement mes 14 réalisations, regroupées par domaine, et consultez leurs fiches détaillées.</span>
+            </span>
+            <span class="journey-foot">Explorer les 14 réalisations <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="journey-card journey-criteria" href="#selectionArea" data-view-target="criteria">
+            <span class="journey-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="17" r="2" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <span class="journey-copy">
+              <strong>Sélectionner vos critères</strong>
+              <span>Choisissez les compétences qui vous intéressent pour découvrir trois réalisations adaptées à votre recherche.</span>
+            </span>
+            <span class="journey-foot">Choisir les compétences <span aria-hidden="true">→</span></span>
+          </a>
         </nav>
       </header>
-      <section class="skill-section" id="selectionArea" aria-labelledby="skills-title">
-        <div class="section-heading"><div><p class="eyebrow">Parcours personnalisé · Facultatif</p><h2 id="skills-title">Quelles compétences recherchez-vous&nbsp;?</h2><p>Cette étape est facultative. Cochez plusieurs critères, même dans des domaines différents, pour découvrir trois expériences qui les illustrent. <a href="#realisations" class="inline-browse">Vous pouvez aussi parcourir directement les 14 réalisations ↓</a></p></div><span class="selection-count" id="selectionCount" aria-live="polite">0 sélection</span></div>
+      <section class="skill-section" id="selectionArea" aria-labelledby="skills-title" hidden>
+        <div class="view-switch"><a href="#accueil" data-view-target="home" class="view-home">← Changer de mode d'exploration</a><span class="view-label">Parcours personnalisé</span></div>
+        <div class="section-heading"><div><p class="eyebrow">Sélection des compétences · Parcours personnalisé</p><h2 id="skills-title">Quelles compétences recherchez-vous&nbsp;?</h2><p>Vous pouvez cocher plusieurs critères, même dans des domaines différents. Je sélectionnerai trois expériences concrètes qui illustrent au mieux les compétences recherchées.</p></div><span class="selection-count" id="selectionCount" aria-live="polite">0 sélection</span></div>
         <form id="skillForm">
           <div id="skillGroups"></div>
           <div class="select-footer">
@@ -247,7 +294,8 @@
       <section class="results-section" id="resultsArea" hidden aria-live="polite" aria-labelledby="resultsHeading">
         <div id="resultsRoot"></div>
       </section>
-      <section class="catalogue-section" id="realisations" aria-labelledby="catalogueHeading">
+      <section class="catalogue-section" id="realisations" aria-labelledby="catalogueHeading" hidden>
+        <div class="view-switch"><a href="#accueil" data-view-target="home" class="view-home">← Changer de mode d'exploration</a><span class="view-label">Exploration libre</span></div>
         <div class="catalogue-heading">
           <p class="eyebrow">Exploration libre · Sans sélection préalable</p>
           <h2 id="catalogueHeading">Mes 14 réalisations</h2>
@@ -319,6 +367,8 @@
   const generate=$('generate');
   const resultsArea=$('resultsArea');
   const root=$('resultsRoot');
+  const homeArea=$('accueil');
+  const skillArea=$('selectionArea');
   const catalogueRoot=$('catalogueRoot');
   const catalogueDetailRoot=$('catalogueDetailRoot');
   const catalogueArea=$('realisations');
@@ -332,6 +382,48 @@
   const contributionHints={marketResearch:'structurer des études de marché et des benchmarks ciblés',dataAnalysis:'documenter les arbitrages à partir des données de portefeuille et des indicateurs disponibles',offerStrategy:'préparer des diagnostics et des recommandations d’évolution d’offres',customerJourney:'confronter les parcours clients aux retours des équipes de gestion et de souscription',contractLaw:'analyser les contrats et les garanties dans le cadre du poste',regulatory:'contribuer à une veille juridique et à l’analyse de ses impacts opérationnels',publicProc:'étudier les cahiers des charges et les enjeux assurantiels des appels d’offres',riskUnderwriting:'apporter une expérience concrète de l’analyse des risques et du suivi des contrats IARD',claimsLife:'relier la gestion des sinistres à la qualité de l’accompagnement des assurés',lifeContract:'contribuer aux analyses contractuelles et aux opérations en assurance de personnes',watch:'organiser et partager une veille sectorielle exploitable',cross:'mettre en dialogue les besoins et les contraintes de plusieurs métiers',editorial:'produire des contenus utiles aux professionnels et suivre leur diffusion',automation:'concevoir et faire évoluer un processus de veille outillé'};
   function el(tag,klass,content){const n=document.createElement(tag);if(klass)n.className=klass;if(content!==undefined&&content!==null)n.textContent=content;return n;}
   function goTo(node){node.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
+  let currentView='home';
+  const viewHashes={home:'#accueil',catalogue:'#realisations',criteria:'#selectionArea'};
+  function viewForHash(hash){
+    if(hash==='#realisations')return 'catalogue';
+    if(hash==='#selectionArea'||hash==='#resultsArea')return 'criteria';
+    if(hash===''||hash==='#accueil'||hash==='#main')return 'home';
+    return null;
+  }
+  function setView(view,focus=false){
+    if(!Object.prototype.hasOwnProperty.call(viewHashes,view))return;
+    currentView=view;
+    homeArea.hidden=view!=='home';
+    skillArea.hidden=view!=='criteria';
+    resultsArea.hidden=view!=='criteria'||!activeResults;
+    catalogueArea.hidden=view!=='catalogue';
+    // Revenir à l'index lors d'une nouvelle visite du parcours libre.
+    if(view==='catalogue'){catalogueRoot.hidden=false;catalogueDetailRoot.hidden=true;catalogueDetailRoot.textContent='';}
+    if(focus){
+      const node=view==='home'?homeArea:view==='criteria'?skillArea:catalogueArea;
+      goTo(node);
+      const heading=view==='home'?$('welcomeTitle'):view==='criteria'?$('skills-title'):$('catalogueHeading');
+      if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}
+    }
+  }
+  function navigateView(view){
+    if(!Object.prototype.hasOwnProperty.call(viewHashes,view))return;
+    const target=viewHashes[view];
+    if(window.location.hash!==target)window.history.pushState({cvView:view},'',target);
+    setView(view,true);
+  }
+  document.querySelectorAll('[data-view-target]').forEach(link=>{
+    link.addEventListener('click',event=>{
+      event.preventDefault();
+      navigateView(link.getAttribute('data-view-target'));
+    });
+  });
+  function syncViewFromUrl(){
+    const view=viewForHash(window.location.hash);
+    if(view)setView(view,false);
+  }
+  window.addEventListener('popstate',syncViewFromUrl);
+  window.addEventListener('hashchange',syncViewFromUrl);
   function buildSkillForm(){const host=$('skillGroups');groups.forEach((g,i)=>{
     const sec=el('section','skill-category');const header=el('div','skill-category-header');header.append(el('span','category-number',g.marker),el('h3','',g.title));sec.append(header);
     const grid=el('div','skill-grid');g.items.forEach(s=>{const label=el('label','skill-check');const box=el('input');box.type='checkbox';box.name='competence';box.value=s.id;box.setAttribute('aria-label',s.label);label.append(box,el('span','',s.label));box.addEventListener('change',()=>{box.checked?selected.add(s.id):selected.delete(s.id);label.classList.toggle('selected',box.checked);updateCount();if(activeResults){activeResults=null;resultsArea.hidden=true;root.textContent='';}});grid.append(label);});sec.append(grid);host.append(sec);
@@ -395,7 +487,9 @@
     const ul=el('ul');Array.from(selected).slice(0,4).forEach(id=>ul.append(el('li','',contributionHints[id])));pr.append(ul);root.append(pr);
     const browse=el('div','browse-full');
     const browseLink=el('a','btn btn-secondary','Voir mes 14 réalisations ↓');
-    browseLink.href='#realisations';browse.append(browseLink);root.append(browse);
+    browseLink.href='#realisations';
+    browseLink.addEventListener('click',e=>{e.preventDefault();navigateView('catalogue');});
+    browse.append(browseLink);root.append(browse);
     root.append(el('p','result-footer-note','Les chiffres et résultats sont contextualisés. Les soft skills sont illustrées par des situations vécues.'));
     goTo(resultsArea);
   }
@@ -447,6 +541,12 @@
   }
   $('skillForm').addEventListener('submit',e=>{e.preventDefault();if(!selected.size)return;activeResults=rank();resultsArea.hidden=false;showCards();});
   buildSkillForm();buildCatalogue();updateCount();
+  const initialView=viewForHash(window.location.hash)||'home';
+  setView(initialView,false);
+  if(initialView!=='home'){
+    const initialNode=initialView==='criteria'?skillArea:catalogueArea;
+    initialNode.scrollIntoView({block:'start',behavior:'auto'});
+  }
 })();
 </script>
   <script src="chatbot/config.js"></script>

@@ -197,23 +197,33 @@
     .catalogue-heading{margin-bottom:25px}
     .catalogue-heading h2{font-size:clamp(27px,3vw,36px);letter-spacing:-.045em;color:#132d4e;margin:8px 0 9px}
     .catalogue-heading p:not(.eyebrow){font-size:13px;line-height:1.75;color:#556b80;max-width:720px;margin:0}
-    .catalogue-group{background:#fff;border:1px solid #dce6f0;border-radius:19px;padding:15px 21px 7px;margin-bottom:15px;box-shadow:0 9px 26px rgba(20,40,75,.04)}
-    .catalogue-group-heading{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid #e9eef6;padding-bottom:12px}
-    .catalogue-group-heading h3{font-size:15px;line-height:1.4;color:#183653;letter-spacing:-.015em;margin:0;flex:1}
-    .catalogue-index{font-size:11px;color:#16869a;font-weight:850}
-    .catalogue-number{color:#7c8ea2;background:#edf3f9;border-radius:20px;font-size:10px;padding:4px 9px;font-weight:750}
-    .catalogue-list{display:grid;gap:0}
-    .catalogue-button{padding:14px 2px;min-height:69px}
-    .catalogue-button:last-child{border-bottom:none}
-    .catalogue-button:focus-visible{outline:3px solid #159fca;outline-offset:2px;border-radius:7px}
-    .catalogue-button .related-arrow{font-size:23px;color:#5c7796;line-height:1}
-    .catalogue-group .related-meta{font-size:10px}
-    .catalogue-group .related-title{font-size:13.5px}
+    /* Catalogue V10.3 : cartes de réalisations, sans tags ni métriques isolées. */
+    .catalogue-group{--cat-accent:#0a839c;--cat-soft:#e7f7fa;position:relative;margin:0 0 34px}
+    .catalogue-group:nth-child(2){--cat-accent:#2d66a3;--cat-soft:#eaf3ff}
+    .catalogue-group:nth-child(3){--cat-accent:#6554b3;--cat-soft:#f0edfc}
+    .catalogue-group:nth-child(4){--cat-accent:#177c76;--cat-soft:#e8f8f3}
+    .catalogue-group-heading{display:flex;align-items:center;gap:13px;border-bottom:1px solid #dbe6f1;margin:0 0 17px;padding-bottom:13px}
+    .catalogue-group-heading h3{font-size:17px;line-height:1.4;color:#163657;letter-spacing:-.025em;margin:0;font-weight:830}
+    .catalogue-index{color:var(--cat-accent);font-size:12px;font-weight:850}
+    .catalogue-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+    .catalogue-card{display:flex;min-width:0}
+    .catalogue-button{display:flex;flex-direction:column;align-items:stretch;gap:0;width:100%;min-width:0;height:100%;text-align:left;font:inherit;color:#173650;background:#fff;border:1px solid #dce7f0;border-radius:19px;padding:20px 21px 18px;box-shadow:0 8px 25px rgba(20,48,79,.055);cursor:pointer;transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+    .catalogue-button:hover{border-color:var(--cat-accent);box-shadow:0 16px 35px rgba(20,48,79,.13);transform:translateY(-3px)}
+    .catalogue-button:focus-visible{outline:3px solid #119ec1;outline-offset:3px}
+    .catalogue-icon{display:grid;place-items:center;width:47px;height:47px;flex:none;background:var(--cat-soft);color:var(--cat-accent);border-radius:14px;margin:0 0 16px}
+    .catalogue-icon-svg{width:25px;height:25px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .catalogue-context{font-size:10.5px;color:#627b98;font-weight:760;letter-spacing:.025em;line-height:1.5;margin:0 0 8px}
+    .catalogue-title{font-size:16px;color:#173856;font-weight:835;line-height:1.39;letter-spacing:-.016em;margin:0 0 10px}
+    .catalogue-summary{font-size:12.5px;color:#506980;font-weight:430;line-height:1.74;margin:0 0 23px;flex:1}
+    .catalogue-action{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:auto;padding-top:13px;border-top:1px solid #e7eef6;color:var(--cat-accent);font-size:12px;font-weight:810}
+    .catalogue-action-arrow{font-size:19px;line-height:1}
+    @media(max-width:680px){.catalogue-list{grid-template-columns:1fr;gap:12px}.catalogue-group{margin-bottom:28px}.catalogue-button{padding:17px 18px 15px}.catalogue-group-heading h3{font-size:15px}.catalogue-title{font-size:15px}.catalogue-icon{width:44px;height:44px;margin-bottom:12px}.catalogue-summary{margin-bottom:17px}}
+    @media(prefers-reduced-motion:reduce){.catalogue-button{transition:none}.catalogue-button:hover{transform:none}}
     .browse-full{display:flex;justify-content:flex-start;margin:22px 0 3px}
     .browse-full .btn{text-decoration:none}
     #catalogueDetailRoot{scroll-margin-top:22px}
     #contact{margin-bottom:110px}
-    @media(max-width:600px){.hero-choices{align-items:stretch;flex-direction:column}.hero-choices .btn{justify-content:center;width:100%}.catalogue-group{padding:13px 14px 4px;border-radius:16px}.catalogue-group-heading h3{font-size:13px}.catalogue-group .related-title{font-size:12.5px}.catalogue-button{min-height:65px}}
+    
 
     /* V10.2 — page d'entrée à deux choix exclusifs, accessible sur mobile. */
     .hero-entry{padding-bottom:28px;scroll-margin-top:24px}
@@ -299,7 +309,7 @@
         <div class="catalogue-heading">
           <p class="eyebrow">Exploration libre · Sans sélection préalable</p>
           <h2 id="catalogueHeading">Mes 14 réalisations</h2>
-          <p>Vous pouvez consulter les expériences qui vous intéressent directement, sans sélectionner de compétences. Cliquez sur une réalisation pour découvrir ma démarche, les résultats obtenus et leur portée réelle.</p>
+          <p>Explorez mes réalisations à votre rythme, sans sélectionner de compétences. Chaque carte présente le contexte et ma contribution ; sa fiche détaillée explique ma démarche, les résultats obtenus et leurs limites.</p>
         </div>
         <div id="catalogueRoot"></div>
         <div id="catalogueDetailRoot" hidden></div>
@@ -440,6 +450,38 @@
     const others=proofs.filter(p=>!chosen.includes(p)).sort((a,b)=>matchesFor(b).length-matchesFor(a).length);
     return {chosen,others,covered};
   }
+  // Icônes vectorielles décoratives : aucun contenu factuel ajouté aux expériences.
+  const catalogueIconShapes={
+    studies:['M3 3v18h18','M7 16l4-4 3 2 5-6'],
+    portfolio:['M3 3v18h18','M7 17v-5','M12 17V9','M17 17V6'],
+    auto:['m5 11 2-5h10l2 5','M4 11h16v7H4z','M7 18v2','M17 18v2','M7 14h2','M15 14h2'],
+    newsletter:['M4 5h16v14H4z','m4 8 8 6 8-6'],
+    social:['M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2','M9 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8','M19 8a3 3 0 0 1 0 6','M21 20v-2a4 4 0 0 0-3-3.9'],
+    automation:['M6 6h5v5H6z','M14 15h5v5h-5z','M11 8h5a2 2 0 0 1 2 2v5','M6 18h5'],
+    underwriting:['M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z','m9 12 2 2 4-4'],
+    claims_mapa:['M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z','M9 12h6','M12 9v6'],
+    claims_groupama:['m5 11 2-5h10l2 5','M4 11h16v7H4z','M7 18v2','M17 18v2','M7 14h2','M15 14h2'],
+    claims_life:['M6 3h9l4 4v14H6z','M15 3v4h4','m9 14 2 2 4-4'],
+    memoire:['M12 3v17','M5 7h14','M3 21h18','M5 7l-3 6h6L5 7Z','M19 7l-3 6h6l-3-6Z'],
+    regulation:['M12 5C9 3 6 3 3 5v14c3-2 6-2 9 0 3-2 6-2 9 0V5c-3-2-6-2-9 0Z','M12 5v14'],
+    smart:['M9 18h6','M9 21h6','M8 14a7 7 0 1 1 8 0c-1 1-1 2-1 4H9c0-2 0-3-1-4Z'],
+    rotaract:['M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2','M9 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8','M19 8a3 3 0 0 1 0 6','M21 20v-2a4 4 0 0 0-3-3.9']
+  };
+  function createCatalogueIcon(id){
+    const holder=el('span','catalogue-icon');
+    holder.setAttribute('aria-hidden','true');
+    const ns='http://www.w3.org/2000/svg';
+    const svg=document.createElementNS(ns,'svg');
+    svg.setAttribute('viewBox','0 0 24 24');
+    svg.setAttribute('class','catalogue-icon-svg');
+    for(const d of catalogueIconShapes[id]||catalogueIconShapes.studies){
+      const path=document.createElementNS(ns,'path');
+      path.setAttribute('d',d);
+      svg.append(path);
+    }
+    holder.append(svg);
+    return holder;
+  }
   function buildCatalogue(){
     const allIds=catalogueGroups.flatMap(g=>g.ids);
     if(allIds.length!==proofs.length||new Set(allIds).size!==proofs.length||allIds.some(id=>!proofs.some(p=>p.id===id)))throw new Error('Le catalogue ne couvre pas les 14 réalisations');
@@ -447,22 +489,27 @@
     catalogueGroups.forEach((group,i)=>{
       const section=el('section','catalogue-group');
       const heading=el('div','catalogue-group-heading');
-      heading.append(el('span','catalogue-index',String(i+1).padStart(2,'0')));
-      heading.append(el('h3','',group.name),el('span','catalogue-number',group.ids.length+' réalisation'+(group.ids.length>1?'s':'')));
+      heading.append(el('span','catalogue-index',String(i+1).padStart(2,'0')),el('h3','',group.name));
       section.append(heading);
       const list=el('div','catalogue-list');
       group.ids.forEach(id=>{
         const p=proofs.find(item=>item.id===id);
-        const button=el('button','related-button catalogue-button');
+        const article=el('article','catalogue-card');
+        const button=el('button','catalogue-button');
         button.type='button';
-        button.setAttribute('aria-label','Consulter la fiche détaillée : '+p.title);
-        const left=el('span','related-copy');
-        left.append(el('span','related-meta',p.contextLabel||p.category),el('span','related-title',p.shortTitle));
-        const chevron=el('span','related-arrow','›');
-        chevron.setAttribute('aria-hidden','true');
-        button.append(left,chevron);
+        button.setAttribute('aria-label','Découvrir cette réalisation : '+p.title);
+        button.append(createCatalogueIcon(id));
+        button.append(el('span','catalogue-context',p.contextLabel||p.tag));
+        button.append(el('span','catalogue-title',p.title));
+        button.append(el('span','catalogue-summary',p.preview));
+        const action=el('span','catalogue-action');
+        const arrow=el('span','catalogue-action-arrow','→');
+        arrow.setAttribute('aria-hidden','true');
+        action.append(el('span','','Découvrir cette réalisation'),arrow);
+        button.append(action);
         button.addEventListener('click',()=>{activeButton=button;showDetail(p,null,'catalogue');});
-        list.append(button);
+        article.append(button);
+        list.append(article);
       });
       section.append(list);catalogueRoot.append(section);
     });

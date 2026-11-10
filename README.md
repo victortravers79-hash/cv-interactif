@@ -2,12 +2,13 @@
 
 **Site public :** https://victortravers79-hash.github.io/cv-interactif/
 
-Version **V10**, destinée à permettre aux recruteurs de découvrir les expériences professionnelles de Victor Travers (marketing, droit des assurances, souscription, sinistres, veille et IA).
+Version **V10.1**, destinée à permettre aux recruteurs de découvrir les expériences professionnelles de Victor Travers (marketing, droit des assurances, souscription, sinistres, veille et IA).
 
 ## Expérience recruteur
 
-- Sélection multiple de compétences techniques (sans sélection des soft skills).
-- Trois cartes de réalisations compactes, adaptées à la sélection, avec ouverture à la demande de fiches détaillées.
+- Deux parcours possibles, indépendants : explorer librement les 14 réalisations, sans rien cocher, ou sélectionner des compétences techniques (pas les soft skills).
+- Un catalogue de 14 réalisations toujours accessible depuis la page d'accueil, organisé en quatre domaines avec des fiches détaillées.
+- Après sélection facultative des compétences, trois cartes personnalisées mettent en valeur les réalisations les plus pertinentes.
 - Fiches fondées sur les expériences et réalisations documentées, leurs méthodes, leurs résultats et leurs limites, y compris le mémoire de Master en droit des assurances.
 - Bouton facultatif « Une question sur mon parcours ? » ouvrant un chatbot IA.
 - Réponses rédigées à la première personne, dans un ton factuel, avec indication explicite dans l'interface qu'elles sont générées par une IA.

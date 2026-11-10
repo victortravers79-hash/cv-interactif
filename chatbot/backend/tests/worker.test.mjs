@@ -25,3 +25,6 @@ test('Question trop longue rejetée',async()=>{const r=await handle(req('a'.repe
 test('Protection quota simulée',async()=>{const e={...env,CHAT_LIMITER:{limit:async()=>({success:false})}};const r=await handle(req('Parlez de la souscription chez Groupama'),e);assert.equal(r.status,429)});
 test('Aucune AI bindée',async()=>{const r=await handle(req('Parlez de la souscription chez Groupama'),{...env,AI:null});assert.equal(r.status,503)});
 test('Erreur AI isolée',async()=>{const r=await handle(req('Parlez de la souscription chez Groupama'),{...env,AI:{run:async()=>{throw new Error('TEST_NO_SECRET')}}});assert.equal(r.status,503);assert.doesNotMatch(await r.text(),/TEST_NO_SECRET/)});
+
+test('Question générale sur le profil',()=>{assert.ok(retrieve('En quoi votre profil peut aider notre équipe ?').some(x=>x.id==='auto'))});
+test('Contact sans consommation IA',async()=>{calls=[];const r=await handle(req('Comment vous contacter par mail ?'),env);assert.equal(r.status,200);assert.equal(calls.length,0);assert.match((await r.json()).reply,/victortravers79@gmail.com/)});

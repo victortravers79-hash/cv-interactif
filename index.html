@@ -269,6 +269,20 @@
     #catalogueExplore>.view-switch{margin-top:7px}
     @media(max-width:700px){.theme-grid{grid-template-columns:1fr;gap:12px}.theme-card{min-height:0;padding:19px;gap:11px}.theme-title{font-size:17px}.theme-description{font-size:12px}}
     @media(prefers-reduced-motion:reduce){.theme-card{transition:none}.theme-card:hover{transform:none}}
+
+    /* Couvertures illustratives autonomes : SVG locaux, sans téléchargement externe. */
+    .theme-card{gap:0;padding:0;overflow:hidden;align-items:stretch}
+    .theme-image{display:block;width:100%;height:146px;object-fit:cover;object-position:center;background:var(--cat-soft);border:0;flex:none}
+    .theme-card .theme-title{display:block;margin:18px 22px 0;font-size:18px}
+    .theme-card .theme-description{display:block;margin:10px 22px 22px;line-height:1.68}
+    .theme-card .theme-action{box-sizing:border-box;width:calc(100% - 44px);margin:0 22px 19px;align-items:center;padding-top:13px}
+    @media(max-width:700px){
+      .theme-card{padding:0;gap:0}
+      .theme-image{height:139px}
+      .theme-card .theme-title{margin:15px 18px 0;font-size:17px}
+      .theme-card .theme-description{margin:9px 18px 19px}
+      .theme-card .theme-action{width:calc(100% - 36px);margin:0 18px 16px}
+    }
   </style>
   <link rel="stylesheet" href="chatbot/chat.css">
 </head>
@@ -541,7 +555,13 @@
       const button=el('button','theme-card catalogue-theme-'+group.slug);
       button.type='button';
       button.setAttribute('aria-label','Voir la thématique : '+group.name);
-      button.append(createCatalogueIcon(group.icon));
+      const banner=el('img','theme-image');
+      banner.src='assets/themes/'+group.slug+'.svg';
+      banner.alt='';
+      banner.loading='lazy';
+      banner.decoding='async';
+      banner.setAttribute('aria-hidden','true');
+      button.append(banner);
       button.append(el('strong','theme-title',group.name));
       button.append(el('span','theme-description',group.description));
       const action=el('span','theme-action');

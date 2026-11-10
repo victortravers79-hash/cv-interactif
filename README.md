@@ -1,16 +1,16 @@
-# CV interactif — Victor Travers · V10.3
+# CV interactif — Victor Travers · V10.4
 
 **Site public :** https://victortravers79-hash.github.io/cv-interactif/
 
-Version **V10.3**, destinée à permettre aux recruteurs de découvrir les expériences professionnelles de Victor Travers (marketing, droit des assurances, souscription, sinistres, veille et IA).
+Version **V10.4**, destinée à permettre aux recruteurs de découvrir les expériences professionnelles de Victor Travers (marketing, droit des assurances, souscription, sinistres, veille et IA).
 
 ## Expérience recruteur
 
 - La page d'accueil propose deux grandes cartes cliquables : **« Voir mes Expériences et Projets »** et **« Sélectionner vos critères »**.
 - Les deux modes sont de véritables vues distinctes : un seul parcours est affiché à la fois, avec **« Changer de mode d'exploration »** pour revenir à l'accueil.
-- Le parcours libre donne directement accès au catalogue des **14 réalisations** organisé en quatre domaines : **cartes visuelles** avec icône, entreprise et contexte, titre complet, description contextualisée et accès à la fiche détaillée. Aucun tag, pastille de mots-clés ou indicateur chiffré isolé.
+- Le parcours libre commence par un **choix intermédiaire de quatre thématiques**, sous forme de cartes. Une fois la thématique choisie, seules ses réalisations sont présentées (respectivement 5, 4, 2 et 3), sous forme de cartes visuelles avec icône, entreprise et contexte, titre complet, description contextualisée et accès à la fiche détaillée. Aucun tag, pastille de mots-clés ou indicateur chiffré isolé.
 - Le parcours par critères propose la sélection de compétences techniques (sans soft skills), puis exactement **trois cartes personnalisées** pour mettre en valeur les expériences pertinentes.
-- Les liens `#realisations` et `#selectionArea` ouvrent directement le parcours correspondant et la navigation arrière est prise en charge.
+- Les liens `#realisations` et `#selectionArea` ouvrent les parcours correspondants ; `#theme-marketing`, `#theme-risques`, `#theme-droit` et `#theme-innovation` ouvrent directement une thématique. Le retour vers les quatre choix et la navigation arrière sont pris en charge.
 - Fiches fondées sur les expériences et réalisations documentées, leurs méthodes, leurs résultats et leurs limites, y compris le mémoire de Master en droit des assurances.
 - Bouton facultatif « Une question sur mon parcours ? » ouvrant un chatbot IA.
 - Réponses rédigées à la première personne, dans un ton factuel, avec indication explicite dans l'interface qu'elles sont générées par une IA.

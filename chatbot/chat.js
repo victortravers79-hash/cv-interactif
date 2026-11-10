@@ -16,7 +16,7 @@
     if(sourceNames.length){const src=document.createElement('span');src.className='ai-sources';src.textContent='Expériences : '+sourceNames.join(' · ');b.append(src);}
     thread.append(b);thread.scrollTop=thread.scrollHeight;
   };
-  function reset(){thread.textContent='';history=[];msg('Bonjour ! Je suis l’assistant du CV de Victor. Je peux vous aider à explorer ses expériences en marketing, droit des assurances, souscription, sinistres et veille. Quelle compétence souhaitez-vous approfondir ?');}
+  function reset(){thread.textContent='';history=[];msg('Bonjour ! Je vous invite à découvrir mon parcours en marketing, droit des assurances, souscription, sinistres et veille stratégique. Quelle expérience souhaitez-vous approfondir ?');}
   function makeSuggestions(){const container=$('aiSuggestions');suggestions.forEach(q=>{const b=document.createElement('button');b.type='button';b.textContent=q;b.addEventListener('click',()=>send(q));container.append(b);});}
   function demoReply(question){const q=question.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');const found=demos.find(x=>new RegExp(x.match,'i').test(q));return found?.reply||"Dans cet aperçu local, je peux répondre à certaines questions fréquentes sur mes expériences. Pour poser librement vos questions à l’IA, le site devra être activé sur Cloudflare. Les fiches détaillées restent toujours consultables.";}
   async function detect(){if(!API_BASE || location.protocol==='file:')return setMode('demo');try{const res=await fetch(API_BASE+'/api/status',{cache:'no-store'});const data=res.ok?await res.json():{};setMode(data.available?'online':'demo');}catch{setMode('demo');}}

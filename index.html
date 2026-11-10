@@ -307,6 +307,22 @@
     .profile-fact span.profile-formation-cta{margin-top:8px;color:#9bdfdf;font-size:9px;font-weight:780}
     @media(max-width:680px){.education-card{grid-template-columns:1fr;gap:10px;padding:19px}.education-featured{padding-left:16px}.education-dates{margin:0}.education-card h3{font-size:15px}.education-heading>p:not(.eyebrow){font-size:12.5px}}
     @media(max-width:480px){.topnav{flex-wrap:wrap;gap:10px}.navlinks{gap:9px}.navlinks .nav-formation{display:inline-flex!important}.brand>span:last-child>span{display:none}.navlinks .nav-cta{padding:9px 10px;font-size:10px}}
+
+    /* Résumé des quatre formations visible dès l'accueil, sans troisième choix principal. */
+    .home-education{margin-top:30px;padding:23px 24px 21px;border:1px solid #dce6f1;border-radius:21px;background:#fff;box-shadow:0 10px 27px rgba(22,47,82,.055)}
+    .home-education-head{margin-bottom:18px}
+    .home-education-head .eyebrow{font-size:10px;letter-spacing:.12em;margin:0 0 7px}
+    .home-education-head h2{font-size:clamp(21px,2.3vw,27px);line-height:1.25;letter-spacing:-.034em;margin:0 0 8px;color:#153653}
+    .home-education-head p:not(.eyebrow){font-size:12.5px;line-height:1.65;color:#607388;margin:0}
+    .home-education-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+    .home-degree{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:15px 17px;background:#f5f8fc;border:1px solid #e2ebf4;border-radius:14px}
+    .home-degree-period{font-size:11px;font-weight:810;color:#197f96}
+    .home-degree h3{margin:0;color:#173552;font-size:13.5px;font-weight:810;line-height:1.5}
+    .home-degree p{margin:0;color:#61768e;font-size:11px;line-height:1.55}
+    .home-education-more{display:inline-flex;gap:10px;align-items:center;margin-top:17px;color:#176c83;font-size:12px;font-weight:790;text-decoration:none;padding:5px 0}
+    .home-education-more:hover{text-decoration:underline;text-underline-offset:4px}
+    .home-education-more:focus-visible{outline:3px solid #168cab;outline-offset:3px}
+    @media(max-width:710px){.home-education{margin-top:23px;padding:19px 17px}.home-education-grid{grid-template-columns:1fr}.home-degree{padding:13px 14px}.home-education-head h2{font-size:22px}}
   </style>
   <link rel="stylesheet" href="chatbot/chat.css">
 </head>
@@ -348,6 +364,20 @@
             <span class="journey-foot">Choisir les compétences <span aria-hidden="true">→</span></span>
           </a>
         </nav>
+        <section class="home-education" aria-labelledby="homeEducationHeading">
+          <div class="home-education-head">
+            <p class="eyebrow">Ma formation</p>
+            <h2 id="homeEducationHeading">Mon parcours universitaire et professionnel</h2>
+            <p>De la gestion au droit des assurances, puis au marketing et à la relation client en assurance.</p>
+          </div>
+          <div class="home-education-grid">
+            <article class="home-degree"><span class="home-degree-period">2024 – 2026</span><h3>Titre RNCP Bac+5 — Management du Marketing et de la Relation Client en Assurance</h3><p>IFPASS &amp; ICD Business School · Niort</p></article>
+            <article class="home-degree"><span class="home-degree-period">2021 – 2023</span><h3>Master de Droit des Assurances</h3><p>Pôle Universitaire de Niort</p></article>
+            <article class="home-degree"><span class="home-degree-period">2018 – 2021</span><h3>Licence de Droit des Assurances</h3><p>Pôle Universitaire de Niort</p></article>
+            <article class="home-degree"><span class="home-degree-period">2016 – 2018</span><h3>DUT Gestion des Entreprises et des Administrations</h3><p>IUT de Niort</p></article>
+          </div>
+          <a class="home-education-more" href="#formation" data-view-target="formation">Consulter mon cursus détaillé <span aria-hidden="true">→</span></a>
+        </section>
       </header>
       <section class="skill-section" id="selectionArea" aria-labelledby="skills-title" hidden>
         <div class="view-switch"><a href="#accueil" data-view-target="home" class="view-home">← Changer de mode d'exploration</a><span class="view-label">Parcours personnalisé</span></div>

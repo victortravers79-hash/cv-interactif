@@ -283,6 +283,30 @@
       .theme-card .theme-description{margin:9px 18px 19px}
       .theme-card .theme-action{width:calc(100% - 36px);margin:0 18px 16px}
     }
+
+    /* Parcours de formation : fiche dédiée, accessible depuis le menu et le profil. */
+    .navlinks .nav-formation{font-weight:830;color:#146686}
+    .education-section{padding:35px 0 10px;scroll-margin-top:18px}
+    .education-heading{margin-bottom:25px}
+    .education-heading h2{font-size:clamp(29px,3.3vw,39px);letter-spacing:-.045em;color:#153653;margin:8px 0 12px}
+    .education-heading>p:not(.eyebrow){font-size:13.5px;line-height:1.75;color:#566e84;max-width:735px;margin:0}
+    .education-list{display:grid;gap:15px}
+    .education-card{display:grid;grid-template-columns:124px minmax(0,1fr);gap:19px;padding:24px 25px;background:#fff;border:1px solid #dce7f1;border-radius:18px;box-shadow:0 9px 25px rgba(20,50,75,.045)}
+    .education-featured{border-left:4px solid #1895a5;padding-left:22px}
+    .education-dates{font-size:13px;font-weight:850;color:#227c8b;margin-top:5px}
+    .education-card h3{font-size:17px;line-height:1.35;color:#153653;letter-spacing:-.019em;margin:0 0 8px}
+    .education-school{font-size:12px!important;font-weight:800;color:#315a79!important;margin:0 0 11px!important}
+    .education-card-body>p:not(.education-school){font-size:12.5px;line-height:1.73;color:#526981;margin:0}
+    .education-case-link{display:inline-flex;gap:12px;align-items:center;margin-top:15px;padding:7px 0;color:#117c93;font-size:12px;font-weight:820;text-decoration:none}
+    .education-case-link:hover{text-decoration:underline;text-underline-offset:3px}
+    .education-case-link:focus-visible{outline:3px solid #1295b0;outline-offset:3px}
+    .education-footnote{color:#687e96;font-size:11px;line-height:1.7;margin:18px 0 0}
+    .profile-formation-link{display:block;color:inherit;text-decoration:none;border-radius:5px}
+    .profile-formation-link:hover b,.profile-formation-link:hover .profile-formation-cta{color:#8df3e4}
+    .profile-formation-link:focus-visible{outline:2px solid #86e2dd;outline-offset:5px}
+    .profile-fact span.profile-formation-cta{margin-top:8px;color:#9bdfdf;font-size:9px;font-weight:780}
+    @media(max-width:680px){.education-card{grid-template-columns:1fr;gap:10px;padding:19px}.education-featured{padding-left:16px}.education-dates{margin:0}.education-card h3{font-size:15px}.education-heading>p:not(.eyebrow){font-size:12.5px}}
+    @media(max-width:480px){.topnav{flex-wrap:wrap;gap:10px}.navlinks{gap:9px}.navlinks .nav-formation{display:inline-flex!important}.brand>span:last-child>span{display:none}.navlinks .nav-cta{padding:9px 10px;font-size:10px}}
   </style>
   <link rel="stylesheet" href="chatbot/chat.css">
 </head>
@@ -292,7 +316,7 @@
     <div class="wrap">
       <nav class="topnav" aria-label="Navigation principale">
         <a class="brand" href="#accueil" data-view-target="home"><span class="brand-mark" aria-hidden="true">VT</span><span>Victor Travers <span style="color:#8190a2;font-weight:500">/ CV interactif</span></span></a>
-        <div class="navlinks"><a href="cv-victor-travers.pdf" target="_blank" rel="noopener">CV PDF</a><a href="#contact" class="nav-cta">Me contacter ↗</a></div>
+        <div class="navlinks"><a class="nav-formation" href="#formation" data-view-target="formation">Formation</a><a href="cv-victor-travers.pdf" target="_blank" rel="noopener">CV PDF</a><a href="#contact" class="nav-cta">Me contacter ↗</a></div>
       </nav>
       <header class="hero hero-entry" id="accueil" aria-labelledby="welcomeTitle">
         <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Votre recrutement, mon parcours</p>
@@ -360,6 +384,18 @@
           <div id="catalogueDetailRoot" hidden></div>
         </div>
       </section>
+      <section class="education-section" id="formation" aria-labelledby="educationHeading" hidden>
+        <div class="view-switch"><a href="#accueil" data-view-target="home" class="view-home">← Changer de mode d'exploration</a><span class="view-label">Formation</span></div>
+        <header class="education-heading"><p class="eyebrow">Diplômes universitaires et titre RNCP</p>
+          <h2 id="educationHeading" tabindex="-1">Mon parcours de formation</h2>
+          <p>Un cursus initial en gestion puis en droit des assurances, complété par deux formations de niveau Bac+5 : un Master de droit des assurances et un titre RNCP spécialisé dans le marketing et la relation client en assurance.</p>
+        </header>
+        <div class="education-list"><article class="education-card education-featured"><div class="education-dates">2024 – 2026</div><div class="education-card-body"><h3>Titre RNCP Bac+5 — Management du Marketing et de la Relation Client en Assurance</h3><p class="education-school">IFPASS &amp; ICD Business School · Niort</p><p>Formation spécialisée suivie durant mon alternance au marketing des offres IARD et Services de la MAIF.</p></div></article>
+<article class="education-card education-featured"><div class="education-dates">2021 – 2023</div><div class="education-card-body"><h3>Master de Droit des Assurances</h3><p class="education-school">Pôle Universitaire de Niort · Niort</p><p>Mon mémoire de 2023 est consacré à l’assurabilité des collectivités territoriales au regard de la passation des marchés publics.</p><a class="education-case-link" href="#memoire" id="educationMemoireLink">Découvrir l’étude de cas de mon mémoire <span aria-hidden="true">→</span></a></div></article>
+<article class="education-card"><div class="education-dates">2018 – 2021</div><div class="education-card-body"><h3>Licence de Droit des Assurances</h3><p class="education-school">Pôle Universitaire de Niort · Niort</p><p>Formation universitaire en droit des assurances, préalable à mon Master.</p></div></article>
+<article class="education-card"><div class="education-dates">2016 – 2018</div><div class="education-card-body"><h3>DUT Gestion des Entreprises et des Administrations</h3><p class="education-school">IUT de Niort · Niort</p><p>Mon premier cursus supérieur en gestion des entreprises et des administrations.</p></div></article></div>
+        <p class="education-footnote">Intitulés, établissements et années repris de mon CV PDF. Le titre RNCP est présenté distinctement des diplômes universitaires.</p>
+      </section>
       <section class="contact" id="contact" aria-labelledby="contactHeading">
         <img src="assets/portrait-contact.webp" width="650" height="975" alt="Victor Travers en veste marron devant un bâtiment" loading="lazy">
         <div class="contact-body">
@@ -387,7 +423,7 @@
     </div>
     <details class="profile-more"><summary>En savoir plus sur mon parcours et ma méthode</summary><p style="font-size:12px;color:#d3e2ed;line-height:1.75">Je recherche un environnement où la qualité de l’analyse, la coopération entre métiers et la compréhension des contraintes techniques permettent de prendre de meilleures décisions. Je préfère distinguer clairement les résultats obtenus des recommandations formulées ou des pistes encore à approfondir.</p></details>
     <div class="profile-divider"></div>
-    <div class="profile-facts"><div class="profile-fact"><b>2 ans</b><span>marketing des offres MAIF</span></div><div class="profile-fact"><b>Double Bac+5</b><span>marketing et droit des assurances</span></div><div class="profile-fact"><b>3 regards</b><span>marketing, souscription, sinistres</span></div></div>
+    <div class="profile-facts"><div class="profile-fact"><b>2 ans</b><span>marketing des offres MAIF</span></div><div class="profile-fact"><a class="profile-formation-link" href="#formation" data-view-target="formation"><b>Double Bac+5</b><span>marketing et droit des assurances</span><span class="profile-formation-cta">Voir mon cursus →</span></a></div><div class="profile-fact"><b>3 regards</b><span>marketing, souscription, sinistres</span></div></div>
     <div class="profile-contacts"><a href="cv-victor-travers.pdf" target="_blank" rel="noopener">Consulter mon CV PDF ↗</a><a href="mailto:victortravers79@gmail.com">✉ victortravers79@gmail.com</a><a href="tel:+33669230303">☎ 06 69 23 03 03</a></div>
     <p class="profile-small">Les expériences présentées sont documentées. Je ne revendique ni résultats économiques non mesurés ni délégation de décision non confirmée.</p>
   </aside>
@@ -425,6 +461,7 @@
   const root=$('resultsRoot');
   const homeArea=$('accueil');
   const skillArea=$('selectionArea');
+  const educationArea=$('formation');
   const catalogueRoot=$('catalogueRoot');
   const catalogueDetailRoot=$('catalogueDetailRoot');
   const catalogueArea=$('realisations');
@@ -442,9 +479,10 @@
   function el(tag,klass,content){const n=document.createElement(tag);if(klass)n.className=klass;if(content!==undefined&&content!==null)n.textContent=content;return n;}
   function goTo(node){node.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
   let currentView='home';
-  const viewHashes={home:'#accueil',catalogue:'#realisations',criteria:'#selectionArea'};
-  const groupForHash=hash=>catalogueGroups.find(g=>hash==='#theme-'+g.slug);
+  const viewHashes={home:'#accueil',catalogue:'#realisations',criteria:'#selectionArea',formation:'#formation'};
+  const groupForHash=hash=>catalogueGroups.find(g=>hash==='#theme-'+g.slug||(hash==='#memoire'&&g.slug==='droit'));
   function viewForHash(hash){
+    if(hash==='#formation')return 'formation';
     if(hash==='#realisations'||groupForHash(hash))return 'catalogue';
     if(hash==='#selectionArea'||hash==='#resultsArea')return 'criteria';
     if(hash===''||hash==='#accueil'||hash==='#main')return 'home';
@@ -458,6 +496,11 @@
     catalogueDetailRoot.hidden=true;
     catalogueDetailRoot.textContent='';
     if(group)renderThemeCatalogue(group);
+    if(window.location.hash==='#memoire'){
+      const memory=proofs.find(p=>p.id==='memoire');
+      activeButton=Array.from(catalogueRoot.querySelectorAll('.catalogue-button')).find(btn=>btn.getAttribute('aria-label')==='Découvrir cette réalisation : '+memory.title)||null;
+      showDetail(memory,null,'catalogue');
+    }
   }
   function setView(view,focus=false){
     if(!Object.prototype.hasOwnProperty.call(viewHashes,view))return;
@@ -466,11 +509,12 @@
     skillArea.hidden=view!=='criteria';
     resultsArea.hidden=view!=='criteria'||!activeResults;
     catalogueArea.hidden=view!=='catalogue';
+    educationArea.hidden=view!=='formation';
     if(view==='catalogue')showCatalogueState();
     if(focus){
-      const node=view==='home'?homeArea:view==='criteria'?skillArea:catalogueArea;
+      const node=view==='home'?homeArea:view==='criteria'?skillArea:view==='formation'?educationArea:catalogueArea;
       goTo(node);
-      const heading=view==='home'?$('welcomeTitle'):view==='criteria'?$('skills-title'):catalogueLanding.hidden?$('themeHeading'):$('catalogueHeading');
+      const heading=view==='home'?$('welcomeTitle'):view==='criteria'?$('skills-title'):view==='formation'?$('educationHeading'):catalogueLanding.hidden?$('themeHeading'):$('catalogueHeading');
       if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}
     }
   }
@@ -497,6 +541,11 @@
     const view=viewForHash(window.location.hash);
     if(view)setView(view,false);
   }
+  $('educationMemoireLink').addEventListener('click',event=>{
+    event.preventDefault();
+    if(window.location.hash!=='#memoire')window.history.pushState({cvExperience:'memoire'},'','#memoire');
+    setView('catalogue',false);
+  });
   window.addEventListener('popstate',syncViewFromUrl);
   window.addEventListener('hashchange',syncViewFromUrl);
   function buildSkillForm(){const host=$('skillGroups');groups.forEach((g,i)=>{
@@ -637,6 +686,7 @@
     const wrap=el('article','detail-panel');wrap.id=fromCatalogue?'catalogueDetailPanel':'detailPanel';
     const returnToOrigin=()=>{
       if(fromCatalogue){
+        if(window.location.hash==='#memoire')window.history.replaceState({cvTheme:'droit'},'','#theme-droit');
         catalogueDetailRoot.textContent='';catalogueDetailRoot.hidden=true;catalogueRoot.hidden=false;
         goTo(catalogueExplore);activeButton?.focus({preventScroll:true});
       }else{
@@ -678,7 +728,7 @@
   const initialView=viewForHash(window.location.hash)||'home';
   setView(initialView,false);
   if(initialView!=='home'){
-    const initialNode=initialView==='criteria'?skillArea:catalogueArea;
+    const initialNode=initialView==='criteria'?skillArea:initialView==='formation'?educationArea:catalogueArea;
     initialNode.scrollIntoView({block:'start',behavior:'auto'});
   }
 })();

@@ -29,4 +29,18 @@
   .ai-foot{padding:0 13px 10px;color:#7c8da0;font-size:10px;line-height:1.5;background:#fff}
   .ai-foot button{background:none;border:0;text-decoration:underline;color:#375e7a;padding:0 4px 0 0;font-size:10px}
   @media(max-width:480px){.ai-launcher{left:50%;right:auto;bottom:12px;min-height:71px;width:min(315px,calc(100vw - 24px));padding:11px 12px;border-radius:18px;gap:11px}.ai-launch-icon{width:43px;height:43px;flex-basis:43px;border-radius:13px}.ai-launch-copy strong{font-size:16px}.ai-launch-copy small{font-size:11px}.ai-panel{left:0;right:0;transform:none;bottom:0;width:100vw;height:min(94dvh,740px);border-radius:21px 21px 0 0}.ai-bubble{max-width:98%}}
+
+  /* V10.9 : le bouton reste centré, mais se compacte pendant la lecture. */
+  .ai-launcher.is-compact{width:185px;min-height:53px;padding:9px 12px;border-radius:16px;gap:9px;box-shadow:0 10px 28px rgba(13,37,114,.32)}
+  .ai-launcher.is-compact .ai-launch-icon{width:35px;height:35px;flex-basis:35px;border-radius:11px}
+  .ai-launcher.is-compact .ai-launch-svg{width:22px;height:22px}
+  .ai-launcher.is-compact .ai-launch-copy strong{font-size:14px}
+  .ai-launcher.is-compact .ai-launch-copy small,.ai-launcher.is-compact .ai-launch-arrow{display:none}
+  .ai-launcher.is-open{opacity:0;pointer-events:none}
+  .ai-sources{display:flex;flex-direction:column;align-items:flex-start;gap:7px;margin-top:12px;padding-top:10px;border-top:1px solid rgba(43,90,121,.18);font-size:11px;white-space:normal}
+  .ai-sources strong{font-weight:760;color:#305b75}
+  .ai-sources a{color:#135b7e;text-decoration:underline;text-underline-offset:3px;line-height:1.45;overflow-wrap:anywhere}
+  .ai-sources a:hover{color:#0d94a4}
+  .ai-sources a:focus-visible{outline:2px solid #139dad;outline-offset:2px}
+  @media(max-width:480px){.ai-launcher.is-compact{width:174px;min-height:48px;bottom:9px}.ai-launcher.is-compact .ai-launch-icon{width:32px;height:32px;flex-basis:32px}}
   @media(prefers-reduced-motion:reduce){.ai-launcher{transition:none}.ai-launcher:hover{transform:translateX(-50%)}}

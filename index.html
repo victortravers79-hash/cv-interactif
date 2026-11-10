@@ -188,6 +188,7 @@
     @media(max-width:480px){.workspace{padding:20px 14px 50px}.topnav{margin-bottom:27px}.navlinks a:not(.nav-cta){display:none}.hero{padding-bottom:25px}.hero-steps{gap:8px}.hero-steps span{font-size:10px}.section-heading{display:block}.selection-count{display:inline-flex;margin-top:10px}.skill-section{padding:20px 16px}.skill-check{font-size:12px;padding:12px 1px}.select-footer .btn-primary{width:100%}.contact{grid-template-columns:1fr}.contact img{height:180px;object-position:center 30%}.contact-body{padding:18px}.profile{padding:17px 14px}.profile-top{grid-template-columns:100px 1fr;gap:14px}.profile-photo{height:132px}.profile h2{font-size:25px}.profile-role{font-size:11px}.profile .eyebrow{font-size:9px}.profile-story{margin-top:14px}.profile h3{font-size:14px}.detail-photos img{height:145px}.result-footer-note{font-size:10px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
   </style>
+  <link rel="stylesheet" href="chatbot/chat.css">
 </head>
 <body>
 <div class="layout">
@@ -248,6 +249,15 @@
     <p class="profile-small">Les expériences présentées sont documentées. Je ne revendique ni résultats économiques non mesurés ni délégation de décision non confirmée.</p>
   </aside>
 </div>
+<button class="ai-launcher" id="aiLauncher" type="button" aria-haspopup="dialog" aria-controls="aiPanel" aria-expanded="false"><span class="ai-launch-dot" aria-hidden="true"></span> Une question sur mon parcours ?</button>
+<section class="ai-panel" id="aiPanel" role="dialog" aria-modal="false" aria-labelledby="aiTitle" hidden>
+  <header class="ai-head"><div><strong id="aiTitle">Assistant IA du CV de Victor</strong><small>Questions sur les expériences et compétences documentées</small></div><button type="button" class="ai-close" id="aiClose" aria-label="Fermer l’assistant">×</button></header>
+  <div class="ai-modes" id="aiMode" role="status" aria-live="polite">Vérification du mode de conversation…</div>
+  <div class="ai-thread" id="aiThread" role="log" aria-live="polite" aria-relevant="additions"></div>
+  <div class="ai-suggestions" id="aiSuggestions" aria-label="Questions proposées"></div>
+  <form class="ai-form" id="aiForm"><label for="aiQuestion" class="sr-only">Votre question</label><textarea id="aiQuestion" class="ai-input" maxlength="500" rows="2" placeholder="Posez une question sur mon expérience…" required></textarea><button type="submit" id="aiSend" class="ai-send">Envoyer</button></form>
+  <div class="ai-foot"><button type="button" id="aiReset">Effacer cet échange</button> · Ne saisissez pas de données sensibles. <span id="aiPrivacy">Mode aperçu local : aucune question transmise à l’IA.</span></div>
+</section>
 <noscript><p style="padding:25px">Activez JavaScript pour personnaliser les réalisations. Vous pouvez toujours <a href="cv-victor-travers.pdf">consulter mon CV PDF</a> et me contacter par e-mail.</p></noscript>
 <script>
 (()=>{
@@ -336,5 +346,7 @@
   buildSkillForm();updateCount();
 })();
 </script>
+  <script src="chatbot/config.js"></script>
+  <script src="chatbot/chat.js"></script>
 </body>
 </html>

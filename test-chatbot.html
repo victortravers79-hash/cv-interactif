@@ -37,9 +37,18 @@
     </ul>
     <p class="foot">Une question envoyée en mode IA consomme une petite partie du quota gratuit Cloudflare. N'envoyez aucune information personnelle ou confidentielle dans les questions. <a href="./">Retour au CV interactif actuellement publié</a>.</p>
   </main>
-  <button class="ai-launcher" id="aiLauncher" type="button" aria-haspopup="dialog" aria-controls="aiPanel" aria-expanded="false"><span class="ai-launch-dot" aria-hidden="true"></span> Une question sur mon parcours ?</button>
+  <button class="ai-launcher" id="aiLauncher" type="button" aria-haspopup="dialog" aria-controls="aiPanel" aria-expanded="false" aria-label="Ouvrir le chatbot IA pour poser des questions sur mon parcours">
+  <span class="ai-launch-icon" aria-hidden="true">
+    <svg class="ai-launch-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2v3"/><rect x="4" y="6" width="16" height="14" rx="4"/>
+      <path d="M2 12h2M20 12h2M9 16h6"/><circle cx="9" cy="11" r="1"/><circle cx="15" cy="11" r="1"/>
+    </svg>
+  </span>
+  <span class="ai-launch-copy"><strong>Chatbot IA</strong><small>Posez vos questions sur mon parcours</small></span>
+  <span class="ai-launch-arrow" aria-hidden="true">↗</span>
+</button>
 <section class="ai-panel" id="aiPanel" role="dialog" aria-modal="false" aria-labelledby="aiTitle" hidden>
-  <header class="ai-head"><div><strong id="aiTitle">Assistant IA du CV de Victor</strong><small>Questions sur les expériences et compétences documentées</small></div><button type="button" class="ai-close" id="aiClose" aria-label="Fermer l’assistant">×</button></header>
+  <header class="ai-head"><div><strong id="aiTitle">Chatbot IA · Mon parcours professionnel</strong><small>Réponses générées par IA à partir de mes expériences documentées</small></div><button type="button" class="ai-close" id="aiClose" aria-label="Fermer l’assistant">×</button></header>
   <div class="ai-modes" id="aiMode" role="status" aria-live="polite">Vérification du mode de conversation…</div>
   <div class="ai-thread" id="aiThread" role="log" aria-live="polite" aria-relevant="additions"></div>
   <div class="ai-suggestions" id="aiSuggestions" aria-label="Questions proposées"></div>

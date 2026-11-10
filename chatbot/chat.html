@@ -1,0 +1,9 @@
+<button class="ai-launcher" id="aiLauncher" type="button" aria-haspopup="dialog" aria-controls="aiPanel" aria-expanded="false"><span class="ai-launch-dot" aria-hidden="true"></span> Une question sur mon parcours ?</button>
+<section class="ai-panel" id="aiPanel" role="dialog" aria-modal="false" aria-labelledby="aiTitle" hidden>
+  <header class="ai-head"><div><strong id="aiTitle">Assistant IA du CV de Victor</strong><small>Questions sur les expériences et compétences documentées</small></div><button type="button" class="ai-close" id="aiClose" aria-label="Fermer l’assistant">×</button></header>
+  <div class="ai-modes" id="aiMode" role="status" aria-live="polite">Vérification du mode de conversation…</div>
+  <div class="ai-thread" id="aiThread" role="log" aria-live="polite" aria-relevant="additions"></div>
+  <div class="ai-suggestions" id="aiSuggestions" aria-label="Questions proposées"></div>
+  <form class="ai-form" id="aiForm"><label for="aiQuestion" class="sr-only">Votre question</label><textarea id="aiQuestion" class="ai-input" maxlength="500" rows="2" placeholder="Posez une question sur mon expérience…" required></textarea><button type="submit" id="aiSend" class="ai-send">Envoyer</button></form>
+  <div class="ai-foot"><button type="button" id="aiReset">Effacer cet échange</button> · Ne saisissez pas de données sensibles. <span id="aiPrivacy">Mode aperçu local : aucune question transmise à l’IA.</span></div>
+</section>

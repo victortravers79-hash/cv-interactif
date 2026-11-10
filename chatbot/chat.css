@@ -1,0 +1,24 @@
+/* Interface facultative du chatbot : aucun effet sur les cartes. */
+  .ai-launcher{position:fixed;right:22px;bottom:22px;z-index:90;border:0;border-radius:999px;padding:15px 19px;background:linear-gradient(130deg,#132c54,#4e54c8);color:#fff;display:flex;align-items:center;gap:11px;font-size:13px;font-weight:830;box-shadow:0 13px 34px rgba(11,32,69,.28)}
+  .ai-launcher:hover{transform:translateY(-2px)}
+  .ai-launcher .ai-launch-dot{width:9px;height:9px;border-radius:100%;background:#76f2d5;box-shadow:0 0 0 4px rgba(118,242,213,.16)}
+  .ai-panel{position:fixed;right:22px;bottom:86px;z-index:100;width:min(410px,calc(100vw - 24px));height:min(625px,calc(100dvh - 114px));background:#fff;border:1px solid #d7e3f1;border-radius:22px;box-shadow:0 18px 65px rgba(12,33,70,.24);display:flex;flex-direction:column;overflow:hidden}
+  .ai-head{padding:17px 17px 14px;background:#102744;color:#fff;display:flex;gap:12px;align-items:center;justify-content:space-between}
+  .ai-head strong{font-size:15px;line-height:1.4}.ai-head small{display:block;color:#d0e5f5;font-size:11px;line-height:1.45;margin-top:3px}
+  .ai-close{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:9px;width:33px;height:33px;font-size:20px;flex:0 0 33px}
+  .ai-modes{padding:10px 17px;border-bottom:1px solid #e8eff5;background:#f0f6fd;color:#375572;font-size:11px;line-height:1.45}
+  .ai-thread{padding:18px;flex:1;overflow:auto;display:flex;flex-direction:column;gap:13px;overscroll-behavior:contain}
+  .ai-bubble{font-size:12.5px;line-height:1.6;max-width:95%;white-space:pre-wrap;padding:12px 14px;border-radius:14px 14px 14px 3px;background:#f0f5fb;color:#23405c;align-self:flex-start;overflow-wrap:anywhere}
+  .ai-bubble.me{background:#dff5f2;color:#145554;align-self:flex-end;border-radius:14px 14px 3px 14px}
+  .ai-bubble.error{background:#fff2ec;color:#93472b}
+  .ai-sources{display:block;margin-top:9px;font-size:10.5px;color:#5c7891}
+  .ai-suggestions{padding:4px 16px 12px;display:flex;gap:7px;flex-wrap:wrap}
+  .ai-suggestions button{border:1px solid #d4e2f0;background:#f7fafc;color:#295270;font-size:11px;padding:8px 9px;border-radius:11px;text-align:left;line-height:1.35}
+  .ai-suggestions button:hover{background:#e5f7f5;border-color:#85bfb8}
+  .ai-form{border-top:1px solid #e4edf5;padding:12px;display:flex;gap:9px;align-items:end}
+  .ai-input{resize:none;flex:1;min-width:0;height:60px;max-height:100px;border:1px solid #cbdbe9;border-radius:11px;padding:11px;font-size:12.5px;line-height:1.4;color:#203a59}
+  .ai-send{height:41px;align-self:center;border:0;border-radius:11px;padding:0 15px;background:#1e6382;color:#fff;font-weight:790;font-size:12px}
+  .ai-send:disabled{opacity:.6;cursor:not-allowed}
+  .ai-foot{padding:0 13px 10px;color:#7c8da0;font-size:10px;line-height:1.5;background:#fff}
+  .ai-foot button{background:none;border:0;text-decoration:underline;color:#375e7a;padding:0 4px 0 0;font-size:10px}
+  @media(max-width:480px){.ai-launcher{right:12px;bottom:12px;padding:13px 16px}.ai-panel{right:0;bottom:0;width:100vw;height:min(94dvh,740px);border-radius:21px 21px 0 0}.ai-bubble{max-width:98%}}

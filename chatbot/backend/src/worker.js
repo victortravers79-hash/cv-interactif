@@ -99,7 +99,7 @@ export async function handle(request, env) {
   if(question.length < 3 || question.length > MAX_QUESTION)return response({error:'Écrivez une question de 3 à 500 caractères.'},400,origin);
   // Validation avant la limitation de debit pour ne pas consommer le quota avec des requetes invalides.
   if(/(?:contact|email|e[ -]?mail|t[eé]l[eé]phone|num[eé]ro|joindre|disponib|linkedin|cv pdf)/i.test(question)) {
-    return response({reply:'Je suis disponible pour échanger sur des opportunités à partir de janvier 2027. Vous pouvez consulter mon CV PDF ou contacter Victor Travers à victortravers79@gmail.com ou au 06 69 23 03 03.',sources:[]},200,origin);
+    return response({reply:'Je suis disponible pour échanger sur des opportunités à partir de janvier 2027. Vous pouvez consulter mon CV PDF, m’écrire à victortravers79@gmail.com ou m’appeler au 06 69 23 03 03.',sources:[]},200,origin);
   }
   const sources=retrieve(question);
   if(!sources.length)return response({reply:'Je n’ai pas d’information suffisamment précise dans mon parcours documenté pour répondre à cette question. Vous pouvez m’interroger sur le marketing des offres, le droit des assurances, la souscription, les sinistres ou la veille stratégique.',sources:[]},200,origin);

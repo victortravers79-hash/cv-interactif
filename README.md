@@ -29,6 +29,8 @@ Les quatre cartes de thématiques affichent désormais des **illustrations SVG n
 - Présentation chronologique de **4 formations** avec leurs noms officiels, établissements et années : DUT GEA (IUT de Niort, 2016–2018), Licence de droit des assurances (Pôle Universitaire de Niort, 2018–2021), Master de droit des assurances (Pôle Universitaire de Niort, 2021–2023) et titre RNCP Bac+5 « Management du Marketing et de la Relation Client en Assurance » (IFPASS & ICD Business School, 2024–2026).
 - Accès direct à l'étude de cas du mémoire de Master depuis la formation (fragment `#memoire`), avec retour vers la thématique droit. Le titre RNCP est distingué des diplômes universitaires.
 
+- **Aperçu LinkedIn :** métadonnées Open Graph et image PNG 1200 × 630 hébergée dans `assets/og-victor-travers.png`. Un rafraîchissement LinkedIn Post Inspector peut être nécessaire lors du premier partage.
+
 ## Architecture
 
 - **Site public :** GitHub Pages, branche `main`, dossier `/(root)`, fichier `index.html`.

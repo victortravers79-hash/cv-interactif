@@ -361,71 +361,71 @@
     @media(max-width:930px){.profile .profile-contacts{display:flex;gap:8px;flex-wrap:wrap}.profile .profile-contacts a{flex:1 1 135px;font-size:11px}.profile .profile-contacts a:first-child{flex-basis:165px}}
     @media(max-width:480px){.hero-contact{gap:10px}.hero-contact-availability{flex-basis:100%}.hero-contact-mail{flex:1;justify-content:center}.hero-contact-phone{padding:10px}.profile .profile-contacts{margin-top:12px}.profile .profile-contacts a{padding:9px 8px}}
 
-    /* Huit jalons visibles : deux bandes horizontales de quatre éléments, sans défilement caché. */
-    .career-timeline{container-type:inline-size;margin-top:24px;padding:24px clamp(16px,2.5vw,27px);border:1px solid #dce6f1;border-radius:21px;background:#fff;box-shadow:var(--shadow);scroll-margin-top:22px}
-    .career-timeline h2{font-size:clamp(21px,2.3vw,27px);line-height:1.25;letter-spacing:-.034em;margin:6px 0;color:#153653}
-    .career-intro{font-size:12px;color:#607388;line-height:1.6;margin:0 0 16px;max-width:760px}
-    .career-legend{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;color:#60748b;font-size:10.5px;margin-bottom:13px}
-    .career-legend span{display:inline-flex;align-items:center;gap:5px}
-    .career-legend span:before{content:'';width:7px;height:7px;border-radius:50%;background:#12869c}
-    .career-legend .legend-project:before{background:#7561c9}
-    .career-legend .legend-engagement:before{background:#cd8838}
-    .career-list{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,344px);column-gap:10px;row-gap:14px;list-style:none;margin:0;padding:0;min-height:0}
-    .career-list:before,.career-list:after{content:'';position:absolute;left:2%;right:2%;height:4px;border-radius:9px;background:linear-gradient(90deg,#c2e0e8,#1094ab);pointer-events:none}
-    .career-list:before{top:168px}
-    .career-list:after{top:526px}
-    .career-item{position:relative;min-width:0;min-height:0;height:344px}
-    .career-dot{position:absolute;top:161px;left:calc(50% - 8px);width:16px;height:16px;border-radius:50%;border:3px solid #fff;background:#128fa1;box-shadow:0 0 0 3px #c6e9ec;z-index:2}
-    .career-project .career-dot{background:#7561c9;box-shadow:0 0 0 3px #e2dcf5}
-    .career-engagement .career-dot{background:#ca8436;box-shadow:0 0 0 3px #fae8cf}
-    .career-stem{position:absolute;left:calc(50% - 1px);width:2px;height:21px;background:#9bcdd7}
-    .career-item:nth-child(odd) .career-stem{top:145px}
-    .career-item:nth-child(even) .career-stem{top:174px}
-    .career-card{position:absolute;left:0;right:0;min-height:0;height:145px;padding:10px 11px;border:1px solid #dfe8f2;border-radius:13px;background:#f7fafd;box-shadow:0 5px 12px rgba(21,50,87,.03);display:flex;flex-direction:column;gap:3px}
-    .career-item:nth-child(odd) .career-card{top:0}
-    .career-item:nth-child(even) .career-card{top:188px;height:150px}
-    .career-card:focus-within,.career-card:hover{border-color:#92cbd3;box-shadow:0 9px 22px rgba(14,81,104,.1)}
-    .career-project .career-card{background:#faf8ff}
-    .career-engagement .career-card{background:#fffaf3}
-    .career-card-primary{display:flex;flex-direction:column;gap:4px;color:inherit;text-decoration:none;flex:1;min-height:0}
-    .career-card-primary:hover .career-action{text-decoration:underline;text-underline-offset:3px}
-    .career-card-top{display:flex;align-items:center;justify-content:space-between;gap:5px;width:100%}
-    .career-date{color:#0e7d93;font-size:10px;font-weight:850;white-space:nowrap}
-    .career-kind{font-size:9px;font-weight:760;color:#1a7181;background:#e1f4f6;border-radius:999px;padding:3px 6px}
-    .career-project .career-kind{background:#eae5fb;color:#6450ab}
-    .career-engagement .career-kind{background:#ffeed8;color:#9a611f}
-    .career-company{font-size:11.5px;color:#183c5b;font-weight:850;line-height:1.3}
-    .career-role{font-size:10.7px;color:#52677e;line-height:1.36;font-weight:640}
-    .career-action{margin-top:auto;color:#117a90;font-size:10px;font-weight:820}
-    .career-more{display:flex;flex-wrap:wrap;gap:3px 8px;border-top:1px solid #dce9f0;padding-top:4px;margin-top:2px}
-    .career-more a{font-size:9.5px;color:#196f87;font-weight:760;text-decoration:none;line-height:1.2}
-    .career-more a:hover{text-decoration:underline}
-    .career-extra{margin-top:16px;display:flex;align-items:center;flex-wrap:wrap;gap:8px 13px;padding:12px 0;border-top:1px solid #e3eaf2}
-    .career-extra strong{font-size:11px;color:#344e69}
-    .career-extra a{font-size:11px;font-weight:770;color:#126f85;text-decoration:underline;text-decoration-color:#b9d6de;text-underline-offset:3px}
-    .career-extra a:hover{text-decoration-color:currentColor}
-    .career-footer{display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:8px}
-    .career-foot{margin:0;color:#708398;font-size:10.5px;line-height:1.55;flex:1 1 330px}
-    .career-all{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#123c60;border-radius:10px;color:#fff;font-size:11px;font-weight:830;padding:11px 13px}
-    .career-all:hover{background:#0c6177}
-    @container (max-width:730px){
-      .career-list{display:grid;grid-template-columns:1fr;grid-template-rows:none;gap:10px;padding:4px 0 0 19px}
-      .career-list:before{left:6px;right:auto;top:9px;bottom:8px;width:3px;height:auto;background:linear-gradient(#b7d9e4,#139caf)}
-      .career-list:after{display:none}
-      .career-item{height:auto}
-      .career-dot{top:19px;left:-19px;width:13px;height:13px}
-      .career-stem{display:none}
-      .career-card,.career-item:nth-child(odd) .career-card,.career-item:nth-child(even) .career-card{position:static;height:auto;min-height:94px;padding:11px 13px}
-      .career-card-primary{display:grid;grid-template-columns:90px minmax(0,1fr);column-gap:10px;align-items:start;flex:none}
-      .career-card-top{grid-row:1/4;display:flex;flex-direction:column;align-items:flex-start;gap:5px}
-      .career-company,.career-role,.career-action{grid-column:2}
-      .career-action{margin-top:3px}
-      .career-more{margin:6px 0 0 100px;border-top:0;padding-top:0}
+    /* Une seule frise : aires de formation + réalisations, MAPA hors cursus.
+   Les étapes partagent une même ligne verticale ; aucune deuxième frise ni scroll horizontal. */
+    .career-timeline{margin-top:24px;padding:clamp(20px,2.8vw,28px);background:#fff;border:1px solid #dce6f1;border-radius:21px;box-shadow:var(--shadow);scroll-margin-top:22px}
+    .career-timeline h2{font-size:clamp(22px,2.5vw,30px);color:#153653;letter-spacing:-.04em;line-height:1.2;margin:7px 0 8px}
+    .career-intro{font-size:12.5px;color:#536c84;line-height:1.65;margin:0 0 19px;max-width:760px}
+    .career-areas{--career-rail:18px;list-style:none;position:relative;display:grid;gap:12px;margin:0;padding:0 0 0 29px}
+    .career-areas:before{content:'';position:absolute;top:26px;bottom:28px;left:7px;width:3px;border-radius:8px;background:linear-gradient(#8ab1d8,#80c4b3 31%,#a8a0d9 62%,#b4c6d8 78%,#0b94b0)}
+    .career-period{position:relative;min-width:0}
+    .career-period:before{content:'';position:absolute;z-index:1;top:20px;left:-27px;width:14px;height:14px;border-radius:50%;box-shadow:0 0 0 3px #fff;border:3px solid #fff;background:var(--period-accent)}
+    .career-zone{--period-accent:#4978ac;--period-tint:#eff5fd;--period-stroke:#d2e1f1;position:relative;background:var(--period-tint);border:1px solid var(--period-stroke);border-left:4px solid var(--period-accent);border-radius:15px;padding:15px 17px}
+    .career-zone-dut{--period-accent:#4879b0;--period-tint:#edf4fd;--period-stroke:#d8e5f5}
+    .career-zone-licence{--period-accent:#208878;--period-tint:#eaf8f3;--period-stroke:#d4eee3}
+    .career-zone-master{--period-accent:#7362bb;--period-tint:#f2effc;--period-stroke:#e5def6}
+    .career-zone-mapa{--period-accent:#647a91;--period-tint:#f6f8fb;--period-stroke:#dbe4ed;border-left-style:dashed}
+    .career-zone-rncp{--period-accent:#168da4;--period-tint:#e9f7fb;--period-stroke:#d3ebf1}
+    .career-zone-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px 16px;flex-wrap:wrap;margin-bottom:10px}
+    .career-zone-title{display:flex;flex-direction:column;gap:3px}
+    .career-period-years{color:var(--period-accent);font-size:11px;font-weight:850;letter-spacing:.015em}
+    .career-zone-title h3{color:#193e5d;font-size:14px;letter-spacing:-.02em;font-weight:850;line-height:1.3;margin:0}
+    .career-zone-context{font-size:11px;color:#596f82;line-height:1.5;margin:1px 0 0}
+    .career-degree-link{font-size:10.5px;font-weight:830;color:#1b637e;text-decoration:underline;text-decoration-color:#a8c6d5;text-underline-offset:3px;padding-top:2px;white-space:nowrap}
+    .career-degree-link:hover{text-decoration-color:currentColor}
+    .career-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    .career-zone-rncp .career-evidence-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .career-proof{position:relative;display:flex;flex-direction:column;gap:4px;min-width:0;min-height:93px;background:#fff;border:1px solid rgba(57,93,122,.16);border-radius:11px;padding:11px 12px;color:#1d3f5b;text-decoration:none;box-shadow:0 3px 8px rgba(21,50,87,.035);transition:border-color .15s,transform .15s,box-shadow .15s}
+    .career-proof:hover{border-color:var(--period-accent);transform:translateY(-2px);box-shadow:0 9px 18px rgba(19,54,82,.1)}
+    .career-proof:focus-visible{outline:3px solid #0a8aab;outline-offset:2px}
+    .career-proof-kind{font-size:9.5px;font-weight:830;text-transform:uppercase;letter-spacing:.055em;color:var(--period-accent)}
+    .career-proof strong{font-size:12px;line-height:1.35;color:#173c59;letter-spacing:-.005em}
+    .career-proof-desc{font-size:10.5px;color:#5a7087;line-height:1.42}
+    .career-proof-action{font-size:10.5px;color:#14778e;font-weight:830;margin-top:auto}
+    .career-zone-mapa .career-evidence-grid{grid-template-columns:minmax(0,1fr)}
+    .career-zone-mapa .career-proof{min-height:0;display:grid;grid-template-columns:110px minmax(0,1fr) auto;align-items:center;column-gap:12px}
+    .career-zone-mapa .career-proof strong{grid-column:2;grid-row:1}
+    .career-zone-mapa .career-proof-desc{grid-column:2;grid-row:2}
+    .career-zone-mapa .career-proof-kind{grid-column:1;grid-row:1/3;align-self:center}
+    .career-zone-mapa .career-proof-action{grid-column:3;grid-row:1/3;align-self:center;margin:0}
+    .career-foundation{font-size:11px;color:#5d7185;line-height:1.6;margin:0}
+    .career-undated{margin:16px 0 0 29px;border-top:1px solid #e4ebf3;padding-top:13px}
+    .career-undated h3{font-size:12px;color:#284660;letter-spacing:-.012em;margin:0 0 5px}
+    .career-undated p{font-size:11px;color:#63788e;line-height:1.5;margin:0 0 10px}
+    .career-undated-links{display:flex;flex-wrap:wrap;gap:8px}
+    .career-undated-links a{font-size:11px;font-weight:780;text-decoration:none;padding:10px 12px;border-radius:10px;background:#f1f5fa;color:#175d78;border:1px solid #e0e9f2}
+    .career-undated-links a:hover{background:#e1f0f5;text-decoration:underline}
+    .career-footer{display:flex;justify-content:space-between;align-items:center;gap:10px 15px;flex-wrap:wrap;margin:15px 0 0 29px}
+    .career-foot{font-size:10.5px;color:#6f8295;line-height:1.6;margin:0;flex:1 1 330px}
+    .career-all{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border-radius:10px;background:#123c60;color:#fff;font-size:11.5px;font-weight:840;padding:12px 14px}
+    .career-all:hover{background:#0d6681}
+    @media(max-width:900px){.career-zone-rncp .career-evidence-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:600px){
+      .career-timeline{padding:18px 14px}
+      .career-areas{padding-left:22px;gap:10px}
+      .career-areas:before{left:6px}
+      .career-period:before{left:-21px}
+      .career-zone{padding:12px}
+      .career-zone-head{gap:7px;margin-bottom:9px}
+      .career-zone-title h3{font-size:13px}
+      .career-evidence-grid,.career-zone-rncp .career-evidence-grid{grid-template-columns:minmax(0,1fr)}
+      .career-proof{min-height:0;gap:3px;padding:10px}
+      .career-zone-mapa .career-proof{display:flex;align-items:flex-start;gap:4px}
+      .career-undated,.career-footer{margin-left:22px}
+      .career-all{width:100%}
     }
-    @container (max-width:380px){
-      .career-card-primary{grid-template-columns:72px minmax(0,1fr);column-gap:9px}
-      .career-more{margin-left:81px}
-    }
+    @media(prefers-reduced-motion:reduce){.career-proof{transition:none}.career-proof:hover{transform:none}}
+
     /* Chemin prioritaire vers les preuves : carte maîtresse et exemples immédiats. */
     .journey-grid{grid-template-columns:minmax(0,1.28fr) minmax(0,1fr)}
     .journey-portfolio{position:relative;border:2px solid #168aa0;background:linear-gradient(150deg,#f0fbfd 0%,#fff 67%);box-shadow:0 14px 35px rgba(12,114,137,.11)}
@@ -499,111 +499,42 @@
         </div>
 
         <section class="career-timeline" id="parcours-professionnel" aria-labelledby="careerHeading">
-          <p class="eyebrow">Expériences, projets et engagement</p>
-          <h2 id="careerHeading">Parcours, réalisations et engagements</h2>
-          <p class="career-intro">Huit étapes, visibles sans défilement horizontal : expériences, études, projets et engagement. Cliquez sur chaque étape pour découvrir les preuves de mon travail.</p>
-          <div class="career-legend" aria-label="Types de jalons">
-            <span>Expérience</span><span class="legend-project">Étude ou projet</span><span class="legend-engagement">Engagement</span>
-          </div>
-          <ol class="career-list">
-            <li class="career-item career-engagement">
-              <span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span>
-              <div class="career-card">
-                <a class="career-card-primary" href="#projet-rotaract" aria-label="Découvrir : Rotaract Niort, Vice-présidence : coordination de 11 bénévoles et actions associatives">
-                  <span class="career-card-top"><span class="career-date">2021–2023</span><span class="career-kind">Engagement</span></span>
-                  <strong class="career-company">Rotaract Niort</strong>
-                  <span class="career-role">Vice-présidence : coordination de 11 bénévoles et actions associatives</span>
-                  <span class="career-action">Découvrir la fiche <span aria-hidden="true">↗</span></span>
-                </a>
-              </div>
-            </li>
-            <li class="career-item career-experience">
-              <span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span>
-              <div class="career-card">
-                <a class="career-card-primary" href="#projet-claims_groupama" aria-label="Découvrir : Groupama, Gestion des sinistres automobiles">
-                  <span class="career-card-top"><span class="career-date">2022</span><span class="career-kind">Expérience</span></span>
-                  <strong class="career-company">Groupama</strong>
-                  <span class="career-role">Gestion des sinistres automobiles</span>
-                  <span class="career-action">Découvrir la fiche <span aria-hidden="true">↗</span></span>
-                </a>
-              </div>
-            </li>
-            <li class="career-item career-experience">
-              <span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span>
-              <div class="career-card">
-                <a class="career-card-primary" href="#projet-underwriting" aria-label="Découvrir : Groupama, Souscription et gestion des contrats des collectivités et associations">
-                  <span class="career-card-top"><span class="career-date">2022–2023</span><span class="career-kind">Expérience</span></span>
-                  <strong class="career-company">Groupama</strong>
-                  <span class="career-role">Souscription et gestion des contrats des collectivités et associations</span>
-                  <span class="career-action">Découvrir la fiche <span aria-hidden="true">↗</span></span>
-                </a>
-              </div>
-            </li>
-            <li class="career-item career-project">
-              <span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span>
-              <div class="career-card">
-                <a class="career-card-primary" href="#projet-memoire" aria-label="Découvrir : Mémoire de Master, Assurabilité des collectivités et marchés publics">
-                  <span class="career-card-top"><span class="career-date">2023</span><span class="career-kind">Étude</span></span>
-                  <strong class="career-company">Mémoire de Master</strong>
-                  <span class="career-role">Assurabilité des collectivités et marchés publics</span>
-                  <span class="career-action">Découvrir la fiche <span aria-hidden="true">↗</span></span>
-                </a>
-              </div>
-            </li>
-            <li class="career-item career-experience">
-              <span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span>
-              <div class="career-card">
-                <a class="career-card-primary" href="#projet-claims_mapa" aria-label="Découvrir : MAPA, Gestion des sinistres corporels et accompagnement des assurés">
-                  <span class="career-card-top"><span class="career-date">2023–2024</span><span class="career-kind">Expérience</span></span>
-                  <strong class="career-company">MAPA</strong>
-                  <span class="career-role">Gestion des sinistres corporels et accompagnement des assurés</span>
-                  <span class="career-action">Découvrir la fiche <span aria-hidden="true">↗</span></span>
-                </a>
-              </div>
-            </li>
-            <li class="career-item career-experience">
-              <span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span>
-              <div class="career-card">
-                <a class="career-card-primary" href="#projet-studies" aria-label="Découvrir : MAIF · Alternance, Marketing des offres IARD et Services : études, analyses et recommandations">
-                  <span class="career-card-top"><span class="career-date">2024–2026</span><span class="career-kind">Expérience</span></span>
-                  <strong class="career-company">MAIF · Alternance</strong>
-                  <span class="career-role">Marketing des offres IARD et Services : études, analyses et recommandations</span>
-                  <span class="career-action">Découvrir la fiche <span aria-hidden="true">↗</span></span>
-                </a>
-                <div class="career-more" aria-label="Autres réalisations de cette expérience"><a href="#projet-portfolio">Analyse de portefeuille</a><a href="#projet-auto">Mission conseil</a><a href="#projet-newsletter">Newsletter de veille</a></div>
-              </div>
-            </li>
-            <li class="career-item career-project">
-              <span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span>
-              <div class="career-card">
-                <a class="career-card-primary" href="#projet-smart" aria-label="Découvrir : Challenge S.M.A.R.T., 2e place : projet d&#39;éducation financière">
-                  <span class="career-card-top"><span class="career-date">2025</span><span class="career-kind">Projet</span></span>
-                  <strong class="career-company">Challenge S.M.A.R.T.</strong>
-                  <span class="career-role">2e place : projet d&#39;éducation financière</span>
-                  <span class="career-action">Découvrir la fiche <span aria-hidden="true">↗</span></span>
-                </a>
-              </div>
-            </li>
-            <li class="career-item career-experience">
-              <span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span>
-              <div class="career-card">
-                <a class="career-card-primary" href="#projet-claims_life" aria-label="Découvrir : MAIF VIE, Assurance de personnes et clauses bénéficiaires">
-                  <span class="career-card-top"><span class="career-date">2026</span><span class="career-kind">Expérience</span></span>
-                  <strong class="career-company">MAIF VIE</strong>
-                  <span class="career-role">Assurance de personnes et clauses bénéficiaires</span>
-                  <span class="career-action">Découvrir la fiche <span aria-hidden="true">↗</span></span>
-                </a>
-              </div>
-            </li>
-            </ol>
-                    <div class="career-extra">
-            <strong>Projets personnels à explorer :</strong>
-            <a href="#projet-social">Marketing de contenu · LinkedIn ↗</a>
-            <a href="#projet-automation">Veille et automatisation IA ↗</a>
+          <p class="eyebrow">Formations, expériences et réalisations</p>
+          <h2 id="careerHeading">Mon parcours, preuves à l’appui</h2>
+          <p class="career-intro">Une seule chronologie, de 2016 à 2026 : chaque aire colorée correspond à une période de formation. Les cartes présentent les expériences, études, projets et engagements réalisés durant ces années, avec un accès direct aux fiches détaillées.</p>
+          <ol class="career-areas" aria-label="Chronologie des formations et des réalisations de 2016 à 2026">
+            <li class="career-period"><section class="career-zone career-zone-dut" aria-label="2016–2018 : DUT Gestion des Entreprises et des Administrations"><div class="career-zone-head"><div class="career-zone-title"><span class="career-period-years">2016–2018</span><h3>DUT Gestion des Entreprises et des Administrations</h3><p class="career-zone-context">IUT de Niort</p></div><a class="career-degree-link" href="#formation" data-view-target="formation">Voir la formation ↗</a></div><p class="career-foundation">Socle en comptabilité, économie, marketing et gestion.</p></section></li>
+            <li class="career-period"><section class="career-zone career-zone-licence" aria-label="2018–2021 : Licence de Droit des Assurances"><div class="career-zone-head"><div class="career-zone-title"><span class="career-period-years">2018–2021</span><h3>Licence de Droit des Assurances</h3><p class="career-zone-context">Pôle Universitaire de Niort</p></div><a class="career-degree-link" href="#formation" data-view-target="formation">Voir la formation ↗</a></div><p class="career-foundation">Approfondissement des mécanismes contractuels et des fondamentaux de l’assurance.</p></section></li>
+            <li class="career-period"><section class="career-zone career-zone-master" aria-label="2021–2023 : Master de Droit des Assurances"><div class="career-zone-head"><div class="career-zone-title"><span class="career-period-years">2021–2023</span><h3>Master de Droit des Assurances</h3><p class="career-zone-context">Pôle Universitaire de Niort</p></div><a class="career-degree-link" href="#formation" data-view-target="formation">Voir la formation ↗</a></div><div class="career-evidence-grid">
+<a class="career-proof" href="#projet-rotaract" aria-label="Découvrir la réalisation : Rotaract Niort"><span class="career-proof-kind">Engagement</span><strong>Rotaract Niort</strong><span class="career-proof-desc">Vice-présidence, coordination de bénévoles et actions associatives.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+<a class="career-proof" href="#projet-claims_groupama" aria-label="Découvrir la réalisation : Groupama · Sinistres auto"><span class="career-proof-kind">Expérience</span><strong>Groupama · Sinistres auto</strong><span class="career-proof-desc">Traitement des sinistres et accompagnement des assurés.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+<a class="career-proof" href="#projet-underwriting" aria-label="Découvrir la réalisation : Groupama · Souscription"><span class="career-proof-kind">Expérience</span><strong>Groupama · Souscription</strong><span class="career-proof-desc">Collectivités, associations, analyse des risques et des contrats.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+<a class="career-proof" href="#projet-memoire" aria-label="Découvrir la réalisation : Mémoire de Master"><span class="career-proof-kind">Étude</span><strong>Mémoire de Master</strong><span class="career-proof-desc">Assurabilité des collectivités et marchés publics.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+</div></section></li>
+            <li class="career-period"><section class="career-zone career-zone-mapa" aria-label="2023–2024 : MAPA · Gestion des sinistres corporels"><div class="career-zone-head"><div class="career-zone-title"><span class="career-period-years">2023–2024</span><h3>MAPA · Gestion des sinistres corporels</h3><p class="career-zone-context">Expérience professionnelle à part entière, hors période de formation</p></div></div><div class="career-evidence-grid">
+<a class="career-proof" href="#projet-claims_mapa" aria-label="Découvrir la réalisation : Gestion des sinistres corporels"><span class="career-proof-kind">Expérience professionnelle</span><strong>Gestion des sinistres corporels</strong><span class="career-proof-desc">Portefeuille de sinistres et accompagnement des assurés.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+</div></section></li>
+            <li class="career-period"><section class="career-zone career-zone-rncp" aria-label="2024–2026 : Titre RNCP Bac+5 — Marketing et relation client en assurance"><div class="career-zone-head"><div class="career-zone-title"><span class="career-period-years">2024–2026</span><h3>Titre RNCP Bac+5 — Marketing et relation client en assurance</h3><p class="career-zone-context">IFPASS &amp; ICD Business School · Alternance MAIF et autres réalisations de la période</p></div><a class="career-degree-link" href="#formation" data-view-target="formation">Voir la formation ↗</a></div><div class="career-evidence-grid">
+<a class="career-proof" href="#projet-studies" aria-label="Découvrir la réalisation : MAIF · Études de marché"><span class="career-proof-kind">Étude marketing</span><strong>MAIF · Études de marché</strong><span class="career-proof-desc">Benchmarks pour éclairer l’évolution des offres.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+<a class="career-proof" href="#projet-portfolio" aria-label="Découvrir la réalisation : MAIF · Portefeuille"><span class="career-proof-kind">Analyse</span><strong>MAIF · Portefeuille</strong><span class="career-proof-desc">Sinistralité, indicateurs et usages des sociétaires.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+<a class="career-proof" href="#projet-auto" aria-label="Découvrir la réalisation : MAIF · Auto-Mission"><span class="career-proof-kind">Mission conseil</span><strong>MAIF · Auto-Mission</strong><span class="career-proof-desc">Diagnostic de l’offre et recommandations.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+<a class="career-proof" href="#projet-newsletter" aria-label="Découvrir la réalisation : MAIF · Newsletter"><span class="career-proof-kind">Communication</span><strong>MAIF · Newsletter</strong><span class="career-proof-desc">Veille à destination de plus de 200 collaborateurs.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+<a class="career-proof" href="#projet-smart" aria-label="Découvrir la réalisation : Challenge S.M.A.R.T. · 2025"><span class="career-proof-kind">Projet</span><strong>Challenge S.M.A.R.T. · 2025</strong><span class="career-proof-desc">2e place : solution d’éducation financière.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+<a class="career-proof" href="#projet-claims_life" aria-label="Découvrir la réalisation : MAIF VIE · 2026"><span class="career-proof-kind">Expérience</span><strong>MAIF VIE · 2026</strong><span class="career-proof-desc">Assurance de personnes et clauses bénéficiaires.</span><span class="career-proof-action">Voir la fiche ↗</span></a>
+</div></section></li>
+          </ol>
+          <div class="career-undated">
+            <h3>Autres réalisations transversales</h3>
+            <p>Ces travaux ne sont pas rattachés artificiellement à un diplôme ou à une année précise.</p>
+            <div class="career-undated-links">
+              <a href="#projet-social">Réseau LinkedIn et marketing de contenu ↗</a>
+              <a href="#projet-automation">Veille et automatisation avec l’IA ↗</a>
+              <a href="#projet-regulation">Pratique contractuelle et réglementaire ↗</a>
+            </div>
           </div>
           <div class="career-footer">
-            <p class="career-foot">Les périodes se chevauchent pour certaines activités. Les projets personnels sans date précise figurent séparément.</p>
-            <a class="career-all" href="#realisations" data-view-target="catalogue">Explorer les 14 réalisations <span aria-hidden="true">→</span></a>
+            <p class="career-foot">Les périodes de formation donnent le contexte chronologique, sans présenter les expériences ou engagements comme des travaux scolaires. Certaines activités se chevauchent.</p>
+            <a class="career-all" href="#realisations" data-view-target="catalogue">Explorer mes 14 réalisations <span aria-hidden="true">→</span></a>
           </div>
         </section>
         <section class="home-education" aria-labelledby="homeEducationHeading">

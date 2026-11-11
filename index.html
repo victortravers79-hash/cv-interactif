@@ -362,14 +362,14 @@
     @media(max-width:480px){.hero-contact{gap:10px}.hero-contact-availability{flex-basis:100%}.hero-contact-mail{flex:1;justify-content:center}.hero-contact-phone{padding:10px}.profile .profile-contacts{margin-top:12px}.profile .profile-contacts a{padding:9px 8px}}
 
     /* Frise horizontale unique : formations en aires colorées, preuves en cartes typées. */
-    .career-timeline{margin-top:24px;padding:clamp(18px,2.6vw,27px);border:1px solid #dce6f1;border-radius:21px;background:#fff;box-shadow:var(--shadow);scroll-margin-top:20px;--proof-pro:#087f93;--proof-academic:#6b58bc;--proof-personal:#b86f1a;--proof-association:#b94c72}
+    .career-timeline{margin-top:24px;padding:clamp(18px,2.6vw,27px);border:1px solid #dce6f1;border-radius:21px;background:#fff;box-shadow:var(--shadow);scroll-margin-top:20px;--proof-pro:#087f93;--proof-alternance:#345bba;--proof-academic:#6b58bc;--proof-personal:#b86f1a;--proof-association:#b94c72}
     .career-timeline h2{font-size:clamp(22px,2.5vw,30px);line-height:1.22;letter-spacing:-.04em;margin:6px 0 8px;color:#153653}
     .career-intro{font-size:12.5px;line-height:1.7;color:#566d83;margin:0 0 16px;max-width:790px}
     .career-legend{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;padding:12px 14px;background:#f5f8fc;border:1px solid #e4ebf4;border-radius:13px;margin:0 0 15px}
     .career-legend strong{font-size:11px;color:#314f67;margin-right:3px}
     .career-key{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;color:#456078;font-weight:720}
     .career-key:before{content:'';width:10px;height:10px;border-radius:3px;background:var(--kind-color)}
-    .career-key-pro{--kind-color:var(--proof-pro)}.career-key-academic{--kind-color:var(--proof-academic)}.career-key-personal{--kind-color:var(--proof-personal)}.career-key-association{--kind-color:var(--proof-association)}
+    .career-key-pro{--kind-color:var(--proof-pro)}.career-key-alternance{--kind-color:var(--proof-alternance)}.career-key-academic{--kind-color:var(--proof-academic)}.career-key-personal{--kind-color:var(--proof-personal)}.career-key-association{--kind-color:var(--proof-association)}
     .career-navigator{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 10px}
     .career-swipe-hint{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;color:#56738b}
     .career-navigation{display:flex;align-items:center;gap:8px}
@@ -386,6 +386,7 @@
     .career-period-licence{--zone-width:205px;--zone-bg:#e7f5ef;--zone-color:#328b75;--zone-outline:#cce7d9}
     .career-period-master{--zone-width:425px;--zone-bg:#f0ecfb;--zone-color:#7867bb;--zone-outline:#dfd9f1}
     .career-period-mapa{--zone-width:210px;--zone-bg:#eef2f6;--zone-color:#75879b;--zone-outline:#d6e0e9}
+    .career-period-maifvie{--zone-width:245px;--zone-bg:#eef2f8;--zone-color:#60769a;--zone-outline:#d5e0ee}
     .career-period-rncp{--zone-width:570px;--zone-bg:#e7f5f9;--zone-color:#168ea6;--zone-outline:#cbe6eb}
     .career-period-head{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:100px}
     .career-period-years{background:var(--zone-color);color:#fff;border-radius:999px;padding:5px 9px;font-size:10px;line-height:1.15;font-weight:850;white-space:nowrap}
@@ -395,9 +396,9 @@
     .career-degree-link{font-size:11px;color:#1a647e;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#96bac9;font-weight:790;margin-top:auto;align-self:flex-start}
     .career-degree-link:hover{text-decoration-color:currentColor}
     .career-proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:9px}
-    .career-period-mapa .career-proof-grid{grid-template-columns:1fr}
+    .career-period-mapa .career-proof-grid,.career-period-maifvie .career-proof-grid{grid-template-columns:1fr}
     .career-proof{--kind-color:var(--proof-pro);display:flex;flex-direction:column;gap:6px;min-width:0;min-height:113px;padding:11px 12px;border:1px solid #dbe5ee;border-left:4px solid var(--kind-color);border-radius:11px;background:#fff;text-decoration:none;color:#17394f;box-shadow:0 3px 10px rgba(32,58,87,.04);transition:transform .15s,border-color .15s,box-shadow .15s}
-    .career-proof-pro{--kind-color:var(--proof-pro)}.career-proof-academic{--kind-color:var(--proof-academic)}.career-proof-personal{--kind-color:var(--proof-personal)}.career-proof-association{--kind-color:var(--proof-association)}
+    .career-proof-pro{--kind-color:var(--proof-pro)}.career-proof-alternance{--kind-color:var(--proof-alternance)}.career-proof-academic{--kind-color:var(--proof-academic)}.career-proof-personal{--kind-color:var(--proof-personal)}.career-proof-association{--kind-color:var(--proof-association)}
     .career-proof:hover{transform:translateY(-2px);border-color:var(--kind-color);box-shadow:0 8px 20px rgba(27,50,83,.12)}
     .career-proof:focus-visible{outline:3px solid var(--kind-color);outline-offset:2px}
     .career-proof-top{display:flex;align-items:center;gap:5px;color:var(--kind-color);font-size:9px;font-weight:850;letter-spacing:.04em;text-transform:uppercase}
@@ -416,7 +417,7 @@
     .career-foot{font-size:10.5px;color:#6d8296;line-height:1.6;margin:0;flex:1 1 260px}
     .career-all{display:inline-flex;gap:8px;align-items:center;justify-content:center;border-radius:10px;background:#123c60;color:#fff;text-decoration:none;padding:12px 14px;font-size:11.5px;font-weight:850}
     .career-all:hover{background:#0b6279}
-    @media(max-width:730px){.career-timeline{padding:18px 15px}.career-personal-grid{grid-template-columns:1fr}.career-legend{gap:9px 12px}.career-legend strong{flex-basis:100%}.career-track{min-height:420px}.career-period-dut{--zone-width:245px}.career-period-licence{--zone-width:245px}.career-period-mapa{--zone-width:245px}.career-arrow{min-width:35px}}
+    @media(max-width:730px){.career-timeline{padding:18px 15px}.career-personal-grid{grid-template-columns:1fr}.career-legend{gap:9px 12px}.career-legend strong{flex-basis:100%}.career-track{min-height:420px}.career-period-dut{--zone-width:245px}.career-period-licence{--zone-width:245px}.career-period-mapa{--zone-width:245px}.career-period-maifvie{--zone-width:245px}.career-arrow{min-width:35px}}
     @media(prefers-reduced-motion:reduce){.career-viewport{scroll-behavior:auto}.career-proof{transition:none}.career-proof:hover{transform:none}}
 
     /* Chemin prioritaire vers les preuves : carte maîtresse et exemples immédiats. */
@@ -494,10 +495,11 @@
         <section class="career-timeline" id="parcours-professionnel" aria-labelledby="careerHeading">
           <p class="eyebrow">Formations, expériences, réalisations</p>
           <h2 id="careerHeading">Mon parcours et mes réalisations</h2>
-          <p class="career-intro">Explorez dix ans de parcours : les aires colorées situent mes formations et mes expériences, tandis que les cartes donnent accès aux réalisations professionnelles, académiques, personnelles et associatives.</p>
+          <p class="career-intro">Explorez dix ans de parcours : les aires colorées situent mes formations et mes expériences, tandis que les cartes distinguent les expériences professionnelles, les missions d’alternance, les réalisations académiques, les projets personnels et les engagements associatifs.</p>
           <div class="career-legend" aria-label="Légende des couleurs des réalisations">
             <strong>Comprendre les couleurs des cartes :</strong>
             <span class="career-key career-key-pro">Turquoise · Expérience professionnelle</span>
+            <span class="career-key career-key-alternance">Bleu · Mission en alternance</span>
             <span class="career-key career-key-academic">Violet · Réalisation académique</span>
             <span class="career-key career-key-personal">Orange · Projet personnel</span>
             <span class="career-key career-key-association">Rose · Engagement associatif</span>
@@ -506,7 +508,7 @@
             <span class="career-swipe-hint">← Faites défiler les périodes de 2016 à 2026 →</span>
             <div class="career-navigation" aria-label="Parcourir la frise chronologique">
               <button type="button" id="careerBack" class="career-arrow" aria-label="Afficher la période précédente" title="Période précédente">←</button>
-              <span id="careerPosition" class="career-position" aria-live="polite">1 / 5</span>
+              <span id="careerPosition" class="career-position" aria-live="polite">1 / 6</span>
               <button type="button" id="careerForward" class="career-arrow" aria-label="Afficher la période suivante" title="Période suivante">→</button>
             </div>
           </div>
@@ -524,13 +526,23 @@
                 <a class="career-proof career-proof-pro" href="#projet-claims_mapa" aria-label="Expérience professionnelle : Gestion des sinistres corporels — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Expérience professionnelle</span><strong>Gestion des sinistres corporels</strong><span class="career-proof-desc">Suivi des dossiers et accompagnement des assurés.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
               </div></li>
               <li class="career-period career-period-rncp" aria-label="2024–2026 : Titre RNCP Bac+5 · Marketing et relation client en assurance"><div class="career-period-head"><span class="career-period-years">2024–2026</span><h3>Titre RNCP Bac+5 · Marketing et relation client en assurance</h3><p class="career-period-context">IFPASS &amp; ICD Business School · Alternance MAIF</p></div><div class="career-proof-grid">
-                <a class="career-proof career-proof-pro" href="#projet-studies" aria-label="Expérience professionnelle : MAIF · Études de marché — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Expérience professionnelle</span><strong>MAIF · Études de marché</strong><span class="career-proof-desc">Benchmarks et analyse du positionnement des offres.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
-                <a class="career-proof career-proof-pro" href="#projet-portfolio" aria-label="Expérience professionnelle : MAIF · Analyse de portefeuille — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Expérience professionnelle</span><strong>MAIF · Analyse de portefeuille</strong><span class="career-proof-desc">Sinistralité, indicateurs et usages clients.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
+                <a class="career-proof career-proof-alternance" href="#projet-studies" aria-label="Mission en alternance : MAIF · Études de marché — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M8.5 13l2.5 2.5 4.5-5"/></svg>Mission en alternance</span><strong>MAIF · Études de marché</strong><span class="career-proof-desc">Benchmarks et analyse du positionnement des offres.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
+                <a class="career-proof career-proof-alternance" href="#projet-portfolio" aria-label="Mission en alternance : MAIF · Analyse de portefeuille — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M8.5 13l2.5 2.5 4.5-5"/></svg>Mission en alternance</span><strong>MAIF · Analyse de portefeuille</strong><span class="career-proof-desc">Sinistralité, indicateurs et usages clients.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
                 <a class="career-proof career-proof-academic" href="#projet-auto" aria-label="Réalisation académique : Mission conseil Auto-Mission — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3.5 3 8.5 3 12 0v-5M22 9v6"/></svg>Réalisation académique</span><strong>Mission conseil Auto-Mission</strong><span class="career-proof-desc">Diagnostic et recommandations sur une offre MAIF.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
-                <a class="career-proof career-proof-pro" href="#projet-newsletter" aria-label="Expérience professionnelle : MAIF · Newsletter de veille — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Expérience professionnelle</span><strong>MAIF · Newsletter de veille</strong><span class="career-proof-desc">Communication de veille auprès des équipes.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
+                <a class="career-proof career-proof-alternance" href="#projet-newsletter" aria-label="Mission en alternance : MAIF · Newsletter de veille — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M8.5 13l2.5 2.5 4.5-5"/></svg>Mission en alternance</span><strong>MAIF · Newsletter de veille</strong><span class="career-proof-desc">Communication de veille auprès des équipes.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
                 <a class="career-proof career-proof-academic" href="#projet-smart" aria-label="Réalisation académique : Challenge S.M.A.R.T. — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3.5 3 8.5 3 12 0v-5M22 9v6"/></svg>Réalisation académique</span><strong>Challenge S.M.A.R.T.</strong><span class="career-proof-desc">2e place : projet d’éducation financière.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
-                <a class="career-proof career-proof-pro" href="#projet-claims_life" aria-label="Expérience professionnelle : MAIF VIE · Assurance de personnes — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Expérience professionnelle</span><strong>MAIF VIE · Assurance de personnes</strong><span class="career-proof-desc">Gestion de dossiers et clauses bénéficiaires.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
+                
               </div><a href="#formation" data-view-target="formation" class="career-degree-link">Consulter la formation ↗</a></li>
+              <li class="career-period career-period-maifvie" aria-label="2026 : MAIF VIE, contrat à durée déterminée">
+                <div class="career-period-head">
+                  <span class="career-period-years">2026</span>
+                  <h3>MAIF VIE · CDD</h3>
+                  <p class="career-period-context">Expérience professionnelle indépendante du titre RNCP et de l’alternance MAIF</p>
+                </div>
+                <div class="career-proof-grid">
+                  <a class="career-proof career-proof-pro" href="#projet-claims_life" aria-label="Expérience professionnelle en CDD : MAIF VIE · Assurance de personnes — voir la fiche détaillée"><span class="career-proof-top"><svg class="career-proof-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Expérience professionnelle</span><strong>MAIF VIE · Assurance de personnes</strong><span class="career-proof-desc">CDD · Gestion des dossiers et clauses bénéficiaires.</span><span class="career-proof-action">Découvrir la fiche ↗</span></a>
+                </div>
+              </li>
             </ol>
           </div>
           <div class="career-undated">
@@ -543,7 +555,7 @@
             <p class="career-additional">Autre réalisation transversale : <a href="#projet-regulation">pratique contractuelle et réglementaire ↗</a></p>
           </div>
           <div class="career-footer">
-            <p class="career-foot">Les couleurs de fond correspondent aux grandes périodes. Les couleurs des cartes indiquent leur nature. MAPA est une expérience professionnelle autonome, et certaines périodes se chevauchent.</p>
+            <p class="career-foot">Les couleurs de fond correspondent aux périodes ; celles des cartes distinguent leur nature. MAPA et le CDD MAIF VIE sont des expériences professionnelles indépendantes des formations et de l’alternance. Certaines périodes se chevauchent.</p>
             <a class="career-all" href="#realisations" data-view-target="catalogue">Explorer les 14 réalisations <span aria-hidden="true">→</span></a>
           </div>
         </section>

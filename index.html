@@ -361,26 +361,50 @@
     @media(max-width:930px){.profile .profile-contacts{display:flex;gap:8px;flex-wrap:wrap}.profile .profile-contacts a{flex:1 1 135px;font-size:11px}.profile .profile-contacts a:first-child{flex-basis:165px}}
     @media(max-width:480px){.hero-contact{gap:10px}.hero-contact-availability{flex-basis:100%}.hero-contact-mail{flex:1;justify-content:center}.hero-contact-phone{padding:10px}.profile .profile-contacts{margin-top:12px}.profile .profile-contacts a{padding:9px 8px}}
 
-    /* Frise professionnelle compacte : lecture immédiate et liens vers les preuves. */
-    .career-timeline{margin-top:24px;padding:23px clamp(16px,2.6vw,26px);border:1px solid #dce6f1;border-radius:21px;background:#fff;box-shadow:var(--shadow);scroll-margin-top:22px}
+    /* Frise alternée : chronologie horizontale sur grand écran, verticale sur mobile. */
+    .career-timeline{margin-top:24px;padding:24px clamp(16px,2.5vw,27px);border:1px solid #dce6f1;border-radius:21px;background:#fff;box-shadow:var(--shadow);scroll-margin-top:22px}
     .career-timeline h2{font-size:clamp(21px,2.3vw,27px);line-height:1.25;letter-spacing:-.034em;margin:6px 0 6px;color:#153653}
-    .career-intro{font-size:12px;color:#607388;line-height:1.55;margin:0 0 15px}
-    .career-list{list-style:none;margin:0;padding:0 0 0 16px;border-left:2px solid #d7e5f0;display:grid;gap:0}
-    .career-item{position:relative;padding:0 0 0 18px}
-    .career-item:not(:last-child){border-bottom:1px solid #ecf1f6}
-    .career-item:before{content:'';position:absolute;left:-22px;top:18px;width:9px;height:9px;border:2px solid #fff;background:#168fa2;border-radius:50%;box-shadow:0 0 0 2px #cde8eb}
-    .career-row{display:grid;grid-template-columns:95px minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 0}
-    .career-date{font-size:11px;color:#167f94;font-weight:840;white-space:nowrap}
-    .career-description{min-width:0}
-    .career-role{display:block;font-size:12.5px;font-weight:820;color:#183b5b;line-height:1.35}
-    .career-company{display:block;font-size:11px;color:#64788d;font-weight:680;margin-top:2px}
-    .career-link{display:inline-flex;align-items:center;gap:5px;padding:7px 9px;background:#edf7fa;border-radius:9px;color:#126f87;font-size:10.5px;font-weight:820;text-decoration:none;white-space:nowrap}
-    .career-link:hover{background:#d9f0f5;text-decoration:underline;text-underline-offset:3px}
-    .career-more{display:flex;flex-wrap:wrap;gap:5px;margin:-5px 0 10px 105px}
-    .career-more a{color:#1c718b;font-size:10.5px;font-weight:750;text-decoration:none}
-    .career-more a+a:before{content:'·';color:#91a9b9;margin:0 7px 0 2px}
+    .career-intro{font-size:12px;color:#607388;line-height:1.6;margin:0 0 18px}
+    .career-list{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;min-height:326px}
+    .career-list:before{content:'';position:absolute;left:2%;right:2%;top:50%;height:4px;border-radius:10px;background:linear-gradient(90deg,#c5dfea,#0b9bad);z-index:0}
+    .career-item{position:relative;min-width:0;min-height:326px}
+    .career-dot{position:absolute;top:calc(50% - 8px);left:calc(50% - 8px);width:16px;height:16px;border-radius:50%;border:3px solid #fff;background:#1395a8;box-shadow:0 0 0 3px #c7e8ec;z-index:2}
+    .career-stem{position:absolute;left:calc(50% - 1px);width:2px;background:#8acbd5;height:21px}
+    .career-item:nth-child(odd) .career-stem{top:calc(50% - 21px)}
+    .career-item:nth-child(even) .career-stem{top:calc(50% + 2px)}
+    .career-card{position:absolute;left:0;right:0;min-height:120px;border:1px solid #e0e9f3;border-radius:13px;background:#f7fafd;padding:11px 10px;display:flex;flex-direction:column;align-items:flex-start;gap:5px;overflow-wrap:anywhere}
+    .career-item:nth-child(odd) .career-card{bottom:calc(50% + 29px)}
+    .career-item:nth-child(even) .career-card{top:calc(50% + 29px)}
+    .career-date{font-size:10px;color:#0f8197;font-weight:850}
+    .career-company{font-size:11px;color:#183c5b;font-weight:850}
+    .career-role{font-size:11px;color:#52677e;line-height:1.4;font-weight:650}
+    .career-link{margin-top:auto;display:inline-flex;gap:4px;align-items:center;color:#0f778d;font-size:10.5px;font-weight:800;text-decoration:none}
+    .career-link:hover{text-decoration:underline;text-underline-offset:3px}
+    .career-more{display:flex;flex-wrap:wrap;gap:4px 9px;margin-top:4px}
+    .career-more a{font-size:10px;color:#1b6b83;text-decoration:none;font-weight:720}
     .career-more a:hover{text-decoration:underline}
-    @media(max-width:650px){.career-timeline{padding:19px 16px}.career-row{grid-template-columns:78px minmax(0,1fr);gap:6px 10px;padding:10px 0}.career-role{font-size:12px}.career-link{grid-column:2;justify-self:start;padding:4px 0;background:none}.career-more{margin:-2px 0 10px 88px}.career-item{padding-left:13px}.career-item:before{left:-22px}}
+    .career-foot{margin:15px 0 0;color:#708398;font-size:11px;line-height:1.55}
+    @media(max-width:1150px){
+      .career-list{display:grid;grid-template-columns:1fr;min-height:0;gap:0;padding-left:22px}
+      .career-list:before{left:8px;right:auto;top:7px;bottom:7px;width:3px;height:auto;background:linear-gradient(#c5dfea,#0b9bad)}
+      .career-item{min-height:0;padding:0 0 12px 15px}
+      .career-item:last-child{padding-bottom:0}
+      .career-dot{top:18px;left:-20px;width:13px;height:13px}
+      .career-stem{display:none}
+      .career-card,.career-item:nth-child(odd) .career-card,.career-item:nth-child(even) .career-card{position:static;min-height:0;padding:11px 13px;gap:4px}
+      .career-card{display:grid;grid-template-columns:85px minmax(0,1fr) auto;align-items:center;column-gap:10px}
+      .career-date{grid-row:1/3;align-self:center}
+      .career-company,.career-role{grid-column:2}
+      .career-link{grid-column:3;grid-row:1/3;margin:0;white-space:nowrap}
+      .career-more{grid-column:2/4}
+    }
+    @media(max-width:630px){
+      .career-timeline{padding:20px 16px}
+      .career-card{grid-template-columns:75px minmax(0,1fr);column-gap:9px}
+      .career-link{grid-column:2;grid-row:auto;justify-self:start;margin-top:3px}
+      .career-more{grid-column:2}
+      .career-role{font-size:10.5px}
+    }
       </style>
   <link rel="stylesheet" href="chatbot/chat.css">
 </head>
@@ -432,14 +456,15 @@
         <section class="career-timeline" id="parcours-professionnel" aria-labelledby="careerHeading">
           <p class="eyebrow">Expériences professionnelles</p>
           <h2 id="careerHeading">Mon parcours en un regard</h2>
-          <p class="career-intro">Cinq expériences dans l’assurance, de la gestion des sinistres au marketing des offres. Accédez directement aux réalisations associées.</p>
-          <ol class="career-list">
-            <li class="career-item"><div class="career-row"><span class="career-date">2024 – 2026</span><div class="career-description"><span class="career-role">Marketing des offres IARD et Services</span><span class="career-company">MAIF · Alternance</span></div><a class="career-link" href="#projet-studies" aria-label="Voir les études de marché réalisées à la MAIF">Voir les études <span aria-hidden="true">↗</span></a></div><div class="career-more"><a href="#projet-portfolio">Analyse de portefeuille</a><a href="#projet-auto">Mission conseil</a></div></li>
-            <li class="career-item"><div class="career-row"><span class="career-date">2026</span><div class="career-description"><span class="career-role">Assurance de personnes et clauses bénéficiaires</span><span class="career-company">MAIF VIE</span></div><a class="career-link" href="#projet-claims_life" aria-label="Voir la réalisation en assurance de personnes chez MAIF VIE">Voir la fiche <span aria-hidden="true">↗</span></a></div></li>
-            <li class="career-item"><div class="career-row"><span class="career-date">2023 – 2024</span><div class="career-description"><span class="career-role">Gestion des sinistres corporels</span><span class="career-company">MAPA</span></div><a class="career-link" href="#projet-claims_mapa" aria-label="Voir la réalisation en gestion des sinistres corporels à la MAPA">Voir la fiche <span aria-hidden="true">↗</span></a></div></li>
-            <li class="career-item"><div class="career-row"><span class="career-date">2022 – 2023</span><div class="career-description"><span class="career-role">Souscription et gestion de contrats</span><span class="career-company">Groupama</span></div><a class="career-link" href="#projet-underwriting" aria-label="Voir la réalisation en souscription chez Groupama">Voir la fiche <span aria-hidden="true">↗</span></a></div></li>
-            <li class="career-item"><div class="career-row"><span class="career-date">2022</span><div class="career-description"><span class="career-role">Gestion des sinistres automobiles</span><span class="career-company">Groupama</span></div><a class="career-link" href="#projet-claims_groupama" aria-label="Voir la réalisation en gestion des sinistres automobiles chez Groupama">Voir la fiche <span aria-hidden="true">↗</span></a></div></li>
+          <p class="career-intro">Une chronologie de mes expériences dans l'assurance. Chaque étape mène à une réalisation concrète.</p>
+          <ol class="career-list" aria-label="Expériences de 2022 à 2026">
+            <li class="career-item"><span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span><div class="career-card"><span class="career-date">2022</span><strong class="career-company">Groupama</strong><span class="career-role">Gestion des sinistres automobiles</span><a class="career-link" href="#projet-claims_groupama">Voir la fiche <span aria-hidden="true">↗</span></a></div></li>
+            <li class="career-item"><span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span><div class="career-card"><span class="career-date">2022 – 2023</span><strong class="career-company">Groupama</strong><span class="career-role">Souscription et gestion de contrats</span><a class="career-link" href="#projet-underwriting">Voir la fiche <span aria-hidden="true">↗</span></a></div></li>
+            <li class="career-item"><span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span><div class="career-card"><span class="career-date">2023 – 2024</span><strong class="career-company">MAPA</strong><span class="career-role">Gestion des sinistres corporels</span><a class="career-link" href="#projet-claims_mapa">Voir la fiche <span aria-hidden="true">↗</span></a></div></li>
+            <li class="career-item"><span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span><div class="career-card"><span class="career-date">2024 – 2026</span><strong class="career-company">MAIF · Alternance</strong><span class="career-role">Marketing des offres IARD et Services</span><a class="career-link" href="#projet-studies">Voir les études <span aria-hidden="true">↗</span></a><div class="career-more"><a href="#projet-portfolio">Portefeuille</a><a href="#projet-auto">Mission conseil</a></div></div></li>
+            <li class="career-item"><span class="career-dot" aria-hidden="true"></span><span class="career-stem" aria-hidden="true"></span><div class="career-card"><span class="career-date">2026</span><strong class="career-company">MAIF VIE</strong><span class="career-role">Assurance de personnes et clauses bénéficiaires</span><a class="career-link" href="#projet-claims_life">Voir la fiche <span aria-hidden="true">↗</span></a></div></li>
           </ol>
+          <p class="career-foot">Périodes issues des expériences déjà documentées. Les activités de 2026 peuvent se chevaucher.</p>
         </section>
         <section class="home-education" aria-labelledby="homeEducationHeading">
           <div class="home-education-head">

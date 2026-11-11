@@ -379,7 +379,7 @@
     .career-viewport{max-width:100%;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;scroll-snap-type:x proximity;scroll-padding-left:0;scrollbar-color:#8bbdc9 #eaf1f5;scrollbar-width:thin;padding-bottom:13px;border-radius:12px}
     .career-viewport:focus-visible{outline:3px solid #118fb0;outline-offset:3px}
     .career-track{--width-dut:185px;--width-licence:205px;--width-master:425px;--width-mapa:210px;--width-rncp:570px;--width-cdd:245px;--rncp-start:calc(var(--width-dut) + var(--width-licence) + var(--width-master) + var(--width-mapa) + 12px);--cdd-start:calc(var(--rncp-start) + var(--width-rncp) + 3px);position:relative;list-style:none;display:flex;align-items:stretch;gap:3px;width:max-content;margin:0;padding:0;min-height:670px}
-    .career-period{min-width:0;flex:0 0 var(--zone-width);width:var(--zone-width);background:var(--zone-bg);border-top:6px solid var(--zone-color);border-bottom:1px solid var(--zone-outline);border-left:1px solid var(--zone-outline);border-right:1px solid var(--zone-outline);padding:13px 13px 16px;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start}
+    .career-period{min-width:0;flex:0 0 var(--zone-width);width:var(--zone-width);background:var(--zone-bg);border-top:6px solid var(--zone-color);border-bottom:1px solid var(--zone-outline);border-left:1px solid var(--zone-outline);border-right:1px solid var(--zone-outline);padding:13px 13px 225px;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start}
     .career-period:first-child{border-radius:14px 0 0 14px}
     .career-period-maifvie{border-radius:0 14px 14px 0}
     .career-period-dut{--zone-width:var(--width-dut);--zone-bg:#e8f1fc;--zone-color:#5185b9;--zone-outline:#d0e1f0}
@@ -449,8 +449,8 @@
     
     /* Bandes orange intégrées près des dernières réalisations, avec un début distinct et une fin commune.
        Les positions des mois sont illustratives ; les dates écrites font foi. */
-    .career-project-lanes{position:absolute;left:0;right:0;bottom:0;height:171px;z-index:2;pointer-events:none;list-style:none}
-    .career-project-heading{position:absolute;left:var(--rncp-start);bottom:144px;margin:0;color:#955814;font-size:10px;letter-spacing:.055em;text-transform:uppercase;font-weight:850;display:flex;align-items:center;gap:7px}
+    .career-project-lanes{position:absolute;left:0;right:0;bottom:0;height:210px;z-index:2;pointer-events:none;list-style:none;margin:0;padding:0}
+    .career-project-heading{position:absolute;left:var(--rncp-start);bottom:180px;margin:0;color:#955814;font-size:10px;letter-spacing:.055em;text-transform:uppercase;font-weight:850;display:flex;align-items:center;gap:7px}
     .career-project-heading:before{content:'';display:inline-block;width:9px;height:9px;border-radius:3px;background:var(--proof-personal)}
     .career-project-band{position:absolute;right:11px;min-height:58px;background:#fff5e7;border:1px solid #dfad74;border-left:5px solid var(--proof-personal);border-radius:12px;padding:9px 13px;display:flex;align-items:center;justify-content:space-between;gap:10px 15px;color:#74420f;text-decoration:none;pointer-events:auto;box-shadow:0 7px 18px rgba(147,90,23,.11);transition:box-shadow .16s,transform .16s,background .16s}
     .career-project-band:hover{background:#ffedd4;box-shadow:0 12px 24px rgba(147,90,23,.2);transform:translateY(-2px)}
@@ -464,7 +464,7 @@
     .career-project-ia{left:calc(var(--cdd-start) - 70px);bottom:8px}
     .career-project-note{margin:11px 0 0;color:#6b8095;font-size:10.5px;line-height:1.5}
     @media(max-width:730px){
-      .career-project-heading{bottom:146px}
+      .career-project-heading{bottom:186px}
       .career-project-band{padding:8px 10px;min-height:60px}
       .career-project-band strong{font-size:11px}
       .career-project-band-kicker{font-size:8.5px}

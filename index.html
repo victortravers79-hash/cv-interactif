@@ -360,6 +360,32 @@
     .hero-contact-phone{color:#205d7e;text-decoration:underline;text-underline-offset:3px;font-size:12px;font-weight:750}
     @media(max-width:930px){.profile .profile-contacts{display:flex;gap:8px;flex-wrap:wrap}.profile .profile-contacts a{flex:1 1 135px;font-size:11px}.profile .profile-contacts a:first-child{flex-basis:165px}}
     @media(max-width:480px){.hero-contact{gap:10px}.hero-contact-availability{flex-basis:100%}.hero-contact-mail{flex:1;justify-content:center}.hero-contact-phone{padding:10px}.profile .profile-contacts{margin-top:12px}.profile .profile-contacts a{padding:9px 8px}}
+
+    /* Chronologie professionnelle : expériences documentées, sans dépendance externe. */
+    .career-timeline{margin-top:25px;padding:26px clamp(17px,3vw,28px);border:1px solid #dce6f1;border-radius:21px;background:#fff;box-shadow:var(--shadow);scroll-margin-top:22px}
+    .career-timeline h2{font-size:clamp(21px,2.3vw,27px);line-height:1.25;letter-spacing:-.034em;margin:7px 0 9px;color:#153653}
+    .career-intro{font-size:12.5px;color:#607388;line-height:1.7;margin:0 0 22px}
+    .career-list{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid #d7e5f0;display:grid;gap:12px}
+    .career-item{position:relative;margin-left:0}
+    .career-item:before{content:'';position:absolute;width:10px;height:10px;background:#198e9e;box-shadow:0 0 0 5px #e9f7f9;border-radius:50%;left:-28px;top:24px}
+    .career-item details{background:#f8fafd;border:1px solid #e2eaf3;border-radius:15px;overflow:hidden}
+    .career-item details[open]{background:#fff;border-color:#91cbd3;box-shadow:0 7px 21px rgba(18,49,83,.06)}
+    .career-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:17px 18px}
+    .career-item summary::-webkit-details-marker{display:none}
+    .career-item summary:after{content:'+';font-size:22px;font-weight:400;color:#39859b;flex:none}
+    .career-item details[open] summary:after{content:'−'}
+    .career-item summary:hover{background:#eef7fa}
+    .career-summary{display:grid;gap:5px;min-width:0}
+    .career-date{font-size:11px;color:#167f94;font-weight:840}
+    .career-role{font-size:14px;font-weight:830;color:#183b5b;line-height:1.42}
+    .career-company{font-size:11.5px;color:#64788d;font-weight:700}
+    .career-body{padding:0 18px 18px;border-top:1px solid #e5edf4}
+    .career-body p{font-size:12.5px;line-height:1.7;color:#4b637a;margin:14px 0}
+    .career-links{display:flex;flex-wrap:wrap;gap:8px}
+    .career-links a{display:inline-flex;border-radius:9px;background:#e9f5fa;color:#17657e;padding:9px 11px;text-decoration:none;font-size:11.5px;font-weight:800}
+    .career-links a:hover{text-decoration:underline}
+    .career-foot{font-size:11px;color:#6d8094;line-height:1.65;margin:17px 0 0}
+    @media(max-width:600px){.career-timeline{padding:20px 16px}.career-list{padding-left:17px}.career-item:before{left:-23px}.career-item summary{padding:14px}.career-body{padding:0 14px 15px}}
   </style>
   <link rel="stylesheet" href="chatbot/chat.css">
 </head>
@@ -407,6 +433,20 @@
             <span class="journey-foot">Choisir les compétences <span aria-hidden="true">→</span></span>
           </a>
         </nav>
+
+        <section class="career-timeline" id="parcours-professionnel" aria-labelledby="careerHeading">
+          <p class="eyebrow">Expériences professionnelles</p>
+          <h2 id="careerHeading">Mon parcours sur le terrain</h2>
+          <p class="career-intro">Du traitement des sinistres à la souscription, puis à l'analyse des offres : explorez les différentes facettes de mon expérience dans l'assurance. Ouvrez une étape pour accéder aux réalisations associées.</p>
+          <ol class="career-list">
+            <li class="career-item"><details open><summary><span class="career-summary"><span class="career-date">2024 – 2026 · Alternance</span><span class="career-role">Marketing des offres IARD et Services</span><span class="career-company">MAIF</span></span></summary><div class="career-body"><p>Études de marché et benchmarks, analyse des données de portefeuille, recommandations sur l'évolution des offres et communication de veille interne.</p><div class="career-links"><a href="#projet-studies">Études de marché ↗</a><a href="#projet-portfolio">Analyse de portefeuille ↗</a><a href="#projet-auto">Mission conseil ↗</a></div></div></details></li>
+            <li class="career-item"><details><summary><span class="career-summary"><span class="career-date">2026</span><span class="career-role">Assurance de personnes et clauses bénéficiaires</span><span class="career-company">MAIF VIE</span></span></summary><div class="career-body"><p>Instruction de dossiers en assurance de personnes et application des règles contractuelles liées aux clauses bénéficiaires.</p><div class="career-links"><a href="#projet-claims_life">Consulter la réalisation ↗</a></div></div></details></li>
+            <li class="career-item"><details><summary><span class="career-summary"><span class="career-date">2023 – 2024</span><span class="career-role">Gestion des sinistres corporels</span><span class="career-company">MAPA</span></span></summary><div class="career-body"><p>Gestion d'un portefeuille de sinistres corporels et accompagnement des assurés tout au long de leur dossier.</p><div class="career-links"><a href="#projet-claims_mapa">Consulter la réalisation ↗</a></div></div></details></li>
+            <li class="career-item"><details><summary><span class="career-summary"><span class="career-date">2022 – 2023</span><span class="career-role">Souscription et gestion de contrats</span><span class="career-company">Groupama</span></span></summary><div class="career-body"><p>Analyse de risques et suivi de contrats pour les collectivités et les associations, avec une approche contractuelle et opérationnelle.</p><div class="career-links"><a href="#projet-underwriting">Consulter la réalisation ↗</a></div></div></details></li>
+            <li class="career-item"><details><summary><span class="career-summary"><span class="career-date">2022</span><span class="career-role">Gestion des sinistres automobiles</span><span class="career-company">Groupama</span></span></summary><div class="career-body"><p>Traitement de déclarations de sinistres automobiles, analyse des garanties et conseil auprès des assurés.</p><div class="career-links"><a href="#projet-claims_groupama">Consulter la réalisation ↗</a></div></div></details></li>
+          </ol>
+          <p class="career-foot">Les dates correspondent aux périodes déjà documentées dans le portfolio. Les fiches détaillées présentent les missions, méthodes et réalisations associées.</p>
+        </section>
         <section class="home-education" aria-labelledby="homeEducationHeading">
           <div class="home-education-head">
             <p class="eyebrow">Ma formation</p>

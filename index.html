@@ -378,7 +378,7 @@
     .career-position{min-width:38px;text-align:center;font-size:11px;font-weight:830;color:#3c6078;font-variant-numeric:tabular-nums}
     .career-viewport{max-width:100%;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;scroll-snap-type:x proximity;scroll-padding-left:0;scrollbar-color:#8bbdc9 #eaf1f5;scrollbar-width:thin;padding-bottom:13px;border-radius:12px}
     .career-viewport:focus-visible{outline:3px solid #118fb0;outline-offset:3px}
-    .career-track{--width-dut:185px;--width-licence:205px;--width-master:425px;--width-mapa:210px;--width-rncp:570px;--width-cdd:245px;--rncp-start:calc(var(--width-dut) + var(--width-licence) + var(--width-master) + var(--width-mapa) + 12px);--cdd-start:calc(var(--rncp-start) + var(--width-rncp) + 3px);position:relative;list-style:none;display:flex;align-items:stretch;gap:3px;width:max-content;margin:0;padding:0;min-height:900px}
+    .career-track{--width-dut:185px;--width-licence:205px;--width-master:425px;--width-mapa:210px;--width-rncp:570px;--width-cdd:245px;--rncp-start:calc(var(--width-dut) + var(--width-licence) + var(--width-master) + var(--width-mapa) + 12px);--cdd-start:calc(var(--rncp-start) + var(--width-rncp) + 3px);position:relative;list-style:none;display:flex;align-items:stretch;gap:3px;width:max-content;margin:0;padding:0;min-height:670px}
     .career-period{min-width:0;flex:0 0 var(--zone-width);width:var(--zone-width);background:var(--zone-bg);border-top:6px solid var(--zone-color);border-bottom:1px solid var(--zone-outline);border-left:1px solid var(--zone-outline);border-right:1px solid var(--zone-outline);padding:13px 13px 16px;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start}
     .career-period:first-child{border-radius:14px 0 0 14px}
     .career-period-maifvie{border-radius:0 14px 14px 0}
@@ -421,11 +421,11 @@
     .career-foot{font-size:10.5px;color:#6d8296;line-height:1.6;margin:0;flex:1 1 260px}
     .career-all{display:inline-flex;gap:8px;align-items:center;justify-content:center;border-radius:10px;background:#123c60;color:#fff;text-decoration:none;padding:12px 14px;font-size:11.5px;font-weight:850}
     .career-all:hover{background:#0b6279}
-    @media(max-width:730px){.career-timeline{padding:18px 15px}.career-personal-grid{grid-template-columns:1fr}.career-legend{gap:9px 12px}.career-legend strong{flex-basis:100%}.career-track{--width-dut:245px;--width-licence:245px;--width-mapa:245px;min-height:900px}.career-period-dut{--zone-width:245px}.career-period-licence{--zone-width:245px}.career-period-mapa{--zone-width:245px}.career-period-maifvie{--zone-width:245px}.career-arrow{min-width:35px}}
+    @media(max-width:730px){.career-timeline{padding:18px 15px}.career-personal-grid{grid-template-columns:1fr}.career-legend{gap:9px 12px}.career-legend strong{flex-basis:100%}.career-track{--width-dut:245px;--width-licence:245px;--width-mapa:245px;min-height:670px}.career-period-dut{--zone-width:245px}.career-period-licence{--zone-width:245px}.career-period-mapa{--zone-width:245px}.career-period-maifvie{--zone-width:245px}.career-arrow{min-width:35px}}
     @media(prefers-reduced-motion:reduce){.career-viewport{scroll-behavior:auto}.career-proof{transition:none}.career-proof:hover{transform:none}}
 
     
-    /* Bandes orange intégrées à la frise, avec un début distinct et une fin commune.
+    /* Bandes orange intégrées près des dernières réalisations, avec un début distinct et une fin commune.
        Les positions des mois sont illustratives ; les dates écrites font foi. */
     .career-project-lanes{position:absolute;left:0;right:0;bottom:0;height:171px;z-index:2;pointer-events:none;list-style:none}
     .career-project-heading{position:absolute;left:var(--rncp-start);bottom:144px;margin:0;color:#955814;font-size:10px;letter-spacing:.055em;text-transform:uppercase;font-weight:850;display:flex;align-items:center;gap:7px}

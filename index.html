@@ -325,7 +325,7 @@
     .profile-formation-link:focus-visible{outline:2px solid #86e2dd;outline-offset:5px}
     .profile-fact span.profile-formation-cta{margin-top:8px;color:#9bdfdf;font-size:9px;font-weight:780}
     @media(max-width:680px){.education-card{grid-template-columns:1fr;gap:10px;padding:19px}.education-featured{padding-left:16px}.education-dates{margin:0}.education-card h3{font-size:15px}.education-heading>p:not(.eyebrow){font-size:12.5px}}
-    @media(max-width:480px){.topnav{flex-wrap:wrap;gap:10px}.navlinks{gap:9px}.navlinks .nav-formation{display:inline-flex!important}.brand>span:last-child>span{display:none}.navlinks .nav-cta{padding:9px 10px;font-size:10px}}
+    @media(max-width:480px){.topnav{flex-wrap:wrap;gap:10px}.navlinks{gap:9px}.navlinks .nav-formation,.navlinks .nav-projects{display:inline-flex!important}.brand>span:last-child>span{display:none}.navlinks .nav-cta{padding:9px 10px;font-size:10px}}
 
     /* Résumé des quatre formations visible dès l'accueil, sans troisième choix principal. */
     .home-education{margin-top:30px;padding:23px 24px 21px;border:1px solid #dce6f1;border-radius:21px;background:#fff;box-shadow:0 10px 27px rgba(22,47,82,.055)}
@@ -494,6 +494,12 @@
     .proof-shortcuts a{color:#146b83;font-size:11px;font-weight:790;text-decoration:underline;text-decoration-color:#bddae4;text-underline-offset:4px}
     .proof-shortcuts a:hover{color:#064e64;text-decoration-color:currentColor}
     @media(max-width:760px){.journey-grid{grid-template-columns:1fr}.journey-portfolio .journey-copy strong{font-size:21px}.proof-shortcuts{margin-top:10px;padding:10px 0}.journey-portfolio{border-width:2px}}
+    .featured-study{margin:22px 0 0;padding:clamp(18px,3vw,30px);border:1px solid #bbd9e2;border-left:4px solid #168aa0;border-radius:18px;background:#f0f9fb;color:#153653}
+    .featured-study h2{margin:8px 0;font-size:clamp(21px,2.3vw,29px);line-height:1.2}
+    .featured-study p:not(.eyebrow){max-width:72ch;margin:0 0 16px;line-height:1.6}
+    .featured-study .btn{text-decoration:none}
+    .hero-entry .journey-card{min-height:0}
+    .hero-entry .home-education-head{margin-bottom:0}
   </style>
   <link rel="stylesheet" href="chatbot/chat.css">
 </head>
@@ -504,50 +510,38 @@
     <div class="wrap">
       <nav class="topnav" aria-label="Navigation principale">
         <a class="brand" href="#accueil" data-view-target="home"><span class="brand-mark" aria-hidden="true">VT</span><span>Victor Travers <span style="color:#8190a2;font-weight:500">/ CV interactif</span></span></a>
-        <div class="navlinks"><a class="nav-formation" href="#formation" data-view-target="formation">Formation</a><a href="cv-victor-travers.pdf" target="_blank" rel="noopener">CV PDF</a><a href="#contact" class="nav-cta">Me contacter ↗</a></div>
+        <div class="navlinks"><a class="nav-projects" href="#realisations" data-view-target="catalogue">Réalisations</a><a class="nav-formation" href="#formation" data-view-target="formation">Formation</a><a href="cv-victor-travers.pdf" target="_blank" rel="noopener">CV PDF</a><a href="#contact" class="nav-cta">Me contacter ↗</a></div>
       </nav>
       <header class="hero hero-entry" id="accueil" aria-labelledby="welcomeTitle">
         <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Votre recrutement, mon parcours</p>
         <h1 id="welcomeTitle">Marketing dans l’assurance : <span class="title-highlight">découvrez ce que je peux apporter à votre équipe.</span></h1>
-        <p class="hero-desc">Je recherche une nouvelle opportunité en <strong>marketing dans l’assurance à partir du 1er janvier 2027</strong>. Découvrez d’abord <strong>mes 14 réalisations documentées</strong> : les missions, mes méthodes de travail et leur portée. Vous pouvez aussi explorer mon parcours selon vos critères.</p>
+        <p class="hero-desc">Je recherche une nouvelle opportunité en <strong>marketing dans l’assurance à partir du 1er janvier 2027</strong>. Mes études de marché, ma pratique de la souscription et mes outils de veille nourrissent mon travail sur les offres d’assurance.</p>
+        <article class="featured-study" aria-labelledby="featuredStudyHeading">
+          <p class="eyebrow">Étude de marché · MAIF ACE · 2024–2026</p>
+          <h2 id="featuredStudyHeading">Quelles garanties et quels services faire évoluer ?</h2>
+          <p>J’ai comparé les offres concurrentes sur quatre thèmes : mobilité des associations, multirisque, prévention cyber et risques climatiques. Mes benchmarks et synthèses ont alimenté les réflexions des équipes sur les garanties et les services de prévention.</p>
+          <a class="btn btn-primary" href="#projet-studies">Voir mon étude de marché <span aria-hidden="true">→</span></a>
+        </article>
+        <nav class="proof-shortcuts" aria-label="Deux autres réalisations">
+          <a href="#projet-automation">Découvrir mon outil de veille stratégique en assurance <span aria-hidden="true">↗</span></a>
+          <a href="#projet-underwriting">Voir comment j’analyse les risques des collectivités et associations chez Groupama <span aria-hidden="true">↗</span></a>
+        </nav>
         <div class="hero-contact" aria-label="Disponibilité et contact">
           <span class="hero-contact-availability"><span aria-hidden="true">●</span> Disponible à partir du 1er janvier 2027</span>
           <a href="mailto:victortravers79@gmail.com?subject=%C3%89change%20professionnel%20-%20Marketing%20Assurance" class="hero-contact-mail">Me proposer un échange <span aria-hidden="true">→</span></a>
           <a href="tel:+33669230303" class="hero-contact-phone">M’appeler</a>
         </div>
-        <nav class="journey-grid" aria-label="Choisissez votre mode d'exploration">
-          <a class="journey-card journey-portfolio" href="#realisations" data-view-target="catalogue">
-            <span class="journey-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="6" width="18" height="15" rx="3"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/>
-              </svg>
-            </span>
-            <span class="journey-copy">
-              <span class="journey-priority">À découvrir en priorité · 14 réalisations</span>
-              <strong>Voir mes réalisations</strong>
-              <span>Des exemples concrets de mes travaux : contexte, démarche, résultats et limites. Explorez-les par thématique pour évaluer ce que je peux apporter à votre équipe.</span>
-            </span>
-            <span class="journey-foot"><span class="journey-cta">Explorer mes 14 réalisations</span> <span aria-hidden="true">→</span></span>
+        <nav class="journey-grid" aria-label="Explorer le portfolio">
+          <a class="journey-card" href="#realisations" data-view-target="catalogue">
+            <span class="journey-copy"><strong>Explorer les 14 réalisations par thématique</strong></span>
+            <span class="journey-foot">Choisir une thématique <span aria-hidden="true">→</span></span>
           </a>
-          <a class="journey-card journey-criteria" href="#selectionArea" data-view-target="criteria">
-            <span class="journey-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="17" r="2" fill="currentColor" stroke="none"/>
-              </svg>
-            </span>
-            <span class="journey-copy">
-              <strong>Sélectionner vos critères</strong>
-              <span>Choisissez les compétences qui vous intéressent pour découvrir trois réalisations adaptées à votre recherche.</span>
-            </span>
+          <a class="journey-card" href="#selectionArea" data-view-target="criteria">
+            <span class="journey-copy"><strong>Trouver les réalisations qui correspondent à votre poste</strong>
+              <span>Choisissez les compétences recherchées pour découvrir trois exemples de mon travail.</span></span>
             <span class="journey-foot">Choisir les compétences <span aria-hidden="true">→</span></span>
           </a>
         </nav>
-        <div class="proof-shortcuts" aria-label="Accès direct à trois réalisations">
-          <span class="proof-shortcuts-title">Ou découvrez directement une réalisation :</span>
-          <a href="#projet-studies">Études de marché <span aria-hidden="true">↗</span></a>
-          <a href="#projet-underwriting">Souscription <span aria-hidden="true">↗</span></a>
-          <a href="#projet-automation">Veille et IA <span aria-hidden="true">↗</span></a>
-        </div>
 
         <section class="career-timeline" id="parcours-professionnel" aria-labelledby="careerHeading">
           <p class="eyebrow">Formations, expériences, réalisations</p>
@@ -628,17 +622,7 @@
           </div>
         </section>
         <section class="home-education" aria-labelledby="homeEducationHeading">
-          <div class="home-education-head">
-            <p class="eyebrow">Ma formation</p>
-            <h2 id="homeEducationHeading">Mon parcours universitaire et professionnel</h2>
-            <p>De la gestion au droit des assurances, puis au marketing et à la relation client en assurance.</p>
-          </div>
-          <div class="home-education-grid">
-            <article class="home-degree"><span class="home-degree-period">2024 – 2026</span><h3>Titre RNCP Bac+5 — Management du Marketing et de la Relation Client en Assurance</h3><p class="home-degree-school">IFPASS &amp; ICD Business School · Niort</p><p class="home-degree-context">Veille, segmentation, parcours client et marketing digital : un cadre que j’ai mobilisé pour mes analyses et recommandations sur les offres MAIF.</p></article>
-            <article class="home-degree"><span class="home-degree-period">2021 – 2023</span><h3>Master de Droit des Assurances</h3><p class="home-degree-school">Pôle Universitaire de Niort</p><p class="home-degree-context">Contrats d’assurance, responsabilité et indemnisation : un approfondissement juridique pour comprendre les garanties et analyser des situations assurantielles.</p></article>
-            <article class="home-degree"><span class="home-degree-period">2018 – 2021</span><h3>Licence de Droit des Assurances</h3><p class="home-degree-school">Pôle Universitaire de Niort</p><p class="home-degree-context">Droit des obligations, assurance de personnes et techniques de gestion des sinistres : les bases de ma lecture juridique des contrats et des dossiers.</p></article>
-            <article class="home-degree"><span class="home-degree-period">2016 – 2018</span><h3>DUT Gestion des Entreprises et des Administrations</h3><p class="home-degree-school">IUT de Niort</p><p class="home-degree-context">Comptabilité, économie, marketing et gestion : un premier socle pour comprendre l’organisation et les enjeux économiques d’un assureur.</p></article>
-          </div>
+          <div class="home-education-head"><h2 id="homeEducationHeading">Ma formation en droit et marketing de l’assurance</h2></div>
           <a class="home-education-more" href="#formation" data-view-target="formation">Consulter mon cursus détaillé <span aria-hidden="true">→</span></a>
         </section>
       </header>
